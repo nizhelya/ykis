@@ -1,0 +1,126 @@
+Чтобы увидеть только код ответа страницы достаточно выполнить такую команду:
+  curl -s -o /dev/null -w "%{http_code}" https://api.sandbox.ipay.ua/
+чтобы ответ выглядел более естественно:
+
+Keystore - это защищенный файл или правильнее сказать база данных, которая выступает в роли специального,
+защищенного хранилища открытых ключей, сертификатов, секретных ключей.
+
+Закрытый и открытый ключи используются в асимметричном шифровании. Открытый ключ может иметь связанный сертификат.
+Сертификат - это цифровой документ, удостоверяющий личность человека, организации или устройства, претендующего на владение открытым ключом. 
+Сертификат обычно имеет цифровую подпись проверяющей стороны в качестве доказательства (Удостоверяющие центры).
+
+Секретные ключи используются в симметричном шифровании. Во многих случаях симметричные ключи согласовываются при настройке безопасного соединения. 
+Поэтому вы будете чаще хранить открытые и закрытые ключи, KeyStore чем секретные ключи.
+
+Keystore умеет работать в ситуации, когда в процессе работы необходима аутентификация сервера и клиента, 
+где все реализовано с помощью SSL соединения, подразумевающее использование приватных ключей и сертификатов и 
+так же keystore применяется при односторонней аутентификации, но только на стороне сервера. 
+Java KeyStore представлен классом java.security.KeyStore. Поскольку KeyStore общедоступен, 
+пользователи JDK могут создавать дополнительные приложения безопасности, которые его используют.
+
+Типы поддерживаемых форматов в keystore
+
+    pkcs12 - это один из типов хранилища, заточенный чисто под хранение и перенос закрытых ключей пользователя, сертификатов.
+    jceks - сторонняя разработка хранилища, отличная более стойким шифрованием на основе triple DES. Позволяет обновлять существующие jks-хранилища до jceks
+    jks - это самый обычный, стандартный тип хранилища, в виде простого файла имеющего расширение jks ("java key storage"), 
+    устанавливается по умолчанию и, поэтому, применяется наиболее часто.
+
+В стандартной реализации каждый ключ в хранилище защищается паролем; кроме того, всё хранилище целиком может быть защищено отдельным паролем. 
+Если вы ничего не меняли, то стандартное расположение хранилища сертификатов находится по пути  jre/lib/security/cacerts (пароль по умолчанию- changeit).
+
+keytool
+
+Список команд
+
+-certreq - генерация CSR запроса
+-changealias - изменить запись алиаса
+-delete  - удалить запись
+-exportcert - экспортировать сертификат
+-genkeypair - генерация пары ключей
+-genseckey - генерация секретного ключа
+-gencert - генерация сертификата из csr запроса
+-importcert - импорт сертификата или цепочки
+-importpass - импорт паролей
+-importkeystore - импорт одной или нескольких записей из другого Keystore
+-keypasswd - изменить пароль у записи
+-list - список всех записей в хранилище сертификатов
+-printcert - вывод содержимого сертификата
+-printcertreq - вывод содержимого CSR запроса
+-printcrl - вывод содержимого CRL запроса
+-storepasswd - изменить пароль на Keystore
+
+keytool -genkeypair -help и получаю вывод дополнительных ключей:
+
+-alias <alias> alias name of the entry to process
+-keyalg <keyalg> key algorithm name
+-keysize <keysize> key bit size
+-sigalg <sigalg> signature algorithm name
+-destalias <destalias> destination alias
+-dname <dname> distinguished name
+-startdate <startdate> certificate validity start date/time
+-ext <value> X.509 extension
+-validity <valDays> validity number of days
+-keypass <arg> key password
+-keystore <keystore> keystore name
+-storepass <arg> keystore password
+-storetype <storetype> keystore type
+-providername <providername> provider name
+-providerclass <providerclass> provider class name
+-providerarg <arg> provider argument
+-providerpath <pathlist> provider classpath
+-v verbose output
+-protected password through protected mechanism
+
+Действия по созданию ключа RSA, самозаверяющих сертификатов, хранилища ключей и хранилища доверенных сертификатов для сервера
+
+   1. Генерация закрытого ключа RSA
+
+    openssl genrsa -out YkisServerCA.key 2048
+
+   2. Создайте сертификат x509
+
+    openssl req -x509 -new -nodes -key YkisServerCA.key -sha256 -days 1096 -out YkisServerCA.pem
+
+   3. Создайте хранилище ключей PKCS12 (YkisKeyStore.p12 - хранилище) из закрытого ключа и открытого сертификата. 
+   (alias YkisServerCert название файла содержащий открытый сертификат и закрытый ключ и помещенный в хранилище
+
+    openssl pkcs12 -export -name YkisServerCert -in YkisServerCA.pem -inkey YkisServerCA.key -out YkisKeyStore.p12 
+
+   4. Конвертировать хранилище ключей PKCS12 (YkisKeyStore.p12 - хранилище) в хранилище ключей JKS
+
+    keytool -importkeystore -destkeystore ykis.keystore -srckeystore YkisKeyStore.p12 -srcstoretype pkcs12 -alias YkisServerCert
+
+   5. Импортируйте сертификат клиента в доверенное хранилище сервера.
+
+    keytool -import -alias client-cert -file YkisServerCA.pem -keystore server.truststore
+
+  6.  Импортируйте сертификат сервера в хранилище доверенных сертификатов сервера.
+
+    keytool -import -alias server-cert -file diagserverCA.pem -keystore server.truststore
+
+Действия по созданию личного ключа RSA, самозаверяющего сертификата, хранилища ключей и хранилища доверенных сертификатов для клиента
+
+  1. Создать личный ключ
+
+    openssl genrsa -out YkisClientCA.key 2048
+
+  2. Создайте сертификат x509
+
+    openssl req -x509 -new -nodes -key YkisClientCA.key -sha256 -days 1096 -out YkisClientCA.pem
+
+  3.  Создайте хранилище ключей PKCS12 из закрытого ключа и открытого сертификата.
+
+    openssl pkcs12 -export -name ykis-client-cert -in YkisClientCA.pem -inkey YkisClientCA.key -out ykiskeystore.p12
+
+  4.  Преобразовать хранилище ключей PKCS12 в хранилище ключей JKS
+
+    keytool -importkeystore -destkeystore client.keystore -srckeystore ykiskeystore.p12 -srcstoretype pkcs12 -alias ykis-cert
+
+   5. Импортируйте сертификат сервера в доверенное хранилище клиента.
+
+    keytool -import -alias server-cert -file YkisClientCA.pem -keystore client.truststore
+
+   6. Импортируйте сертификат клиента в доверенное хранилище клиента.
+
+    keytool -import -alias ykis-cert -file YkisClientCA.pem -keystore client.truststore
+

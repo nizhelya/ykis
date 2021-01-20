@@ -1,0 +1,47 @@
+DELETE FROM YIS.KVARTPLATA  WHERE data < "20140101";
+DELETE FROM YIS.OTOPLENIE  WHERE data < "20140101";
+DELETE FROM YIS.PODOGREV  WHERE data < "20140101";
+DELETE FROM YIS.PTN  WHERE data < "20140101";
+DELETE FROM YIS.VODA  WHERE data < "20140101";
+DELETE FROM YIS.STOKI  WHERE data < "20140101";
+DELETE FROM YIS.TBO  WHERE data < "20140101";
+DELETE FROM YIS.OPLATA  WHERE data < "20140101";
+DELETE FROM YIS.HEATHOUSE  WHERE data < "20140101";
+DELETE FROM YIS.WATER  WHERE data < "20140101";
+
+
+UPDATE `HOUSE` SET `house` = "Новобілярська 26-Б"  WHERE `house_id`= 195
+UPDATE `ADDRESS` SET `house` = "Новобілярська 26-Б"  WHERE `house_id`= 195
+UPDATE `ADDRESS` SET `address` = CONCAT(`house`,"/",`appartment`) WHERE `house_id`= 195
+UPDATE YIS.ADDRESS as t1 ,YIS.APPARTMENT as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,OSBB.APPARTMENT as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,YIS.KVARTPLATA as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,YIS.OTOPLENIE as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,YIS.PODOGREV as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,YIS.PTN as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,YIS.VODA as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,YIS.STOKI as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,YIS.TBO as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,OSBB.KVARTPLATA as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,OSBB.OTOPLENIE as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,OSBB.PODOGREV as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,OSBB.PTN as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,OSBB.VODA as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,OSBB.STOKI as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,OSBB.TBO as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,OSBB.ENERGY as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,OSBB.GAS as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+UPDATE YIS.ADDRESS as t1 ,OSBB.VAXTA as t2  SET t2.`address` = t1.`address` WHERE t2.`house_id`= 195 and t2.`address_id` = t1.`address_id`;
+
+UPDATE `KVARTPLATA` SET `address` = "Іванова 18/70"  WHERE `address_id`= 15059;
+UPDATE `KVARTPLATA` SET `address` = "Іванова 18/69"  WHERE `address_id`= 15060;
+
+UPDATE `KVARTPLATA` SET `address` = "Іванова 18/69"  WHERE `address_id`= 15060;
+UPDATE `VODA` SET `address` = "Іванова 18/69"  WHERE `address_id`= 15060;
+UPDATE `STOKI` SET `address` = "Іванова 18/69"  WHERE `address_id`= 15060;
+UPDATE `OTOPLENIE` SET `address` = "Іванова 18/69"  WHERE `address_id`= 15060;
+UPDATE `PODOGREV` SET `address` = "Іванова 18/69"  WHERE `address_id`= 15060;
+UPDATE `PTN` SET `address` = "Іванова 18/69"  WHERE `address_id`= 15060;
+UPDATE `TBO` SET `address` = "Іванова 18/69"  WHERE `address_id`= 15060;
+UPDATE `VODOMER` SET `address` = "Іванова 18/69"  WHERE `address_id`= 15060;
+UPDATE `WATER` SET `address` = "Іванова 18/69"  WHERE `address_id`= 15060;
