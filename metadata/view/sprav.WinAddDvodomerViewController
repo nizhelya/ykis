@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winadddvodomer",
+        "designer|userClassName": "sprav.WinAddDvodomerViewController"
+    },
+    "designerId": "11422a51-65a3-4428-9299-63b1ed9dc46b"
+}

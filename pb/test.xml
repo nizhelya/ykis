@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Transfer action="Check" interface="Debt" xmlns="http://debt.privatbank.ua/Transfer">
+<Data xsi:type="Payment" id="97618" number="0.0.739614.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+<PayerInfo billIdentifier="1436200423220904">
+    <Fio>Стрембий  Вера Николаевна</Fio>
+    <Phone>0939601231,  067-852-42-46</Phone>
+    <Address>Миру 26/119</Address>
+</PayerInfo>
+
+<TotalSum>1560</TotalSum>
+<CreateTime>2020-04-21T15:11:06.129+03:00</CreateTime>
+
+<ServiceGroup>
+    <CompanyInfo mfo="328704" okpo="40970860" account="UA393287040000026003054319021" >
+        <CompanyCode>40970860</CompanyCode>
+        <CompanyName>ОСББ «МИРНИЙ».-26»</CompanyName> 
+    </CompanyInfo>
+   
+        <Service serviceCode="401" sum="400">
+            <ServiceName>Внески на утримання будинку та прибудинкової території</ServiceName>
+            <Destination>Оплата за послугу "Внески на утримання будинку та прибудинкової території"</Destination>
+        </Service>
+</ServiceGroup>
+
+<ServiceGroup>
+    <CompanyInfo mfo="328704" okpo="26134519" account="UA363287040000026007054340182">
+        <CompanyCode>26134519</CompanyCode>
+        <CompanyName>КП ТМ "ЮЖТЕПЛОКОМУНЕНЕРГО"</CompanyName>
+    </CompanyInfo>
+   
+        <Service serviceCode="101" sum="500">
+            <ServiceName>Опалення</ServiceName>
+            <Destination>Оплата за послугу "Опалення"</Destination>
+        </Service>
+
+        <Service serviceCode="102" sum="300">
+            <ServiceName>ПТН</ServiceName>
+            <Destination>Оплата за послугу "ПТН"</Destination>
+        </Service>
+        
+         <Service serviceCode="104" sum="10">
+             <ServiceName>Подогрів</ServiceName>
+             <Destination>Оплата за послугу "Подогрів"</Destination>
+        </Service>
+        
+</ServiceGroup>
+
+<ServiceGroup>
+    <CompanyInfo mfo="328704" okpo="31783053" account="UA563287040000026006054340826">
+        <CompanyCode>31783053</CompanyCode>
+        <CompanyName>КП "Южводоканал"</CompanyName> 
+     </CompanyInfo>
+       
+        <Service serviceCode="201" sum="200">
+            <ServiceName>Водопостачання </ServiceName>
+            <Destination>Оплата за послугу "Водопостачання "</Destination>
+        </Service>
+
+        <Service serviceCode="202" sum="100">
+            <ServiceName>Водовідведення </ServiceName>
+            <Destination>Оплата за послугу "Водовідведення "</Destination>
+        </Service>
+</ServiceGroup>
+
+<ServiceGroup>
+    <CompanyInfo mfo="328704" okpo="30750184" account="UA583281680000000026004219661">
+        <CompanyCode>30750184</CompanyCode>
+        <CompanyName>КП «ЮЖТРАНС» </CompanyName>   
+    </CompanyInfo>
+        <Service serviceCode="301" sum="50">
+            <ServiceName>Вивіз ТПВ </ServiceName>
+            <Destination>Оплата за послугу "Вивіз ТПВ "</Destination>
+        </Service>
+</ServiceGroup>
+</Data>
+</Transfer>
+
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Transfer xmlns="http://debt.privatbank.ua/Transfer" interface="Debt" action="Pay">
+<Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Payment" id="97619" number="0.0.739614.5">
+ <CompanyInfo mfo="328704" okpo="40970860" account="UA393287040000026003054319021" >
+ <CompanyCode>40970860</CompanyCode>
+ <CompanyName>ОСББ «МИРНИЙ».-26»</CompanyName>                
+<CheckReference>7</CheckReference>
+</CompanyInfo>
+<PayerInfo billIdentifier="1436200423220904">
+    <Fio>Стрембий  Вера Николаевна</Fio>
+    <Phone>0939601231,  067-852-42-46</Phone>
+    <Address>Миру 26/119</Address>
+</PayerInfo>
+
+<TotalSum>1560</TotalSum>
+
+<CreateTime>2020-04-23T08:00:00.001+03:00</CreateTime>
+<ConfirmTime>2014-04-23T16:55:04.120+03:00</ConfirmTime>
+
+<ServiceGroup>
+    <CompanyInfo mfo="328704" okpo="40970860" account="UA393287040000026003054319021" >
+        <CompanyCode>40970860</CompanyCode>
+        <CompanyName>ОСББ «МИРНИЙ».-26»</CompanyName>                
+<CheckReference>7</CheckReference>
+        </CompanyInfo>
+    <Service serviceCode="401" sum="100" id="324124213">
+        <ServiceName>Внески на утримання будинку та прибудинкової території</ServiceName>
+        <Destination>Оплата за послугу "Внески на утримання будинку та прибудинкової території"</Destination>
+    </Service>
+</ServiceGroup>
+<ServiceGroup>
+     <CompanyInfo mfo="328704" okpo="26134519" account="UA363287040000026007054340182">
+        <CompanyCode>26134519</CompanyCode>
+        <CompanyName>КП ТМ "ЮЖТЕПЛОКОМУНЕНЕРГО"</CompanyName>             
+        <CheckReference>7</CheckReference>
+        </CompanyInfo>
+        <Service serviceCode="101" sum="500">
+            <ServiceName>Опалення</ServiceName>
+            <Destination>Оплата за послугу "Опалення"</Destination>
+        </Service>
+
+        <Service serviceCode="102" sum="300">
+            <ServiceName>ПТН</ServiceName>
+            <Destination>Оплата за послугу "ПТН"</Destination>
+        </Service>
+        
+         <Service serviceCode="104" sum="10">
+             <ServiceName>Подогрів</ServiceName>
+             <Destination>Оплата за послугу "Подогрів"</Destination>
+        </Service>
+</ServiceGroup>
+
+
+<ServiceGroup>
+     <CompanyInfo mfo="328704" okpo="31783053" account="UA563287040000026006054340826">
+        <CompanyCode>31783053</CompanyCode>
+        <CompanyName>КП "Южводоканал"</CompanyName>            
+        <CheckReference>7</CheckReference>
+        </CompanyInfo>
+        <Service serviceCode="201" sum="200">
+            <ServiceName>Водопостачання </ServiceName>
+            <Destination>Оплата за послугу "Водопостачання "</Destination>
+        </Service>
+
+        <Service serviceCode="202" sum="100">
+            <ServiceName>Водовідведення </ServiceName>
+            <Destination>Оплата за послугу "Водовідведення "</Destination>
+        </Service>
+</ServiceGroup>
+
+<ServiceGroup>
+     <CompanyInfo mfo="328704" okpo="30750184" account="UA583281680000000026004219661">
+        <CompanyCode>30750184</CompanyCode>
+        <CompanyName>КП «ЮЖТРАНС» </CompanyName>             
+        <CheckReference>7</CheckReference>
+        </CompanyInfo>
+    <Service serviceCode="301" sum="50">
+            <ServiceName>Вивіз ТПВ </ServiceName>
+            <Destination>Оплата за послугу "Вивіз ТПВ "</Destination>
+        </Service>
+</ServiceGroup>
+</Data>
+</Transfer>

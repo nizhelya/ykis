@@ -1,0 +1,717 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winaddorg",
+        "designer|userClassName": "org.WinAddOrg",
+        "height": 625,
+        "id": "winAddOrg",
+        "itemId": null,
+        "layout": "fit",
+        "modal": true,
+        "title": "Добавление новой организации, предприятия",
+        "width": 836
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "4a484aff-fbd5-4692-ba5c-35adf8056035",
+    "viewControllerInstanceId": "7b3a115d-8926-4b4b-a450-3f16b067cea5",
+    "viewModelInstanceId": "cb68e246-2514-4102-b116-5270eb79ee9b",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": null,
+                "bodyPadding": 10,
+                "designer|snapToGrid": 5,
+                "height": null,
+                "id": "fmAddOrg",
+                "itemId": null,
+                "layout": "absolute",
+                "paramsAsHash": true,
+                "style": "background-color: #DCDCDC;",
+                "title": ""
+            },
+            "name": "MyForm34",
+            "configAlternates": {
+                "scrollable": "boolean",
+                "style": "string"
+            },
+            "designerId": "2684e326-8e60-4bed-a254-0e34dd95a6a4",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 230,
+                        "layout|x": 10,
+                        "layout|y": 285,
+                        "padding": "10 10 10 10",
+                        "style": "background-color: #DCDCDC;",
+                        "title": "Адрес",
+                        "width": 420
+                    },
+                    "name": "MyFieldSet133",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "a2936fdc-02d7-429b-9431-627a6bd08307",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "enableKeyEvents": true,
+                                "fieldLabel": "Юридический",
+                                "height": null,
+                                "labelAlign": "top",
+                                "labelWidth": null,
+                                "layout|anchor": "100%",
+                                "maxLength": 250,
+                                "maxLengthText": "Максимальная длина для этого поля 250 символов",
+                                "name": "uaddress",
+                                "style": null,
+                                "width": 390
+                            },
+                            "name": "MyTextArea13",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "cfc4b6a6-93df-4650-b883-8f3036f5ef63",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextareafieldChange",
+                                        "implHandler": [
+                                            "var me =this;",
+                                            "",
+                                            "var faddress = Ext.getCmp('faddressAdd');",
+                                            "//console.log(faddress);",
+                                            "if (newValue) {",
+                                            "    faddress.setValue(newValue);",
+                                            "} ",
+                                            ""
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTextareafieldChange",
+                                    "designerId": "1d4c96ad-4bff-4cd3-a1ce-b926c04c036b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Физический",
+                                "height": null,
+                                "id": "faddressAdd",
+                                "labelAlign": "top",
+                                "labelWidth": null,
+                                "layout|anchor": "100%",
+                                "maxLength": 250,
+                                "maxLengthText": "Максимальная длина для этого поля 250 символов",
+                                "name": "faddress",
+                                "width": 390
+                            },
+                            "name": "MyTextArea14",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "a014828b-81f4-487a-a4ea-c88977dbcc3d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 195,
+                        "layout|x": 455,
+                        "layout|y": 155,
+                        "padding": "10 10 10 10",
+                        "style": "background-color: #DCDCDC;",
+                        "title": "Уставные документы",
+                        "width": 350
+                    },
+                    "name": "MyFieldSet134",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "d0ba5ddd-88b3-40ad-b0d0-e17b3d93aabc",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Действует на основании",
+                                "grow": true,
+                                "height": null,
+                                "labelAlign": "top",
+                                "layout|anchor": "100%",
+                                "name": "statut",
+                                "value": null,
+                                "width": null
+                            },
+                            "name": "MyTextArea15",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "94fbff91-c842-45c2-b205-d4fb1c44f13e"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "ЕДРПОУ",
+                                "layout|anchor": "100%",
+                                "maxLength": 12,
+                                "maxLengthText": "Максимальная длина для этого поля 8 символов",
+                                "name": "edrpou",
+                                "value": null,
+                                "width": null
+                            },
+                            "name": "MyTextField129",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "bdbcd655-4f8e-4980-b649-febc3084c398"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Инн",
+                                "formBind": false,
+                                "layout|anchor": "100%",
+                                "maxLength": 12,
+                                "maxLengthText": "Максимальная длина для этого поля 12 символов",
+                                "name": "inn",
+                                "value": null,
+                                "width": null
+                            },
+                            "name": "MyTextField130",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "a098c6f8-3c4d-4370-8495-162ccee06cba"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "formBind": false,
+                        "height": null,
+                        "icon": "resources/css/images/ico/delete.png",
+                        "id": null,
+                        "itemId": null,
+                        "layout|x": 15,
+                        "layout|y": 540,
+                        "text": "Отмена",
+                        "width": 95
+                    },
+                    "name": "MyButton91",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "6703258f-daaf-49d2-8629-eeedca84fc14",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "fn": "handler",
+                                "implHandler": [
+                                    "this.up('#winAddOrg').close();"
+                                ]
+                            },
+                            "name": "handler",
+                            "designerId": "004c44e0-1a54-4c33-a2f7-81c2d4fb3fb4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 215,
+                        "layout|x": 10,
+                        "layout|y": 60,
+                        "style": "background-color: #DCDCDC;",
+                        "title": "Название организации, предприятия",
+                        "width": 420
+                    },
+                    "name": "MyFieldSet135",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "b65806ae-04c6-4b3c-bc5f-9902c5c8efba",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Полное",
+                                "grow": true,
+                                "height": null,
+                                "labelAlign": "top",
+                                "labelWidth": null,
+                                "layout|anchor": "100%",
+                                "maxLength": 250,
+                                "maxLengthText": "Максимальная длина для этого поля 250 символов",
+                                "name": "fname",
+                                "tabIndex": null,
+                                "value": null,
+                                "width": null
+                            },
+                            "name": "MyTextArea16",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "2f5b2d94-d490-4967-84f8-3c4c01dd95dc",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextareafieldChange1",
+                                        "implHandler": [
+                                            "var nameOrgAdd = Ext.getCmp('nameOrgAdd');",
+                                            "//console.log(faddress);",
+                                            "if (newValue) {",
+                                            "    nameOrgAdd.setValue(newValue);",
+                                            "} "
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTextareafieldChange1",
+                                    "designerId": "0c83c26d-6776-4c73-b2f2-bae8c4c262cd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Краткое",
+                                "formBind": false,
+                                "grow": true,
+                                "height": null,
+                                "id": "nameOrgAdd",
+                                "labelAlign": "top",
+                                "labelWidth": null,
+                                "layout|anchor": "100%",
+                                "maxLength": 50,
+                                "maxLengthText": "Максимальная длина для этого поля 50 символов",
+                                "name": "sname",
+                                "value": null,
+                                "width": null
+                            },
+                            "name": "MyTextArea17",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "0283ee0e-8624-482c-807e-db3ce834314b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 90,
+                        "layout|x": 455,
+                        "layout|y": 60,
+                        "style": "background-color: #DCDCDC;",
+                        "title": "Руководство",
+                        "width": 350
+                    },
+                    "name": "MyFieldSet136",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "8a67c834-303a-40bb-8751-a2de4c7eebd5",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Директор",
+                                "labelWidth": 80,
+                                "layout|anchor": "100%",
+                                "name": "boss",
+                                "value": null
+                            },
+                            "name": "MyTextField131",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "9a0ecfa1-59f7-4f45-84a2-213845966785"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Главбух",
+                                "labelWidth": 80,
+                                "layout|anchor": "100%",
+                                "name": "gbuh",
+                                "value": null
+                            },
+                            "name": "MyTextField132",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "35a5013f-0db2-4e8d-83d2-fdf74b0e55ab"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "boxLabel": "Нет",
+                        "fieldLabel": "Плательщик НДС",
+                        "inputValue": "1",
+                        "labelWidth": 150,
+                        "layout|anchor": null,
+                        "layout|x": 455,
+                        "layout|y": 360,
+                        "name": "nds",
+                        "shadow": null,
+                        "style": "background-color: #e0e0e0;",
+                        "uncheckedValue": "0",
+                        "width": 200
+                    },
+                    "name": "MyCheckbox64",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "7e553fe9-e2ac-4df5-a6fa-9d3c69edd792",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCheckboxfieldChange",
+                                "implHandler": [
+                                    "if(newValue){",
+                                    "    field.setBoxLabel(\"Да\");",
+                                    "}else{",
+                                    "    field.setBoxLabel(\"Нет\");",
+                                    "}"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "name": "onCheckboxfieldChange",
+                            "designerId": "4b0f98b4-6e3d-40e6-99e5-f8636a0e4b5f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "collapsed": null,
+                        "height": 125,
+                        "id": "fsNds",
+                        "layout|x": 455,
+                        "layout|y": 390,
+                        "style": "background-color: #DCDCDC;",
+                        "title": "Свидотство",
+                        "width": 350
+                    },
+                    "name": "MyFieldSet137",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "b40bd709-26fe-4fc4-b819-e3ecd8f2acb5",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "№",
+                                "labelWidth": 110,
+                                "layout|anchor": "100%",
+                                "name": "svid_nds",
+                                "value": null,
+                                "width": null
+                            },
+                            "name": "MyTextField133",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "d4a349a6-e98e-4a9f-b76c-998d53a4f032"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Дата выдачи",
+                                "format": "d-m-Y",
+                                "labelWidth": 110,
+                                "layout|anchor": "100%",
+                                "name": "svid_sdata"
+                            },
+                            "name": "MyDateField49",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "ed8f5278-cd5e-49cd-8a73-e9b9b488b723"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Действует до",
+                                "format": "d-m-Y",
+                                "labelWidth": 110,
+                                "layout|anchor": "100%",
+                                "name": "svid_fdata"
+                            },
+                            "name": "MyDateField50",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "493b57a3-3648-4a04-b818-0d7d1e269a09"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "name",
+                        "fieldLabel": "Вид собственности",
+                        "id": null,
+                        "itemId": null,
+                        "labelWidth": 140,
+                        "layout|anchor": null,
+                        "layout|x": 15,
+                        "layout|y": 15,
+                        "name": "cat_id",
+                        "queryMode": "local",
+                        "store": "StOrgCat",
+                        "value": null,
+                        "valueField": "cat_id",
+                        "width": 415
+                    },
+                    "name": "MyComboBox27",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "d99fc855-0d25-4341-9c3c-44da0a1e129b"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "formBind": true,
+                        "height": null,
+                        "icon": "resources/css/images/ico/add.png",
+                        "id": "winBtnAddOrg",
+                        "layout|x": 460,
+                        "layout|y": 540,
+                        "text": "Добавить организацию",
+                        "width": 345
+                    },
+                    "name": "MyButton92",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "23d84027-9ca8-4393-afca-af9d31abe236"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowDecimals": false,
+                        "decimalPrecision": 0,
+                        "fieldLabel": "Код ВиК",
+                        "hideTrigger": true,
+                        "labelWidth": 70,
+                        "layout|anchor": null,
+                        "layout|x": 505,
+                        "layout|y": 20,
+                        "maxWidth": null,
+                        "name": "kod_vik",
+                        "readOnly": null,
+                        "width": 130
+                    },
+                    "name": "MyNumberField2",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "80deae9f-c119-4e7e-8920-56032b45157e"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowDecimals": false,
+                        "decimalPrecision": 0,
+                        "fieldLabel": "Код ЮТКЭ",
+                        "hideTrigger": true,
+                        "labelWidth": 80,
+                        "layout|anchor": null,
+                        "layout|x": 655,
+                        "layout|y": 20,
+                        "maxWidth": null,
+                        "name": "kod_ytke",
+                        "readOnly": null,
+                        "width": 145
+                    },
+                    "name": "MyNumberField3",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "d06336c1-c6b0-4d42-a12c-81599265b903"
+                }
+            ]
+        }
+    ]
+}

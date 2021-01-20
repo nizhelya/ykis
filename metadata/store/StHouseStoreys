@@ -1,0 +1,54 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": null,
+        "designer|userClassName": "StHouseStoreys",
+        "model": "MdSpravochnik",
+        "storeId": "StHouseStoreys"
+    },
+    "name": "StVmodel1",
+    "designerId": "b49306a0-f52e-46b3-ae78-08ed1f30c774",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": null,
+                "directFn": "QuerySprav.getResults",
+                "extraParams": [
+                    "{",
+                    "what: 'getHouseStoreys'",
+                    "}"
+                ],
+                "metadata": null
+            },
+            "name": "MyDirectProxy50",
+            "designerId": "65f7e0a7-5c8e-46f1-811d-72cd36ab04ad",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader52",
+                    "designerId": "b2e26340-a3f6-4847-9ec1-33f4b8537b0a"
+                }
+            ]
+        }
+    ]
+}

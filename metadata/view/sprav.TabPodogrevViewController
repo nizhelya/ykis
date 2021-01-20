@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabpodogrev",
+        "designer|userClassName": "sprav.TabPodogrevViewController"
+    },
+    "designerId": "0f458f6f-af3d-49d7-b8d8-5715acc9fb76"
+}

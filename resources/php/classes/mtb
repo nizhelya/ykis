@@ -1,0 +1,3 @@
+ 
+UPDATE `OPLATA` SET prixod = "МТБ БАНК" WHERE  prixod = "МАРФІН БАНК" and data between '20190101' and '20190328'
+UPDATE `MTB_PAYMENT` SET prixod = "МТБ БАНК" WHERE  prixod = "МАРФІН БАНК" 

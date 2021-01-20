@@ -1,0 +1,22 @@
+  data=<?xml version="1.0" encoding="utf-8"?>
+<payment><auth>
+    <mch_id>492</mch_id>
+    <sign>e64c66f7aafd2c66de1a9a8204bfa6494307f957d93a1f4dcab7ddfd0bd57440b2a976144bb0604d13da43032dde011058b846d9367702a7dbb1046c8c0623c0</sign>
+    <salt>5acdc7029eedb63ba9706615bd540f5448578dd5</salt>
+    </auth>
+  <urls>
+    <good>https://is.yuzhny.com/is/index.php?pay_id=20116</good>
+    <bad>https://is.yuzhny.com/is/index.php?pay_id=20116</bad>
+    </urls>
+    <transactions>
+    <transaction>
+      <amount>3488</amount>
+      <currency>UAH</currency>
+      <desc>Вывоз мусора (ТБО)</desc>
+      <smch_id>6211</smch_id>
+      <info>[]</info>
+      </transaction>
+      </transactions>
+      <lifetime>24</lifetime>
+      <lang>ru</lang>
+      </payment>

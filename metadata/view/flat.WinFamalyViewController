@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winfamaly",
+        "designer|userClassName": "flat.WinFamalyViewController"
+    },
+    "name": "flat.WinLgotnikViewController1",
+    "designerId": "565dba58-ad3c-4b0a-8115-27130332eb26"
+}

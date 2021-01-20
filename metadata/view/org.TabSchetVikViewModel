@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabschetvik",
+        "designer|userClassName": "org.TabSchetVikViewModel"
+    },
+    "designerId": "0a421194-96cd-4458-bdd7-9a3df3de6032"
+}

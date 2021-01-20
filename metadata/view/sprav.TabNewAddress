@@ -1,0 +1,2241 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "tabnewaddress",
+        "designer|userClassName": "sprav.TabNewAddress",
+        "id": "tabNewAddress",
+        "layout": "fit",
+        "title": "Новый адрес"
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "5204486c-3597-4b8d-9ff4-457f62be86d5",
+    "viewControllerInstanceId": "3d46f56e-261c-4a6c-a92b-9a3fb481280b",
+    "viewModelInstanceId": "8396f5e8-cf2d-4fb6-aa0a-281318932252",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "designer|snapToGrid": 5,
+                "height": 20,
+                "id": "fmNewAddress",
+                "layout": "absolute",
+                "scrollable": true,
+                "title": ""
+            },
+            "name": "MyForm36",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "e3ea3396-c590-4b46-8154-4dba778dbe59",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "height": 195,
+                        "layout": "absolute",
+                        "layout|x": 25,
+                        "layout|y": 25,
+                        "style": "background-color: #e0e0e0;",
+                        "title": "Ввод нового района",
+                        "width": 220
+                    },
+                    "name": "MyFieldSet147",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "5d8ec2f7-3ea3-4618-b218-431a16fa0ef2",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "raion",
+                                "fieldLabel": "Выбор района",
+                                "labelAlign": "top",
+                                "labelWidth": 50,
+                                "layout|anchor": null,
+                                "layout|x": 15,
+                                "layout|y": 100,
+                                "name": "raion_id",
+                                "queryMode": "local",
+                                "store": "StRaionOrg",
+                                "valueField": "raion_id",
+                                "width": 175
+                            },
+                            "name": "MyComboBox36",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "6a8ad22f-530b-4c31-af6b-20d1c4107c5f",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxSelect",
+                                        "implHandler": [
+                                            "// STORE",
+                                            "",
+                                            "var StHouses = Ext.data.StoreManager.get(\"StHousesOrg\");",
+                                            "var StStreet = Ext.data.StoreManager.get(\"StStreetOrg\");",
+                                            "var StAddress = Ext.data.StoreManager.get(\"StAddressOrg\");",
+                                            "",
+                                            "//COMBO",
+                                            "",
+                                            "var form = combo.findParentByType('form');",
+                                            "var  btAddOsmd = Ext.getCmp('btAddOsmd');",
+                                            "",
+                                            "var  newOsmd = form.getForm().findField('newOsmd');",
+                                            "var  osmd = form.getForm().findField('osmd');",
+                                            "",
+                                            "",
+                                            "var  allStreet = form.getForm().findField('allStreet');",
+                                            "var  cbStreet = form.getForm().findField('street_id');",
+                                            "var  cbHouse = form.getForm().findField('house_id');",
+                                            "var  cbAddress = form.getForm().findField('address');",
+                                            "var  showRaion = Ext.getCmp('showRaion');",
+                                            "var  showStreet = Ext.getCmp('showStreet');",
+                                            "//var  showHouses = Ext.getCmp('showHouses');",
+                                            "var  btAddHouse = Ext.getCmp('btAddHouse');",
+                                            "var  btAddAddress = Ext.getCmp('btAddAddress');",
+                                            "var  btAddStreet = Ext.getCmp('btAddStreet');",
+                                            "var  newStreet = form.getForm().findField('newStreet');",
+                                            "var  newhouse = form.getForm().findField('newhouse');",
+                                            "var  nomer = form.getForm().findField('nomer');",
+                                            "",
+                                            "var  chbDeleteAddress = Ext.getCmp('chbDeleteAddress');",
+                                            "var  fmDeleteAddress = Ext.getCmp('fmDeleteAddress');",
+                                            "chbDeleteAddress.setVisible(false);",
+                                            "fmDeleteAddress.setVisible(false);",
+                                            "",
+                                            "",
+                                            "",
+                                            "//console.log(showRaion);",
+                                            "var selected = record;",
+                                            "",
+                                            "",
+                                            "//LOGIKA",
+                                            "",
+                                            "if (selected) {",
+                                            "    StStreet.removeAll();",
+                                            "    StHouses.removeAll();",
+                                            "    StAddress.removeAll();",
+                                            "    cbStreet.clearValue();",
+                                            "    cbAddress.clearValue();",
+                                            "    cbHouse.clearValue();",
+                                            "    allStreet.setValue(false);",
+                                            "    btAddAddress.setDisabled(true);",
+                                            "    btAddStreet.setDisabled(true);",
+                                            "    btAddHouse.setDisabled(true);",
+                                            "    cbStreet.setDisabled(false);",
+                                            "    cbHouse.setDisabled(true);",
+                                            "    cbAddress.setDisabled(true);",
+                                            "    showRaion.setText(selected.data.raion ).show();",
+                                            "    showStreet.setText(selected.data.raion ).hide();",
+                                            "    //   showHouses.setText(selected.data.raion ).hide();",
+                                            "    newhouse.setValue(\"\");",
+                                            "    nomer.setValue(\"\");",
+                                            "    newStreet.setValue(\"\");",
+                                            "    newOsmd.setValue(\"\");",
+                                            "    newOsmd.setDisabled(true);",
+                                            "    btAddOsmd.setDisabled(true);",
+                                            "    osmd.setDisabled(true);",
+                                            "    osmd.setValue(false);",
+                                            "    ",
+                                            "    StStreet.load({",
+                                            "        params: {",
+                                            "            what:'StreetsFromRaion',",
+                                            "            what_id: selected.data.raion_id",
+                                            "        },",
+                                            "        scope: this",
+                                            "    });",
+                                            "}"
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onComboboxSelect",
+                                    "designerId": "12165934-31ac-45fb-833a-88a14acc848d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Новый район",
+                                "labelAlign": "top",
+                                "layout|x": 20,
+                                "layout|y": 5,
+                                "minLength": null,
+                                "name": "newRaion",
+                                "validateBlank": true,
+                                "validateOnChange": null,
+                                "vtype": null,
+                                "width": 175
+                            },
+                            "name": "MyTextField143",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "5c97964d-70bd-4bd4-905e-6ac1be554fd8",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldChange1",
+                                        "implHandler": [
+                                            "var  btAddRaion = Ext.getCmp('btAddRaion');  ",
+                                            "btAddRaion.setDisabled(false);",
+                                            ""
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTextfieldChange1",
+                                    "designerId": "ee415cdf-5e38-48de-b35a-84cbad9d2e9b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "formBind": false,
+                                "height": 30,
+                                "icon": "resources/css/images/ico/add.png",
+                                "id": "btAddRaion",
+                                "itemId": null,
+                                "layout|x": 20,
+                                "layout|y": 60,
+                                "text": "Добавить новый район",
+                                "width": 175
+                            },
+                            "name": "MyButton110",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "d32912c2-9348-4447-a69e-63bd4ea02c96",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtAddRaionClick",
+                                        "implHandler": [
+                                            "// in use",
+                                            "var me = this;",
+                                            "//STORE",
+                                            "var StRaion = Ext.data.StoreManager.get(\"StRaionOrg\");",
+                                            "var StStreet = Ext.data.StoreManager.get(\"StStreetOrg\");",
+                                            "var StHouses = Ext.data.StoreManager.get(\"StHousesOrg\");",
+                                            "var StAddress = Ext.data.StoreManager.get(\"StAddressOrg\");",
+                                            "",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var  form = button.findParentByType('form');",
+                                            "var  cbStreet = form.getForm().findField('street_id');",
+                                            "var  cbHouse = form.getForm().findField('house_id');",
+                                            "var  cbRaion = form.getForm().findField('raion_id');",
+                                            "var  cbAddress = form.getForm().findField('address');",
+                                            "var  newStreet = form.getForm().findField('newStreet');",
+                                            "var  newRaion = form.getForm().findField('newRaion');",
+                                            "var  newhouse = form.getForm().findField('newhouse');",
+                                            "var  nomer = form.getForm().findField('nomer');",
+                                            "",
+                                            "//var  showHouses = Ext.getCmp('showHouses');",
+                                            "var  showRaion = Ext.getCmp('showRaion');",
+                                            "var  showStreet = Ext.getCmp('showStreet');",
+                                            "var  btAddAddress = Ext.getCmp('btAddAddress');",
+                                            "var  btAddStreet = Ext.getCmp('btAddStreet');",
+                                            "var  btAddHouse = Ext.getCmp('btAddHouse');",
+                                            "var  btAddRaion = Ext.getCmp('btAddRaion');",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "var value = form.getValues();",
+                                            "",
+                                            "//LOGIN & PASSWORD",
+                                            "var values =stUser.getAt(0);",
+                                            "var params = {",
+                                            "    login:values.get('login'),",
+                                            "    password:values.get('password'),",
+                                            "    what:\"newRaion\"",
+                                            "};",
+                                            "",
+                                            "//LOGIKA",
+                                            "",
+                                            "Ext.Object.merge(value, params);",
+                                            "QueryAddress.updateRecords(value,function(results){",
+                                            "    if(results.success===\"1\"){",
+                                            "        Ext.MessageBox.show({",
+                                            "            title: 'Добавление нового района',",
+                                            "            msg: results.msg,",
+                                            "            buttons: Ext.MessageBox.OK,",
+                                            "            icon: Ext.MessageBox.INFO",
+                                            "        });",
+                                            "        StStreet.removeAll();",
+                                            "        StStreet.removeAll();",
+                                            "        // StHouses.removeAll();",
+                                            "        StAddress.removeAll();",
+                                            "        cbStreet.clearValue();",
+                                            "        cbHouse.clearValue();",
+                                            "        cbAddress.clearValue();",
+                                            "        btAddAddress.setDisabled(true);",
+                                            "        btAddHouse.setDisabled(true);",
+                                            "        btAddStreet.setDisabled(true);",
+                                            "",
+                                            "",
+                                            "",
+                                            "        StRaion.load({",
+                                            "            params: {",
+                                            "                what:'raion',",
+                                            "                what_id: 0",
+                                            "            },",
+                                            "            callback: function(records,operation,success){",
+                                            "                if(success){",
+                                            "                    cbRaion.setValue(parseInt(results.new_id,0));",
+                                            "                    cbAddress.setDisabled(true);",
+                                            "                    cbHouse.setDisabled(true);",
+                                            "                    btAddRaion.setDisabled(true);",
+                                            "                    cbStreet.setDisabled(false);",
+                                            "",
+                                            "                    showRaion.setText(results.new_name).show();",
+                                            "                    showStreet.hide();",
+                                            "                    // showHouses.hide();",
+                                            "                    nomer.setValue(\"\");",
+                                            "                    newStreet.setValue(\"\");",
+                                            "                    newRaion.setValue(\"\");",
+                                            "                    newhouse.setValue(\"\");",
+                                            "",
+                                            "",
+                                            "",
+                                            "                }",
+                                            "            },",
+                                            "            scope:this",
+                                            "        });",
+                                            "    } else {",
+                                            "        Ext.MessageBox.show({",
+                                            "            title: 'Добавление нового района',",
+                                            "            msg: results.msg,",
+                                            "            buttons: Ext.MessageBox.OK,",
+                                            "            icon: Ext.MessageBox.ERROR",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onBtAddRaionClick",
+                                    "designerId": "97bda11d-b038-4c2b-a064-393e1e4e95d6"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "height": 195,
+                        "layout": "absolute",
+                        "layout|x": 265,
+                        "layout|y": 25,
+                        "style": "background-color: #e0e0e0;",
+                        "title": "Ввод новой улицы",
+                        "width": 280
+                    },
+                    "name": "MyFieldSet148",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "8968030d-6c6e-486b-a2fe-34a802079afe",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "displayField": "street",
+                                "fieldLabel": "Выбор улицы",
+                                "labelAlign": "top",
+                                "labelWidth": 50,
+                                "layout|x": 5,
+                                "layout|y": 100,
+                                "name": "street_id",
+                                "queryMode": "local",
+                                "store": "StStreetOrg",
+                                "valueField": "street_id",
+                                "width": 195
+                            },
+                            "name": "MyComboBox37",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "ff110035-eaf9-45db-96cf-6dced2ae5804",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxSelect1",
+                                        "implHandler": [
+                                            "// STORE",
+                                            "",
+                                            "var StHouses = Ext.data.StoreManager.get(\"StHousesOrg\");",
+                                            "var StAddress = Ext.data.StoreManager.get(\"StAddressOrg\");",
+                                            "",
+                                            "//COMBO",
+                                            "",
+                                            "var  form = combo.findParentByType('form');",
+                                            "var  cbHouse = form.getForm().findField('house_id');",
+                                            "var  cbAddress = form.getForm().findField('address');",
+                                            "var  newhouse = form.getForm().findField('newhouse');",
+                                            "var  nomer = form.getForm().findField('nomer');",
+                                            "var  btAddOsmd = Ext.getCmp('btAddOsmd');",
+                                            "var  newOsmd = form.getForm().findField('newOsmd');",
+                                            "var  osmd = form.getForm().findField('osmd');",
+                                            "",
+                                            "var  showStreet = Ext.getCmp('showStreet');",
+                                            "//var  showHouses = Ext.getCmp('showHouses');",
+                                            "var  btAddAddress = Ext.getCmp('btAddAddress');",
+                                            "var  btAddHouse = Ext.getCmp('btAddHouse');",
+                                            "var  chbDeleteAddress = Ext.getCmp('chbDeleteAddress');",
+                                            "var  fmDeleteAddress = Ext.getCmp('fmDeleteAddress');",
+                                            "chbDeleteAddress.setVisible(false);",
+                                            "fmDeleteAddress.setVisible(false);",
+                                            "",
+                                            "",
+                                            "",
+                                            "//console.log(showRaion);",
+                                            "var selected = record;",
+                                            "",
+                                            "",
+                                            "//LOGIKA",
+                                            "",
+                                            "if (selected) {",
+                                            "    StHouses.removeAll();",
+                                            "    StAddress.removeAll();",
+                                            "    cbHouse.clearValue();",
+                                            "    cbAddress.clearValue();",
+                                            "    btAddAddress.setDisabled(true);",
+                                            "    btAddHouse.setDisabled(false);",
+                                            "    cbHouse.setDisabled(false);",
+                                            "    cbAddress.setDisabled(true);",
+                                            "    showStreet.setText(selected.data.street ).show();",
+                                            "    //showHouses.hide();",
+                                            "    newhouse.setValue(selected.data.street );",
+                                            "    nomer.setValue(\"\");",
+                                            "    newOsmd.setDisabled(true);",
+                                            "    newOsmd.setValue(\"\");",
+                                            "    btAddOsmd.setDisabled(true);",
+                                            "    osmd.setDisabled(true);",
+                                            "    osmd.setValue(false);",
+                                            "   ",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "    StHouses.load({",
+                                            "        params: {",
+                                            "            what:'HousesFromStreet',",
+                                            "            what_id: selected.data.street_id",
+                                            "        },",
+                                            "        scope: this",
+                                            "    });",
+                                            "}"
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onComboboxSelect1",
+                                    "designerId": "db081f24-d118-477e-90a5-f6c1e76d255f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Новая улица",
+                                "labelAlign": "top",
+                                "layout|x": 0,
+                                "layout|y": 5,
+                                "name": "newStreet",
+                                "validateOnChange": false,
+                                "width": 120
+                            },
+                            "name": "MyTextField144",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "6c6abb78-18ee-493c-8f4a-24733e12007b",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldChange2",
+                                        "implHandler": [
+                                            "var  btAddStreet = Ext.getCmp('btAddStreet');  ",
+                                            "btAddStreet.setDisabled(false);",
+                                            ""
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTextfieldChange2",
+                                    "designerId": "0f5342af-ae40-4c5a-8409-dc1dcb5c7178"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "formBind": false,
+                                "height": 30,
+                                "icon": "resources/css/images/ico/add.png",
+                                "id": "btAddStreet",
+                                "itemId": null,
+                                "layout|x": 5,
+                                "layout|y": 60,
+                                "text": "Добавить новую улицу",
+                                "width": 245
+                            },
+                            "name": "MyButton111",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "52735095-0fed-40fc-808f-f1ec52f31f88",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtAddStreetClick",
+                                        "implHandler": [
+                                            "// in use",
+                                            "var me = this;",
+                                            "//STORE",
+                                            "var StStreet = Ext.data.StoreManager.get(\"StStreetOrg\");",
+                                            "var StHouses = Ext.data.StoreManager.get(\"StHousesOrg\");",
+                                            "var StAddress = Ext.data.StoreManager.get(\"StAddressOrg\");",
+                                            "",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var  form = button.findParentByType('form');",
+                                            "var  cbStreet = form.getForm().findField('street_id');",
+                                            "var  cbHouse = form.getForm().findField('house_id');",
+                                            "var  cbAddress = form.getForm().findField('address');",
+                                            "var  newStreet = form.getForm().findField('newStreet');",
+                                            "var  newhouse = form.getForm().findField('newhouse');",
+                                            "var  nomer = form.getForm().findField('nomer');",
+                                            "",
+                                            "//var  showHouses = Ext.getCmp('showHouses');",
+                                            "var  showStreet = Ext.getCmp('showStreet');",
+                                            "var  btAddAddress = Ext.getCmp('btAddAddress');",
+                                            "var  btAddStreet = Ext.getCmp('btAddStreet');",
+                                            "var  btAddHouse = Ext.getCmp('btAddHouse');",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "var value = form.getValues();",
+                                            "",
+                                            "//LOGIN & PASSWORD",
+                                            "var values =stUser.getAt(0);",
+                                            "var params = {",
+                                            "    login:values.get('login'),",
+                                            "    password:values.get('password'),",
+                                            "    what:\"newStreet\"",
+                                            "};",
+                                            "",
+                                            "//LOGIKA",
+                                            "",
+                                            "Ext.Object.merge(value, params);",
+                                            "QueryAddress.updateRecords(value,function(results){",
+                                            "    if(results.success===\"1\"){",
+                                            "        Ext.MessageBox.show({",
+                                            "            title: 'Добавление новой улицы',",
+                                            "            msg: results.msg,",
+                                            "            buttons: Ext.MessageBox.OK,",
+                                            "            icon: Ext.MessageBox.INFO",
+                                            "        });",
+                                            "        StStreet.removeAll();",
+                                            "        StHouses.removeAll();",
+                                            "        StAddress.removeAll();",
+                                            "        cbStreet.clearValue();",
+                                            "        cbHouse.clearValue();",
+                                            "        cbAddress.clearValue();",
+                                            "        btAddAddress.setDisabled(true);",
+                                            "        btAddHouse.setDisabled(true);",
+                                            "",
+                                            "        StStreet.load({",
+                                            "            params: {",
+                                            "                what:'StreetsFromRaion',",
+                                            "                what_id: 0",
+                                            "            },",
+                                            "            callback: function(records,operation,success){",
+                                            "                if(success){",
+                                            "                    cbStreet.setValue(parseInt(results.new_id,0));",
+                                            "                    cbAddress.setDisabled(true);",
+                                            "                    btAddStreet.setDisabled(true);",
+                                            "                    newhouse.setValue(results.new_name );",
+                                            "                    showStreet.setText(results.new_name).show();",
+                                            "                   // showHouses.hide();",
+                                            "                    nomer.setValue(\"\");",
+                                            "                    newStreet.setValue(\"\");",
+                                            "",
+                                            "",
+                                            "                }",
+                                            "            },",
+                                            "            scope:this",
+                                            "        });",
+                                            "    } else {",
+                                            "        Ext.MessageBox.show({",
+                                            "            title: 'Добавление новой улицы',",
+                                            "            msg: results.msg,",
+                                            "            buttons: Ext.MessageBox.OK,",
+                                            "            icon: Ext.MessageBox.ERROR",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onBtAddStreetClick",
+                                    "designerId": "451e284c-35f9-4db8-87db-3887a13a2f09"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "abbr",
+                                "fieldLabel": "аббр",
+                                "labelAlign": "top",
+                                "layout|x": 190,
+                                "layout|y": 5,
+                                "name": "abbr",
+                                "store": "StAbbr",
+                                "value": [
+                                    "ул."
+                                ],
+                                "valueField": "abbr",
+                                "width": 60
+                            },
+                            "name": "MyComboBox38",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "1028105e-85e5-48dd-937c-58e872fbaeac"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "частн",
+                                "checked": true,
+                                "fieldLabel": "",
+                                "inputValue": "1",
+                                "layout|x": 130,
+                                "layout|y": 25,
+                                "name": "privat",
+                                "uncheckedValue": "0"
+                            },
+                            "name": "MyCheckbox67",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "5feb5ca9-de46-4181-bd7c-f08ac9b0f742"
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Все",
+                                "fieldLabel": "",
+                                "inputValue": "1",
+                                "layout|x": 210,
+                                "layout|y": 120,
+                                "name": "allStreet",
+                                "uncheckedValue": "0"
+                            },
+                            "name": "MyCheckbox68",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "749988dc-7c86-4479-97fc-8dbfdf78e4d6",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "checkbox",
+                                            "checked"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "// in use",
+                                            "var me = this;",
+                                            "//STORE",
+                                            "var StStreet = Ext.data.StoreManager.get(\"StStreetOrg\");",
+                                            "var StHouses = Ext.data.StoreManager.get(\"StHousesOrg\");",
+                                            "var StAddress = Ext.data.StoreManager.get(\"StAddressOrg\");",
+                                            "",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var  form = checkbox.findParentByType('form');",
+                                            "var  cbStreet = form.getForm().findField('street_id');   ",
+                                            "var  cbHouse = form.getForm().findField('house_id');   ",
+                                            "var  cbAddress = form.getForm().findField('address');",
+                                            "var  newStreet = form.getForm().findField('newStreet'); ",
+                                            "var  newhouse = form.getForm().findField('newhouse');   ",
+                                            "var  nomer = form.getForm().findField('nomer');   ",
+                                            "",
+                                            "",
+                                            "var  showHouses = Ext.getCmp('showHouses');  ",
+                                            "var  showStreet = Ext.getCmp('showStreet');   ",
+                                            "var  btAddAddress = Ext.getCmp('btAddAddress');  ",
+                                            "var  btAddHouse = Ext.getCmp('btAddHouse'); ",
+                                            "var  btAddStreet = Ext.getCmp('btAddStreet');  ",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "var value = form.getValues();",
+                                            "",
+                                            "//LOGIN & PASSWORD",
+                                            "var values =stUser.getAt(0);",
+                                            "var params = {",
+                                            "    login:values.get('login'),",
+                                            "    password:values.get('password')",
+                                            "};",
+                                            "",
+                                            "//LOGIKA",
+                                            "StStreet.removeAll();",
+                                            "StHouses.removeAll(); ",
+                                            "StAddress.removeAll();",
+                                            "cbStreet.clearValue();",
+                                            "cbHouse.clearValue();",
+                                            "cbAddress.clearValue();",
+                                            "btAddAddress.setDisabled(true);",
+                                            "btAddHouse.setDisabled(true);",
+                                            "btAddStreet.setDisabled(true);",
+                                            "",
+                                            "newhouse.setValue(\"\");",
+                                            "nomer.setValue(\"\");",
+                                            "newStreet.setValue(\"\");",
+                                            "StStreet.load({",
+                                            "    params: {",
+                                            "        what:'street',",
+                                            "        what_id: 0       ",
+                                            "    }, ",
+                                            "    callback: function(records,operation,success){       ",
+                                            "        if(success){",
+                                            "            cbAddress.setDisabled(true); ",
+                                            "            cbStreet.setDisabled(false); ",
+                                            "",
+                                            "        }",
+                                            "    },",
+                                            "    scope:this  ",
+                                            "});   "
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "62715661-1115-49be-aece-d8f62c7a99ef"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "height": 240,
+                        "layout": "absolute",
+                        "layout|x": 550,
+                        "layout|y": 25,
+                        "style": "background-color: #e0e0e0;",
+                        "title": "Ввод нового дома",
+                        "width": 235
+                    },
+                    "name": "MyFieldSet149",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "d2e1b9da-55ab-460b-8ddd-ce995d31d194",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "displayField": "house",
+                                "fieldLabel": "Выбор дома",
+                                "forceSelection": true,
+                                "labelAlign": "top",
+                                "labelWidth": 50,
+                                "layout|x": 10,
+                                "layout|y": 95,
+                                "name": "house_id",
+                                "queryMode": "local",
+                                "store": "StHousesOrg",
+                                "typeAhead": null,
+                                "valueField": "house_id",
+                                "width": 200
+                            },
+                            "name": "MyComboBox39",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "07461551-d361-4424-90b1-52e473cdb940",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxSelect2",
+                                        "implHandler": [
+                                            "// STORE",
+                                            "",
+                                            "var StAddress = Ext.data.StoreManager.get(\"StAddressOrg\");",
+                                            "",
+                                            "//COMBO",
+                                            "",
+                                            "var  form = combo.findParentByType('form');",
+                                            "var  cbAddress = form.getForm().findField('address');",
+                                            "",
+                                            "//var  showHouses = Ext.getCmp('showHouses');",
+                                            "var  btAddAddress = Ext.getCmp('btAddAddress');",
+                                            "var  btAddOsmd = Ext.getCmp('btAddOsmd');",
+                                            "",
+                                            "var  newOsmd = form.getForm().findField('newOsmd');",
+                                            "var  osmd = form.getForm().findField('osmd');",
+                                            "",
+                                            "",
+                                            "var  chbDeleteAddress = Ext.getCmp('chbDeleteAddress');",
+                                            "var  fmDeleteAddress = Ext.getCmp('fmDeleteAddress');",
+                                            "chbDeleteAddress.setVisible(false);",
+                                            "fmDeleteAddress.setVisible(false);",
+                                            "",
+                                            "",
+                                            "var selected = record;",
+                                            "",
+                                            "",
+                                            "//LOGIKA",
+                                            "",
+                                            "if (selected) {",
+                                            "    StAddress.removeAll();",
+                                            "    cbAddress.clearValue();",
+                                            "    cbAddress.setDisabled(false);",
+                                            "    if (selected.data.osmd == 1) {",
+                                            "        ",
+                                            "        osmd.setValue(true);",
+                                            "        osmd.setDisabled(true);",
+                                            "        btAddOsmd.setDisabled(false);",
+                                            "        newOsmd.setDisabled(false);",
+                                            "        newOsmd.setValue(selected.data.abbr);",
+                                            "    } else {",
+                                            "",
+                                            "        ",
+                                            "        osmd.setDisabled(false);",
+                                            "        osmd.setValue(false);",
+                                            "        newOsmd.setDisabled(true);",
+                                            "        newOsmd.setValue(selected.data.abbr);",
+                                            "        btAddOsmd.setDisabled(true);",
+                                            "",
+                                            "    }",
+                                            "",
+                                            "    //showHouses.setText(selected.data.house ).show();",
+                                            "    btAddAddress.setDisabled(false);",
+                                            "",
+                                            "    StAddress.load({",
+                                            "        params: {",
+                                            "            what:'AddressFromHouses',",
+                                            "            what_id: selected.data.house_id",
+                                            "        },",
+                                            "        scope: this",
+                                            "    });",
+                                            "}"
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onComboboxSelect2",
+                                    "designerId": "e818913d-bcd3-4f04-9fff-d5732f1a4623"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "formBind": false,
+                                "height": 30,
+                                "icon": "resources/css/images/ico/add.png",
+                                "id": "btAddHouse",
+                                "itemId": null,
+                                "layout|x": 10,
+                                "layout|y": 60,
+                                "text": "Добавить новый дом",
+                                "width": 200
+                            },
+                            "name": "MyButton112",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "313b5a02-2a59-49d6-aead-a4cf3de36c20",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtAddHouseClick",
+                                        "implHandler": [
+                                            "// in use",
+                                            "var me = this;",
+                                            "//STORE",
+                                            "var StHouses = Ext.data.StoreManager.get(\"StHousesOrg\");",
+                                            "var StAddress = Ext.data.StoreManager.get(\"StAddressOrg\");",
+                                            "",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var  form = button.findParentByType('form');",
+                                            "var  cbHouse = form.getForm().findField('house_id');",
+                                            "var  cbAddress = form.getForm().findField('address');",
+                                            "var  newhouse = form.getForm().findField('newhouse');",
+                                            "",
+                                            "//var  showHouses = Ext.getCmp('showHouses');",
+                                            "var  btAddAddress = Ext.getCmp('btAddAddress');",
+                                            "",
+                                            "",
+                                            "",
+                                            "var value = form.getValues();",
+                                            "",
+                                            "//LOGIN & PASSWORD",
+                                            "var values =stUser.getAt(0);",
+                                            "var params = {",
+                                            "    login:values.get('login'),",
+                                            "    password:values.get('password'),",
+                                            "    what:\"newHouse\"",
+                                            "};",
+                                            "",
+                                            "//LOGIKA",
+                                            "",
+                                            "Ext.Object.merge(value, params);",
+                                            "QueryAddress.updateRecords(value,function(results){",
+                                            "    if(results.success===\"1\"){",
+                                            "        Ext.MessageBox.show({",
+                                            "            title: 'Добавление нового дома',",
+                                            "            msg: results.msg,",
+                                            "            buttons: Ext.MessageBox.OK,",
+                                            "            icon: Ext.MessageBox.INFO",
+                                            "        });",
+                                            "        StHouses.removeAll();",
+                                            "        StAddress.removeAll();",
+                                            "        cbHouse.clearValue();",
+                                            "        cbAddress.clearValue();",
+                                            "        btAddAddress.setDisabled(false);",
+                                            "",
+                                            "        StHouses.load({",
+                                            "            params: {",
+                                            "                what:'HousesFromStreet',",
+                                            "                what_id: value.street_id",
+                                            "            },",
+                                            "            callback: function(records,operation,success){",
+                                            "                if(success){",
+                                            "                    cbHouse.setDisabled(false);",
+                                            "                    cbHouse.setValue(parseInt(results.new_id,10));",
+                                            "                    cbAddress.setDisabled(false);",
+                                            "                    //showHouses.setText(results.new_name).show();",
+                                            "                }",
+                                            "            },",
+                                            "            scope:this",
+                                            "        });",
+                                            "    } else {",
+                                            "        Ext.MessageBox.show({",
+                                            "            title: 'Добавление нового дома',",
+                                            "            msg: results.msg,",
+                                            "            buttons: Ext.MessageBox.OK,",
+                                            "            icon: Ext.MessageBox.ERROR",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onBtAddHouseClick",
+                                    "designerId": "5294dac4-6179-410f-8a98-91854549110b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Новый дом",
+                                "labelAlign": "top",
+                                "layout|x": 10,
+                                "layout|y": 0,
+                                "name": "newhouse",
+                                "width": 135
+                            },
+                            "name": "MyTextField145",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "8bea8593-55c1-4a0e-8df6-bc789c23f31e"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "fieldLabel": "ОСМД",
+                                "hideLabel": true,
+                                "labelWidth": 50,
+                                "layout|x": 0,
+                                "layout|y": 180,
+                                "name": "newOsmd",
+                                "width": 170
+                            },
+                            "name": "MyTextField13",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "1df648d3-d982-4e8f-9fec-15a606230c18",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldChange3",
+                                        "implHandler": [
+                                            "var  btAddOsmd = Ext.getCmp('btAddOsmd');",
+                                            "btAddOsmd.setDisabled(false);",
+                                            ""
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTextfieldChange3",
+                                    "designerId": "772f38fe-4b9d-4b69-a44d-35f30d3a4223"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Номер",
+                                "labelAlign": "top",
+                                "labelWidth": 50,
+                                "layout|x": 150,
+                                "layout|y": 0,
+                                "name": "nomer",
+                                "vtype": null,
+                                "width": 60
+                            },
+                            "name": "MyTextField146",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "6774d418-c8d0-49f8-9eb4-7589d64fe6f7",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldValidityChange2",
+                                        "implHandler": [
+                                            "var  btAddStreet = Ext.getCmp('btAddHouse');  ",
+                                            "btAddStreet.setDisabled(false);",
+                                            ""
+                                        ],
+                                        "name": "validitychange",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTextfieldValidityChange2",
+                                    "designerId": "abebc2f5-7490-4146-a192-9bb1af293eee"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldChange",
+                                        "implHandler": [
+                                            "var  btAddStreet = Ext.getCmp('btAddHouse');  ",
+                                            "btAddStreet.setDisabled(false);",
+                                            ""
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTextfieldChange",
+                                    "designerId": "783f0160-f997-4d54-8409-cfa0aa28557f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "добавить в ОСМД",
+                                "checked": null,
+                                "disabled": true,
+                                "fieldLabel": "",
+                                "inputValue": "1",
+                                "labelWidth": null,
+                                "layout|anchor": null,
+                                "layout|x": 10,
+                                "layout|y": 155,
+                                "name": "osmd",
+                                "uncheckedValue": "0"
+                            },
+                            "name": "MyCheckbox103",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3e5063dc-16f0-4aaf-ba21-bd0547affe3d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCheckboxfieldChange",
+                                        "implHandler": [
+                                            "var  form = field.findParentByType('form');",
+                                            "",
+                                            "var  btAddOsmd = Ext.getCmp('btAddOsmd');",
+                                            "//var  btAddRko = Ext.getCmp('btAddRko');",
+                                            "",
+                                            "var  newOsmd = form.getForm().findField('newOsmd');",
+                                            "//var  rko = form.getForm().findField('rko');",
+                                            "",
+                                            "newOsmd.setDisabled(false);",
+                                            "newOsmd.setValue(\"\");",
+                                            "btAddOsmd.setDisabled(true);",
+                                            "//btAddRko.setDisabled(false);",
+                                            "//rko.setValue(false);",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onCheckboxfieldChange",
+                                    "designerId": "0dcef52c-1464-4ed5-9672-577412d89d82"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "formBind": false,
+                                "height": 30,
+                                "icon": "resources/css/images/ico/add.png",
+                                "id": "btAddOsmd",
+                                "itemId": null,
+                                "layout|x": 180,
+                                "layout|y": 175,
+                                "text": "",
+                                "width": 30
+                            },
+                            "name": "MyButton8",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "4ff2fa55-0556-4710-8847-f7465e1f88e5",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtAddOsmdClick",
+                                        "implHandler": [
+                                            "// in use",
+                                            "var me = this;",
+                                            "//STORE",
+                                            "var StHouses = Ext.data.StoreManager.get(\"StHousesOrg\");",
+                                            "var StAddress = Ext.data.StoreManager.get(\"StAddressOrg\");",
+                                            "",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var  form = button.findParentByType('form');",
+                                            "var  cbAddress = form.getForm().findField('address');",
+                                            "var  newhouse = form.getForm().findField('newhouse');",
+                                            "",
+                                            "//var  showHouses = Ext.getCmp('showHouses');",
+                                            "var  btAddAddress = Ext.getCmp('btAddAddress');",
+                                            "",
+                                            "",
+                                            "var value = form.getValues();",
+                                            "",
+                                            "//LOGIN & PASSWORD",
+                                            "var values =stUser.getAt(0);",
+                                            "var params = {",
+                                            "    login:values.get('login'),",
+                                            "    password:values.get('password'),",
+                                            "    what:\"addHouseOsmd\"",
+                                            "};",
+                                            "",
+                                            "//LOGIKA",
+                                            "",
+                                            "Ext.Object.merge(value, params);",
+                                            "QueryAddress.updateRecords(value,function(results){",
+                                            "    if(results.success===\"1\"){",
+                                            "        Ext.MessageBox.show({",
+                                            "            title: 'Обновление статуса дома',",
+                                            "            msg: results.msg,",
+                                            "            buttons: Ext.MessageBox.OK,",
+                                            "            icon: Ext.MessageBox.INFO",
+                                            "        });",
+                                            "        StAddress.removeAll();",
+                                            "        cbAddress.clearValue();",
+                                            "        btAddAddress.setDisabled(false);",
+                                            "",
+                                            "        StHouses.load({",
+                                            "            params: {",
+                                            "                what:'HousesFromStreet',",
+                                            "                what_id: value.street_id",
+                                            "            },",
+                                            "            callback: function(records,operation,success){",
+                                            "                if(success){",
+                                            "                    cbAddress.setDisabled(false);",
+                                            "                     }",
+                                            "            },",
+                                            "            scope:this",
+                                            "        });",
+                                            "    } else {",
+                                            "        Ext.MessageBox.show({",
+                                            "            title: 'Обновление статуса дома',",
+                                            "            msg: results.msg,",
+                                            "            buttons: Ext.MessageBox.OK,",
+                                            "            icon: Ext.MessageBox.ERROR",
+                                            "        });",
+                                            "    }",
+                                            "",
+                                            "});"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "name": "onBtAddOsmdClick",
+                                    "designerId": "b48258ed-b8e5-4369-841a-8237eae4411b"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "height": 250,
+                        "layout": "absolute",
+                        "layout|x": 40,
+                        "layout|y": 270,
+                        "style": "background-color: #e0e0e0;",
+                        "title": "Ввод нового адреса",
+                        "width": 745
+                    },
+                    "name": "MyFieldSet150",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "bf5a7090-e443-4384-9145-78091894814b",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|snapToGrid": 5,
+                                "height": 145,
+                                "layout": "absolute",
+                                "layout|x": 305,
+                                "layout|y": 5,
+                                "style": "background-color: #f1eeee;",
+                                "title": "Потребляемые коммунальные услуги",
+                                "width": 410
+                            },
+                            "name": "MyFieldSet151",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "aa588bef-ccb2-4c03-b3ad-8e401e5dab77",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Отопление",
+                                        "checked": true,
+                                        "fieldLabel": "",
+                                        "inputValue": "1",
+                                        "layout|anchor": null,
+                                        "layout|x": 280,
+                                        "layout|y": 10,
+                                        "name": "otoplenie",
+                                        "uncheckedValue": "0"
+                                    },
+                                    "name": "MyCheckbox69",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "bbf340bc-244e-4546-8047-f6d9beef3486"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Подогрев",
+                                        "checked": true,
+                                        "fieldLabel": "",
+                                        "inputValue": "1",
+                                        "layout|anchor": null,
+                                        "layout|x": 280,
+                                        "layout|y": 40,
+                                        "name": "podogrev",
+                                        "uncheckedValue": "0"
+                                    },
+                                    "name": "MyCheckbox70",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "9eb302b0-a43d-48a6-addb-fd176dabf6ee"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Водоснабжение",
+                                        "checked": true,
+                                        "fieldLabel": "",
+                                        "inputValue": "1",
+                                        "layout|anchor": null,
+                                        "layout|x": 10,
+                                        "layout|y": 10,
+                                        "name": "voda",
+                                        "uncheckedValue": "0"
+                                    },
+                                    "name": "MyCheckbox71",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "7af10a78-dcea-476c-8915-9e5c0f284773"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Водоотведение",
+                                        "checked": true,
+                                        "fieldLabel": "",
+                                        "inputValue": "1",
+                                        "layout|anchor": null,
+                                        "layout|x": 10,
+                                        "layout|y": 40,
+                                        "name": "stoki",
+                                        "uncheckedValue": "0"
+                                    },
+                                    "name": "MyCheckbox72",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "729bd63b-0513-44cb-a3a4-9ecbbeed6af0"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Квартплата",
+                                        "checked": true,
+                                        "fieldLabel": "",
+                                        "inputValue": "1",
+                                        "layout|anchor": null,
+                                        "layout|x": 140,
+                                        "layout|y": 10,
+                                        "name": "kvartplata",
+                                        "uncheckedValue": "0"
+                                    },
+                                    "name": "MyCheckbox73",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "69589560-542d-4c43-b43e-8252ac4c04aa"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Вывоз мусора",
+                                        "checked": true,
+                                        "fieldLabel": "",
+                                        "inputValue": "1",
+                                        "layout|anchor": null,
+                                        "layout|x": 140,
+                                        "layout|y": 40,
+                                        "name": "tbo",
+                                        "uncheckedValue": "0"
+                                    },
+                                    "name": "MyCheckbox74",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "811c9ed7-1c34-4883-bb2c-850d4ade20c6"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": null,
+                                        "formBind": false,
+                                        "height": 30,
+                                        "icon": "resources/css/images/ico/add.png",
+                                        "id": "btAddBasa",
+                                        "itemId": null,
+                                        "layout|x": 220,
+                                        "layout|y": 85,
+                                        "text": "Добавить базы",
+                                        "width": 160
+                                    },
+                                    "name": "MyButton7",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "b5c83fba-a072-42dd-9431-b0c9345cfd47",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "e"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "// in use",
+                                                    "var form = button.findParentByType('form');",
+                                                    "var value = form.getValues();",
+                                                    "var  cbAddress = Ext.getCmp('cbAddress');",
+                                                    "//console.log(value);",
+                                                    "//STORE",
+                                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var address_id = cbAddress.getValue();",
+                                                    "",
+                                                    "",
+                                                    "//LOGIN & PASSWORD",
+                                                    "var values =stUser.getAt(0);",
+                                                    "var params = {",
+                                                    "    login:values.get('login'),",
+                                                    "    password:values.get('password'),",
+                                                    "    address_id:address_id,",
+                                                    "    what:\"addBasaNachAddress\"",
+                                                    "};",
+                                                    "",
+                                                    "",
+                                                    "//LOGIKA",
+                                                    "",
+                                                    "Ext.Object.merge(value, params);",
+                                                    "//LOGIKA",
+                                                    "",
+                                                    "QueryAddress.updateRecords(value,function(results){",
+                                                    "    if(results.success===\"1\"){",
+                                                    "        Ext.MessageBox.show({",
+                                                    "            title: 'Добавление баз начислений по адресу',",
+                                                    "            msg: results.msg,",
+                                                    "            buttons: Ext.MessageBox.OK,",
+                                                    "            icon: Ext.MessageBox.INFO",
+                                                    "        });",
+                                                    "",
+                                                    "    } else {",
+                                                    "        Ext.MessageBox.show({",
+                                                    "            title: 'Добавление баз начислений по адресу',",
+                                                    "            msg: results.msg,",
+                                                    "            buttons: Ext.MessageBox.OK,",
+                                                    "            icon: Ext.MessageBox.ERROR",
+                                                    "        });",
+                                                    "    }",
+                                                    "",
+                                                    "});"
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "ac085634-eeb8-416e-955f-30c54bd621fd"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Date",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Период",
+                                        "format": "F,Y",
+                                        "id": "dataAddBasa",
+                                        "labelWidth": 70,
+                                        "layout|x": 5,
+                                        "layout|y": 85,
+                                        "name": "data",
+                                        "startDay": 1,
+                                        "submitFormat": "Ymd",
+                                        "width": 203
+                                    },
+                                    "name": "MyDateField2",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "ea902d87-8dfe-4a86-ac20-e4225c93e9a0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|snapToGrid": 5,
+                                "height": 65,
+                                "layout": "absolute",
+                                "layout|x": 10,
+                                "layout|y": 155,
+                                "style": "background-color: #f1eeee;",
+                                "title": "Квартиры",
+                                "width": 710
+                            },
+                            "name": "MyFieldSet152",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "edabb8fd-8e81-447f-be20-7ce48644a485",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Номер 1й квартиры",
+                                        "labelWidth": 130,
+                                        "layout|anchor": null,
+                                        "layout|x": 10,
+                                        "layout|y": 10,
+                                        "name": "nomerkv",
+                                        "value": [
+                                            "1"
+                                        ],
+                                        "width": 200
+                                    },
+                                    "name": "MyTextField147",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "473a4cfe-6e97-4100-b629-16b715fe21e8"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Количество квартир",
+                                        "hideTrigger": true,
+                                        "labelWidth": 130,
+                                        "layout|x": 220,
+                                        "layout|y": 10,
+                                        "name": "qtykv",
+                                        "value": [
+                                            "1"
+                                        ],
+                                        "width": 200
+                                    },
+                                    "name": "MyNumberField189",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "c82c630f-ce55-4bd0-b749-4ffee058f77f"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "formBind": false,
+                                        "height": 30,
+                                        "icon": "resources/css/images/ico/add.png",
+                                        "id": "btAddAddress",
+                                        "itemId": null,
+                                        "layout|x": 435,
+                                        "layout|y": 5,
+                                        "text": "Добавить адрес",
+                                        "width": 240
+                                    },
+                                    "name": "MyButton113",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "2bdbc2a5-6745-4451-b62c-eb973cf096ea"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "displayField": "address",
+                                "fieldLabel": "квартиры в доме",
+                                "id": "cbAddress",
+                                "labelWidth": 120,
+                                "layout|x": 0,
+                                "layout|y": 55,
+                                "name": "address",
+                                "queryMode": "local",
+                                "store": "StAddressOrg",
+                                "valueField": "address_id",
+                                "width": 300
+                            },
+                            "name": "MyComboBox40",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "138f47de-3ac5-4edc-9dc6-f55a469d655d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxSelect3",
+                                        "implHandler": [
+                                            "var  chbDeleteAddress = Ext.getCmp('chbDeleteAddress');",
+                                            "var  fmDeleteAddress = Ext.getCmp('fmDeleteAddress');",
+                                            "var  btAddBasa = Ext.getCmp('btAddBasa');",
+                                            "var  dataAddBasa = Ext.getCmp('dataAddBasa');",
+                                            "",
+                                            "",
+                                            "var dt = new Date();",
+                                            "var  firstDay = Ext.Date.getFirstDateOfMonth( dt ) ;",
+                                            "",
+                                            "",
+                                            "chbDeleteAddress.setVisible(true);",
+                                            "chbDeleteAddress.setValue(0);",
+                                            "btAddBasa.setVisible(true);",
+                                            "dataAddBasa.setVisible(true);",
+                                            "dataAddBasa.setValue(Ext.Date.format(firstDay, 'Y-m-d'));",
+                                            "",
+                                            "fmDeleteAddress.setVisible(false);",
+                                            ""
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onComboboxSelect3",
+                                    "designerId": "47064d8a-d237-4997-8a8c-eff5e9c210bd"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "",
+                                "fieldLabel": "Удалить адрес",
+                                "id": "chbDeleteAddress",
+                                "inputValue": "1",
+                                "layout|x": 145,
+                                "layout|y": 85,
+                                "name": "chbDeleteAddress",
+                                "uncheckedValue": "0"
+                            },
+                            "name": "MyCheckbox75",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "04557b05-6fe9-4805-bbf7-50055f171714",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "checkbox",
+                                            "checked"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var  form = checkbox.findParentByType('form');",
+                                            "var  cbHouse = form.getForm().findField('house_id');",
+                                            "var  cbAddress = form.getForm().findField('address');",
+                                            "var  fmDeleteAddress = Ext.getCmp('fmDeleteAddress');",
+                                            "",
+                                            "var  delAddressId = fmDeleteAddress.getForm().findField('delAddressId');",
+                                            "var  delHouseId = fmDeleteAddress.getForm().findField('delHouseId');",
+                                            "",
+                                            "",
+                                            "var adrec = cbAddress.getRawValue();",
+                                            "var address_id = cbAddress.getValue();",
+                                            "var house_id = cbHouse.getValue();",
+                                            "",
+                                            "",
+                                            "",
+                                            "var value = form.getValues();",
+                                            "if (checked) {",
+                                            "",
+                                            "    fmDeleteAddress.show().setTitle('('+address_id+')&nbsp;&nbsp;Удалить адрес &nbsp;&nbsp;&nbsp;' + adrec );",
+                                            "    var  btnDeleteAddress = Ext.getCmp('btnDeleteAddress');",
+                                            "    btnDeleteAddress.setText('Удалить все базы + по адресу &nbsp;' + adrec );",
+                                            "    btnDeleteAddress.setDisabled(true);",
+                                            "",
+                                            "    // fmDeleteAddress.getForm().loadRecord(0);",
+                                            "    delAddressId.setValue(address_id);",
+                                            "    delHouseId.setValue(house_id);",
+                                            "",
+                                            "",
+                                            "    fmDeleteAddress.getForm().findField('control').setValue(0);",
+                                            "}else{",
+                                            "    fmDeleteAddress.hide();",
+                                            "    delAddressId.setValue(0);",
+                                            "    delHouseId.setValue(0);",
+                                            "",
+                                            "",
+                                            "}"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "4f85c041-a721-4129-8162-0ea158f43ea4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "id": "showStreet",
+                        "layout|x": 305,
+                        "layout|y": 225,
+                        "minWidth": null,
+                        "padding": "10 0 5 5",
+                        "style": "color: #D15706; text-shadow: -1px -1px white, 1px 1px #333;font-size:14pt;text-align:left;",
+                        "text": "Адрес",
+                        "width": 185
+                    },
+                    "name": "MyLabel49",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "333e1b7f-0835-421b-bf91-2c86a1fd680d"
+                },
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "id": "showRaion",
+                        "layout|x": 55,
+                        "layout|y": 225,
+                        "minWidth": null,
+                        "padding": "10 0 5 5",
+                        "style": "color: #D15706; text-shadow: -1px -1px white, 1px 1px #333;font-size:14pt;text-align:left;",
+                        "text": "Адрес",
+                        "width": 170
+                    },
+                    "name": "MyLabel51",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "9de58de6-e33e-4c07-aea0-63c1a67176d2"
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "height": 135,
+                        "hidden": null,
+                        "id": "fmDeleteAddress",
+                        "layout": "absolute",
+                        "layout|x": 45,
+                        "layout|y": 535,
+                        "style": "background-color: #C2D9E9;",
+                        "title": "Процедура удаления адреса",
+                        "width": 745
+                    },
+                    "name": "MyForm37",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "519ae16f-cadc-4f80-85d1-5112d9700131",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|snapToGrid": 5,
+                                "height": 80,
+                                "layout": "absolute",
+                                "layout|x": 15,
+                                "layout|y": 5,
+                                "style": "background-color: #e0e0e0;",
+                                "title": "Контроль баз  по коммунальным услугам",
+                                "width": 710
+                            },
+                            "name": "MyFieldSet153",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "0a442882-a2f4-4d0f-801e-869d66a2baaf",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Контроль",
+                                        "fieldLabel": "",
+                                        "formBind": false,
+                                        "inputValue": "1",
+                                        "layout|anchor": null,
+                                        "layout|x": 5,
+                                        "layout|y": 10,
+                                        "name": "control",
+                                        "uncheckedValue": "0"
+                                    },
+                                    "name": "MyCheckbox76",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "0d59162d-8507-4af2-984d-32f1b1e1efbb",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "checkbox",
+                                                    "checked"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "",
+                                                    "",
+                                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var  form = checkbox.findParentByType('form');",
+                                                    "var  btnDeleteAddress = Ext.getCmp('btnDeleteAddress');",
+                                                    "var values =stUser.getAt(0);",
+                                                    "var value = {",
+                                                    "    login:values.get('login'),",
+                                                    "    password:values.get('password'),",
+                                                    "    address_id:form.getForm().findField('delAddressId').getValue(),",
+                                                    "    what:'checkDelAddress'",
+                                                    "};",
+                                                    "",
+                                                    "if (checked) {",
+                                                    "",
+                                                    "",
+                                                    "    QueryAddress.updateRecords(value,function(results){",
+                                                    "        if (results.success===\"1\"){",
+                                                    "            btnDeleteAddress.setDisabled(false);",
+                                                    "",
+                                                    "            Ext.MessageBox.show({",
+                                                    "                title: 'Проверка для удаления адреса',",
+                                                    "                msg: results.msg,",
+                                                    "                buttons: Ext.MessageBox.OK,",
+                                                    "                icon: Ext.MessageBox.INFO",
+                                                    "            });",
+                                                    "",
+                                                    "        } else {",
+                                                    "            Ext.MessageBox.show({",
+                                                    "                title: 'Проверка для удаления адреса',",
+                                                    "                msg: results.msg,",
+                                                    "                buttons: Ext.MessageBox.OK,",
+                                                    "                icon: Ext.MessageBox.INFO",
+                                                    "            });",
+                                                    "        }",
+                                                    "    });",
+                                                    "",
+                                                    "} else {",
+                                                    "    btnDeleteAddress.setDisabled(true);",
+                                                    "",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "7e5ed19f-2970-4cad-93ca-d3681ba269bf"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "formBind": true,
+                                        "height": 30,
+                                        "icon": "resources/css/images/ico/no.png",
+                                        "id": "btnDeleteAddress",
+                                        "itemId": null,
+                                        "layout|x": 125,
+                                        "layout|y": 10,
+                                        "text": "Удалить  адрес",
+                                        "width": 545
+                                    },
+                                    "name": "MyButton114",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "fca2ade4-0fd5-4189-9b55-24b185f0c84d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "name": "delAddressId"
+                            },
+                            "name": "MyHiddenField17",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "1be449b6-5e7d-4070-8717-17dd84b30170"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "layout|x": 70,
+                                "layout|y": 130,
+                                "name": "delHouseId"
+                            },
+                            "name": "MyHiddenField18",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "a11fbe2d-101f-41a3-9b4f-56016907bf3e"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTabNewAddressActivate",
+                "implHandler": [
+                    "var  fmDeleteAddress = Ext.getCmp('fmDeleteAddress');",
+                    "var  chbDeleteAddress = Ext.getCmp('chbDeleteAddress');",
+                    "var  btAddBasa = Ext.getCmp('btAddBasa');",
+                    "var  dataAddBasa = Ext.getCmp('dataAddBasa');",
+                    "var dt = new Date();",
+                    "var  firstDay = Ext.Date.getFirstDateOfMonth( dt ) ;",
+                    "",
+                    "dataAddBasa.setValue(Ext.Date.format(firstDay, 'Y-m-d'));",
+                    "",
+                    "btAddBasa.setVisible(false);",
+                    "dataAddBasa.setVisible(false);",
+                    "",
+                    "fmDeleteAddress.setVisible(false);",
+                    "chbDeleteAddress.setVisible(false);",
+                    ""
+                ],
+                "name": "activate",
+                "scope": "me"
+            },
+            "name": "onTabNewAddressActivate",
+            "designerId": "2c3b01a7-7e2c-4be8-9717-628dc33aa361"
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userClassName": "StTarifOt",
+        "model": "MdTarif",
+        "storeId": "StTarifOt"
+    },
+    "name": "StTarif1",
+    "designerId": "67d858f6-9079-4727-94f9-e3b230b20df6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QueryLoad.getResults",
+                "extraParams": [
+                    "{what:\"Tarif_ot\"}"
+                ]
+            },
+            "name": "MyDirectProxy47",
+            "designerId": "ed41882c-480b-470b-accd-1b37dfb6aab8",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader49",
+                    "designerId": "aaebba01-a704-45da-96e6-3eda412151c4"
+                }
+            ]
+        }
+    ]
+}

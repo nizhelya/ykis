@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabappbti",
+        "designer|userClassName": "flat.TabAppBtiViewController"
+    },
+    "name": "MyPanel2ViewController",
+    "designerId": "37edd38d-8a16-49cc-9796-c39293e47dc9"
+}

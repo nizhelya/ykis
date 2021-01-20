@@ -1,0 +1,63 @@
+SELECT 
+t1.`address_id`,
+t1.`lgotnik_id`,
+t1.`idcode`,
+t1.`fio`,
+t1.`summ`
+FROM YISGRAND.DBF_OTOPLENIE as t1 
+WHERE t1.`data` = '20180801' AND  NOT EXISTS (SELECT * FROM YISGRAND.BPT as t2 WHERE t2.`data`='20180901'  AND t2.`lgotnik_id` = t1.`lgotnik_id` )
+
+
+UPDATE `OTOPLENIE` SET  
+`gkm2_lg`=0  
+WHERE data = "20150301"
+
+UPDATE YIS.OTOPLENIE AS t1, YIS.OTOPLENIE AS t2 
+SET t2.`zadol`= t1.`dolg`, t2.`dolg`= t1.`dolg` + t2.`nachisleno`- t2.`oplacheno` 
+WHERE t1.`data`='20150301' AND t2.`data`='20150401' AND t1.`address_id`= t2.`address_id` ;
+
+UPDATE `TM_ORG_FILIAL` SET `usobstv_id`= `usobstv_id` WHERE 1
+
+UPDATE OTOPLENIE as t1 ,OTOPLENIE1 as t2 SET  
+t1.`otoplenie`=t2.`otoplenie`,
+t1.`perer`=t2.perer,
+t1.`perer_gkal`=t2.perer_gkal,
+t1.`perer_m2`=t2.perer_m2,
+t1.`nachisleno`=t2.nachisleno,
+t1.`budjet`=t2.budjet,
+t1.`pbudjet`=t2.pbudjet,
+t1.`budjet_m2`=t2.budjet_m2,
+t1.`pbudjet_m2`=t2.pbudjet_m2,
+t1.`gkm2`=t2.gkm2,
+t1.`gkm2_perer`=t2.gkm2_perer,
+t1.`gkal`=t2.gkal,
+t1.`gkalm2`=t2.gkalm2,
+t1.`gkal_mop`=t2.gkal_mop,
+t1.`gkm2_mop`=t2.gkm2_mop,
+t1.`mop`=t2.mop,
+t1.`budjet_mop`=t2.budjet_mop,
+t1.`otoplenie_gkal`=t2.otoplenie_gkal,
+t1.`budjet_gkal`=t2.budjet_gkal,
+t1.`pbudjet_gkal`=t2.pbudjet_gkal,
+t1.`square_lg`=t2.square_lg,
+t1.`gkm2_lg`=t2.gkm2_lg
+WHERE t1.`data`='20150301' AND t2.`data`='20150301' AND t1.`address_id`= t2.`address_id` ;
+
+
+
+UPDATE YIS.OTOPLENIE as t1
+SET t1.`dolg`= t1.`zadol` + t1.`nachisleno`- t1.`oplacheno` 
+WHERE t1.`data`='20150301'  ;
+
+REPLASE INTO YIS.`BVODA`(`rec_id`, `lgotnik_id`, `lgota_id`, `pok_id`, `house_id`, `address_id`, `address`, `inn`, `fio`, `document`, `people`, `lgota`, `category`, `percent`, `gr`, `data`, `sdata`, `fdata`, `qty`, `tarif`, `budjet`, `pr`, `perer`, `info`, `operator`) 
+SELECT * FROM YIS.`BVODA1` 
+
+REPLACE INTO `BVODA`(`rec_id`, `lgotnik_id`, `lgota_id`, `pok_id`, `house_id`, `address_id`, `address`, `inn`, `fio`, `document`, `people`, `lgota`, `category`, `percent`, `gr`, `data`, `sdata`, `fdata`, `qty`, `tarif`,
+`budjet`, `pr`, `perer`, `info`, `operator`)  SELECT * FROM `BVODA1` WHERE 1
+
+REPLACE INTO `BSTOKI`(`rec_id`, `lgotnik_id`, `lgota_id`, `pok_id`, `house_id`, `address_id`, `address`, `inn`, `fio`, `document`, `people`, `lgota`, `category`, `percent`, `gr`, `data`, `sdata`, `fdata`, `qty`, `tarif`, `budjet`, `pr`, `perer`, `info`, `operator`)  SELECT * FROM `BSTOKI1` WHERE 1
+
+REPLACE INTO `OTOPLENIE`(`address_id`, `house_id`, `address`, `data`, `god`, `mec`, `zadol`, `kzadol`, `knachisleno`, `koplacheno`, `koplata`, `kdolg`, `kredit`, `square`, `tarif`, `otoplenie`, `perer`, `gkal_old`, `gkal_new`, `perer_gkal`, `perer_m2`, `nachisleno`, `penya`, `oplacheno`, `rec_id`, `foplacheno`, `subsidia`, `subs`, `dolg`, `fdolg`, `fdata`, `budjet`, `pbudjet`, `budjet_m2`, `pbudjet_m2`, `tarif_gkal`, `tarif_perer`, `gkm2`, `gkm2_perer`, `data_perer`, `gkal`, `gkalm2`, `gkal_mop`, `gkm2_mop`, `mop`, `budjet_mop`, `otoplenie_gkal`, `budjet_gkal`, `pbudjet_gkal`, `square_lg`, `gkm2_lg`, `dteplomer_id`, `teplomer`, `raion_id`, `usluga`, `pr`, `metod`, `info`, `operator`, `data_in`) SELECT * FROM `OTOPLENIE2` WHERE 1
+
+INSERT INTO `BOTOPLENIE`(`rec_id`, `lgotnik_id`, `lgota_id`, `pok_id`, `house_id`, `address_id`, `address`, `inn`, `fio`, `document`, `people`, `lgota`, `category`, `percent`, `gr`, `data`, `sdata`, `fdata`, `m2`, `tarif_gkal`, `gkm2`, `gkal`, `qty`, `tarif`, `budjet`, `pr`, `perer`, `info`, `metod`, `operator`) SELECT * FROM `BOTOPLENIE2` WHERE 1
+

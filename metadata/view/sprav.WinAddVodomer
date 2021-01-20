@@ -1,0 +1,1177 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winaddvodomer",
+        "designer|userClassName": "sprav.WinAddVodomer",
+        "height": 636,
+        "id": "winAddVodomer",
+        "itemId": null,
+        "layout": "fit",
+        "modal": true,
+        "style": "background-color: #e4dbdb;",
+        "title": "Введення нового приладу обліку",
+        "width": 553
+    },
+    "configAlternates": {
+        "scrollable": "boolean",
+        "style": "string"
+    },
+    "designerId": "23b4abfc-73d9-4e55-849f-98eaa4b69293",
+    "viewControllerInstanceId": "0e0c4706-3a12-4f69-84d8-f1b3e8032093",
+    "viewModelInstanceId": "9827884a-8550-42bc-963c-a13fc8aca204",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": null,
+                "bodyStyle": null,
+                "height": 648,
+                "id": "fmAddVodomer",
+                "itemId": null,
+                "layout": "fit",
+                "style": null,
+                "title": "",
+                "width": 562
+            },
+            "name": "MyForm46",
+            "configAlternates": {
+                "scrollable": "boolean",
+                "style": "string"
+            },
+            "designerId": "916ee29e-71cd-4404-a049-f47a88e8d86d",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "fieldLabel": "",
+                        "height": 120,
+                        "layout": "absolute",
+                        "style": "background-color: #e0e0e0;",
+                        "width": 562
+                    },
+                    "name": "MyFieldContainer3",
+                    "configAlternates": {
+                        "style": "string"
+                    },
+                    "designerId": "fcaf94a3-2e32-43bb-95b3-c43f077dd2e4",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|snapToGrid": 5,
+                                "height": 85,
+                                "layout": "absolute",
+                                "style": "background-color: #e0e0e0;",
+                                "title": ""
+                            },
+                            "name": "MyFieldSet21",
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "ebacd795-59b5-44c8-8003-08d96078729d",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Підключити існуючий",
+                                        "fieldLabel": "",
+                                        "hideEmptyLabel": false,
+                                        "id": "chkExistentVod",
+                                        "inputValue": "1",
+                                        "itemId": null,
+                                        "labelWidth": 20,
+                                        "layout|x": 310,
+                                        "layout|y": 15,
+                                        "name": "isjoint",
+                                        "style": "background-color: #f1eeee;",
+                                        "submitValue": false,
+                                        "uncheckedValue": "0",
+                                        "validateOnChange": false,
+                                        "width": 200
+                                    },
+                                    "name": "MyCheckbox89",
+                                    "configAlternates": {
+                                        "style": "string",
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "17585733-a124-4132-aa3a-db3b82d92447",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onChkExistentVodChange",
+                                                "implHandler": [
+                                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var values =stUser.getAt(0);",
+                                                    "var login = values.get('login');",
+                                                    "var password = values.get('password');",
+                                                    "var house_id = values.get('house_id');",
+                                                    "var vibor = values.get('vibor');",
+                                                    "var cnt = Ext.getCmp('fcntNewVodomer');",
+                                                    "var cb = Ext.getCmp('cbExistentVod');",
+                                                    "var form = field.findParentByType('form');",
+                                                    "var store = Ext.data.StoreManager.get(\"StExistentVod\");",
+                                                    "cb.clearValue();",
+                                                    "var what = \"\";",
+                                                    "if (vibor === \"addAppVodomer\") {",
+                                                    "    what = \"ExistentVodomer\";",
+                                                    "}else{",
+                                                    "    what = \"ExistentVod\";",
+                                                    "    var house_id = Ext.getCmp('cbHouseFilial').getValue();",
+                                                    "",
+                                                    "}",
+                                                    "if (newValue) {",
+                                                    "",
+                                                    "    store.load({",
+                                                    "        params: {",
+                                                    "            what:what,",
+                                                    "            house_id: house_id,",
+                                                    "            login:login,",
+                                                    "            password:password",
+                                                    "        },",
+                                                    "        scope:this",
+                                                    "    });",
+                                                    "    cnt.hide();",
+                                                    "    cb.show();",
+                                                    "    cb.clearValue();",
+                                                    "    form.down('#btAddVodomer').setDisabled(true);",
+                                                    "}",
+                                                    "else {",
+                                                    "    cnt.show();",
+                                                    "    cb.hide();",
+                                                    "    form.down('#btAddVodomer').setDisabled(false);",
+                                                    "}"
+                                                ],
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "name": "onChkExistentVodChange",
+                                            "designerId": "038eb606-80b2-4182-9c24-23f4b707d36d"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Label",
+                                        "layout|x": null,
+                                        "layout|y": null,
+                                        "name": "what"
+                                    },
+                                    "name": "MyHiddenField29",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "47180e7b-a7d4-4698-9128-307fadec66a5"
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Label",
+                                        "layout|x": null,
+                                        "layout|y": null,
+                                        "name": "vodomer_id"
+                                    },
+                                    "name": "MyHiddenField30",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "d3b6cb53-3067-4dfe-84aa-95f7e5d1dd68"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "nomer",
+                                        "fieldLabel": "Номер",
+                                        "hidden": true,
+                                        "id": "cbExistentVod",
+                                        "itemId": null,
+                                        "labelWidth": 50,
+                                        "layout|x": 250,
+                                        "layout|y": 50,
+                                        "name": "joint_id",
+                                        "queryMode": "local",
+                                        "store": "StExistentVod",
+                                        "valueField": "vodomer_id",
+                                        "width": 250
+                                    },
+                                    "name": "MyComboBox64",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "b31bd3f6-0433-4d85-8d6e-f62666b35af6",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onCbExistentVodSelect",
+                                                "implHandler": [
+                                                    "var form = combo.findParentByType('form');",
+                                                    "form.down('#btAddVodomer').setDisabled(false);",
+                                                    ""
+                                                ],
+                                                "name": "select",
+                                                "scope": "me"
+                                            },
+                                            "name": "onCbExistentVodSelect",
+                                            "designerId": "623024ec-70e9-4052-b818-8c3846e608ed"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Адрес Ид",
+                                        "id": null,
+                                        "labelWidth": 75,
+                                        "layout|x": 150,
+                                        "layout|y": 15,
+                                        "name": "address_id",
+                                        "style": "background-color: #f1eeee;",
+                                        "width": 150
+                                    },
+                                    "name": "MyTextField168",
+                                    "configAlternates": {
+                                        "style": "string",
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "b3994ff7-7f18-4627-896c-27a1ec8155f4"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Філія Ид",
+                                        "id": null,
+                                        "labelWidth": 70,
+                                        "layout|x": 0,
+                                        "layout|y": 15,
+                                        "name": "filial_id",
+                                        "style": "background-color: #f1eeee;",
+                                        "width": 140
+                                    },
+                                    "name": "MyTextField17",
+                                    "configAlternates": {
+                                        "style": "string",
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "87ac8c95-b2fd-47bd-89d8-a7d56e3d1baf"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "fieldLabel": "Адреса новий Ид",
+                                        "id": null,
+                                        "labelWidth": 120,
+                                        "layout|x": 35,
+                                        "layout|y": 50,
+                                        "name": "new_id",
+                                        "style": "background-color: #f1eeee;",
+                                        "width": 180
+                                    },
+                                    "name": "MyTextField13",
+                                    "configAlternates": {
+                                        "style": "string",
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "956b2da2-fefe-4002-8c1e-4e7b0e2c9070"
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Label",
+                                        "name": "dvodomer_id"
+                                    },
+                                    "name": "MyHiddenField31",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "cc6e005d-6330-4473-a0f6-d4149cc3aceb"
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Label",
+                                        "name": "vibor"
+                                    },
+                                    "name": "MyHiddenField9",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "a930eeb8-c704-4cd7-bb8f-b0ef8354a9c1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "height": null,
+                                "icon": "resources/css/images/ico/add.png",
+                                "id": "btAddVodomer",
+                                "itemId": null,
+                                "layout|x": 255,
+                                "layout|y": 555,
+                                "text": "Додати прилад обліку",
+                                "width": 260
+                            },
+                            "name": "MyButton160",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "a30710ee-f583-49ed-9b6a-d25b746a60e7"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "icon": "resources/css/images/ico/delete.png",
+                                "layout|x": 25,
+                                "layout|y": 555,
+                                "text": "Скасувати",
+                                "width": 130
+                            },
+                            "name": "MyButton161",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "8e1e2b88-6b1f-4653-a8b2-65af7f588f63",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "button.up('#winAddVodomer').close();"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "6d42667f-0b26-4d8d-846a-5d7593d0a12f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|snapToGrid": 5,
+                                "height": 450,
+                                "id": null,
+                                "layout": "absolute",
+                                "layout|x": 20,
+                                "layout|y": 90,
+                                "margin": null,
+                                "style": "background-color: #f1eeee;",
+                                "title": "",
+                                "width": 500
+                            },
+                            "name": "MyFieldSet181",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "0e569832-8988-4699-a503-40a7113899f7",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 145,
+                                        "id": "fcntNewVodomer",
+                                        "layout|x": 5,
+                                        "layout|y": 290,
+                                        "style": "background-color: #e0e0e0;",
+                                        "title": "Повірка",
+                                        "width": 205
+                                    },
+                                    "name": "MyFieldSet42",
+                                    "configAlternates": {
+                                        "style": "string"
+                                    },
+                                    "designerId": "3d6ba181-5a9a-49f0-b6d5-ccc21320342c",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Остання",
+                                                "format": "d-m-Y",
+                                                "labelAlign": null,
+                                                "labelWidth": 70,
+                                                "layout|anchor": "100%",
+                                                "name": "pdate",
+                                                "submitFormat": "Ymd",
+                                                "width": null
+                                            },
+                                            "name": "MyDateField81",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "05c7b667-20c2-4e39-b7b4-db5fbca6447e"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "Наступна",
+                                                "format": "d-m-Y",
+                                                "labelAlign": null,
+                                                "labelWidth": 70,
+                                                "layout|anchor": "100%",
+                                                "name": "fpdate",
+                                                "submitFormat": "Ymd",
+                                                "width": null
+                                            },
+                                            "name": "MyDateField82",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "01b46ee8-3176-46ae-92f9-8f742f0c64a1"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "№ пломби",
+                                                "labelAlign": null,
+                                                "labelWidth": 70,
+                                                "layout|anchor": "100%",
+                                                "name": "plomba",
+                                                "width": null
+                                            },
+                                            "name": "MyTextField166",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "1c0197b3-c520-497b-8e9b-d20eecf90135"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Checkbox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Призупинено",
+                                                "fieldLabel": "",
+                                                "id": null,
+                                                "inputValue": "1",
+                                                "itemId": null,
+                                                "labelPad": null,
+                                                "layout|anchor": "100%",
+                                                "name": "paused",
+                                                "padding": "0 0 0 20",
+                                                "uncheckedValue": "0",
+                                                "width": 120
+                                            },
+                                            "name": "MyCheckbox25",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "33ac17b4-93f1-46a2-a4bd-c902241b8753"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 145,
+                                        "layout|x": 220,
+                                        "layout|y": 290,
+                                        "style": "background-color: #e0e0e0;",
+                                        "title": "Установка",
+                                        "width": 240
+                                    },
+                                    "name": "MyFieldSet51",
+                                    "configAlternates": {
+                                        "style": "string"
+                                    },
+                                    "designerId": "f275bc44-d681-4ae8-81a9-25ab4ae9a678",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Дата випуску",
+                                                "format": "d-m-Y",
+                                                "labelAlign": null,
+                                                "layout|anchor": "100%",
+                                                "name": "zdate",
+                                                "submitFormat": "Ymd",
+                                                "width": null
+                                            },
+                                            "name": "MyDateField81",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "cb25956c-f5ec-4b14-80a3-857a473824ac"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "blankText": "Поле обязательное для заполнения",
+                                                "decimalPrecision": 0,
+                                                "fieldLabel": "термін повірки (рік)",
+                                                "hideTrigger": true,
+                                                "labelAlign": null,
+                                                "labelWidth": 150,
+                                                "layout|anchor": "100%",
+                                                "name": "pp",
+                                                "value": [
+                                                    "0"
+                                                ],
+                                                "width": 218
+                                            },
+                                            "name": "MyNumberField254",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "7785481a-9978-416d-8b1e-6a7232418877"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Date",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "fieldLabel": "Дата введення",
+                                                "format": "d-m-Y",
+                                                "labelAlign": null,
+                                                "layout|anchor": "100%",
+                                                "name": "sdate",
+                                                "submitFormat": "Ymd",
+                                                "width": null
+                                            },
+                                            "name": "MyDateField82",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "967ec66a-c378-49e9-b87b-39bfd9ebe7aa"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowBlank": false,
+                                                "blankText": "Поле обязательное для заполнения",
+                                                "decimalPrecision": 3,
+                                                "fieldLabel": "Первинне показання",
+                                                "hideTrigger": true,
+                                                "labelAlign": null,
+                                                "layout|anchor": "100%",
+                                                "name": "tek",
+                                                "value": [
+                                                    "0"
+                                                ],
+                                                "width": null
+                                            },
+                                            "name": "MyNumberField12",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "5d3ecf4f-5b2d-42c4-be02-d92b1be4c162"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.RadioGroup",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "columns": 1,
+                                        "fieldLabel": "Установлен",
+                                        "id": "rbgPosition",
+                                        "itemId": null,
+                                        "labelAlign": "top",
+                                        "labelStyle": null,
+                                        "layout|x": 35,
+                                        "layout|y": 205,
+                                        "style": "background-color: #e0e0e0;",
+                                        "width": 145
+                                    },
+                                    "name": "MyRadioGroup10",
+                                    "configAlternates": {
+                                        "columns": "number",
+                                        "style": "string",
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "038d39a1-713d-4fe6-926c-6a3de53e036c",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Горизонтально",
+                                                "checked": true,
+                                                "fieldLabel": null,
+                                                "inputValue": "гориз",
+                                                "name": "position"
+                                            },
+                                            "name": "MyRadio31",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "8065aa70-dfe0-458d-a47a-ca69d5fec0c7"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Вертикально",
+                                                "fieldLabel": null,
+                                                "inputValue": "верт",
+                                                "name": "position"
+                                            },
+                                            "name": "MyRadio32",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "3dc7fd7d-2f4a-41b8-94f5-b02be2a1f9dc"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Вода",
+                                        "checked": true,
+                                        "fieldLabel": "",
+                                        "id": null,
+                                        "inputValue": "1",
+                                        "layout|x": 35,
+                                        "layout|y": 85,
+                                        "name": "vd",
+                                        "uncheckedValue": "0"
+                                    },
+                                    "name": "MyCheckbox90",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "bf4d69af-2ed5-43e1-833a-3c8d6cd1ba22"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Стоки",
+                                        "checked": true,
+                                        "fieldLabel": "",
+                                        "inputValue": "1",
+                                        "layout|x": 120,
+                                        "layout|y": 85,
+                                        "name": "st",
+                                        "uncheckedValue": "0"
+                                    },
+                                    "name": "MyCheckbox91",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "fe24dfe7-0d3d-40e2-8b21-31a025a222af"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Зворотний",
+                                        "fieldLabel": "",
+                                        "id": "obrVodomer",
+                                        "inputValue": "1",
+                                        "itemId": null,
+                                        "layout|x": 330,
+                                        "layout|y": 50,
+                                        "name": "obr",
+                                        "uncheckedValue": "0",
+                                        "width": 120
+                                    },
+                                    "name": "MyCheckbox92",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "4376ed2c-c59b-429f-a8d9-43c6f7fd7fab"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "Загальний",
+                                        "fieldLabel": "",
+                                        "id": "jointVodomer",
+                                        "inputValue": "1",
+                                        "itemId": null,
+                                        "layout|x": 330,
+                                        "layout|y": 15,
+                                        "name": "joint",
+                                        "uncheckedValue": "0",
+                                        "width": 120
+                                    },
+                                    "name": "MyCheckbox93",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "39f6c8f1-1ca1-4034-8eb3-8f7442da1d7d"
+                                },
+                                {
+                                    "type": "Ext.form.RadioGroup",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "columns": 1,
+                                        "fieldLabel": "Місце встановлення",
+                                        "height": 200,
+                                        "id": "rbgPlace",
+                                        "labelAlign": "top",
+                                        "layout|x": 265,
+                                        "layout|y": 85,
+                                        "style": "background-color: #e0e0e0;",
+                                        "width": 145
+                                    },
+                                    "name": "MyRadioGroup11",
+                                    "configAlternates": {
+                                        "columns": "number",
+                                        "style": "string",
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "855c1b5d-f501-4809-a739-07c4d66e7c26",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Кухня",
+                                                "checked": true,
+                                                "fieldLabel": null,
+                                                "inputValue": "кухня",
+                                                "labelWidth": 80,
+                                                "name": "place"
+                                            },
+                                            "name": "MyRadio33",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "0476b080-3916-455d-811d-f247d6766c86"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Cанвузол",
+                                                "fieldLabel": null,
+                                                "inputValue": "санвузол",
+                                                "name": "place"
+                                            },
+                                            "name": "MyRadio34",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "d05f893f-8639-485c-9bf5-8f87dd838486"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Колодязь",
+                                                "fieldLabel": null,
+                                                "inputValue": "колодязь",
+                                                "name": "place"
+                                            },
+                                            "name": "MyRadio35",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "bd86f8f9-664b-4a52-b697-4faadfc5eefc"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "ПРУ",
+                                                "fieldLabel": null,
+                                                "inputValue": "ПРУ",
+                                                "name": "place"
+                                            },
+                                            "name": "MyRadio36",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "38fadfd9-b615-4058-9219-069aee4421df"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Сміттєва камера",
+                                                "fieldLabel": null,
+                                                "inputValue": "СмітКам",
+                                                "name": "place"
+                                            },
+                                            "name": "MyRadio37",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "48fb2ff7-3723-4b61-a39e-369b6c1e2661"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Полив",
+                                                "fieldLabel": null,
+                                                "inputValue": "Полив",
+                                                "name": "place"
+                                            },
+                                            "name": "MyRadio38",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "ad9aca9a-49a0-4328-a1e8-527253c0a25b"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "Інше",
+                                                "fieldLabel": null,
+                                                "inputValue": "інше",
+                                                "name": "place"
+                                            },
+                                            "name": "MyRadio39",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "46a89bc6-429b-428a-84b8-e25b859fe14d"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.RadioGroup",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "border": null,
+                                        "columns": 1,
+                                        "fieldLabel": "Тип  воды",
+                                        "id": "rbgTypeVoda",
+                                        "labelAlign": "top",
+                                        "layout|x": 35,
+                                        "layout|y": 125,
+                                        "style": "background-color: #e0e0e0;",
+                                        "vertical": true,
+                                        "width": 145
+                                    },
+                                    "name": "MyRadioGroup12",
+                                    "configAlternates": {
+                                        "columns": "number",
+                                        "style": "string",
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "4bdee069-2fa1-4742-a2d3-c1607fece627",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "На холодну",
+                                                "checked": true,
+                                                "fieldLabel": null,
+                                                "inputValue": "Хвода",
+                                                "name": "voda"
+                                            },
+                                            "name": "MyRadio40",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "91bc7123-bf43-4a7b-9d77-2eb5af04c039"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "boxLabel": "На гарячу",
+                                                "fieldLabel": null,
+                                                "inputValue": "Гвода",
+                                                "name": "voda",
+                                                "width": null
+                                            },
+                                            "name": "MyRadio41",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "68ed2928-9de5-47fb-9ddf-ec8e41431626"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "blankText": "Поле обязательное для заполнения",
+                                        "fieldLabel": "Номер",
+                                        "formBind": false,
+                                        "id": null,
+                                        "itemId": null,
+                                        "labelWidth": 60,
+                                        "layout|anchor": null,
+                                        "layout|x": 60,
+                                        "layout|y": 15,
+                                        "name": "nomer",
+                                        "width": 250
+                                    },
+                                    "name": "MyTextField165",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "30409b4b-2a09-44d5-a204-98f50adc115a"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "model",
+                                        "fieldLabel": "Модель",
+                                        "formBind": false,
+                                        "id": "cbVodModel",
+                                        "itemId": null,
+                                        "labelWidth": 60,
+                                        "layout|anchor": null,
+                                        "layout|x": 60,
+                                        "layout|y": 50,
+                                        "name": "model_id",
+                                        "queryMode": "local",
+                                        "store": "StVmodel",
+                                        "value": null,
+                                        "valueField": "model_id",
+                                        "width": 250
+                                    },
+                                    "name": "MyComboBox65",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "429ff113-43e9-4899-9da8-8fe268658eb6"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

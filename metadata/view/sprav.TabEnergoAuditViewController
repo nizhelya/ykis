@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabenergoaudit",
+        "designer|userClassName": "sprav.TabEnergoAuditViewController"
+    },
+    "name": "sprav.TabOsmdHousesViewController1",
+    "designerId": "cd39f17d-c4a9-4d3c-9310-dc4003c3dda0"
+}

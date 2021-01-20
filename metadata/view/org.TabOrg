@@ -1,0 +1,2002 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "taborg",
+        "designer|userClassName": "org.TabOrg",
+        "id": "tabOrg",
+        "itemId": null,
+        "layout": "fit",
+        "scrollable": true,
+        "title": "Организация"
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "d727655f-8135-40c9-90bb-f733208df403",
+    "viewControllerInstanceId": "3d3540e1-e25f-4caf-9d6b-e5757e81a4c2",
+    "viewModelInstanceId": "d4465f55-580f-468d-907a-cab36355d5b3",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": null,
+                "bodyPadding": 10,
+                "designer|snapToGrid": 5,
+                "height": null,
+                "id": "fmOrg",
+                "itemId": null,
+                "layout": "absolute",
+                "paramsAsHash": true,
+                "scrollable": true,
+                "title": ""
+            },
+            "name": "MyForm14",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "4281c007-b668-4d66-8f6a-d64c60bae398",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "formBind": false,
+                        "height": null,
+                        "icon": "resources/css/images/ico/delete.png",
+                        "id": "btnDeleteOrg",
+                        "itemId": null,
+                        "layout|x": 25,
+                        "layout|y": 665,
+                        "text": "Удалить организацию",
+                        "tooltip": "удалить организацию",
+                        "width": 195
+                    },
+                    "name": "MyButton47",
+                    "configAlternates": {
+                        "tooltip": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "8d3ac8b5-1529-470b-9cb5-2df774cb51b8"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "height": 165,
+                        "layout": "absolute",
+                        "layout|x": 15,
+                        "layout|y": 40,
+                        "style": "background-color: #DCDCDC;",
+                        "title": "Название организации, предприятия",
+                        "width": 895
+                    },
+                    "name": "MyFieldSet54",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "3e7554fb-d8e3-4ea6-ae1c-2fde64eb0982",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "displayField": "name",
+                                "fieldLabel": "Вид собственности",
+                                "forceSelection": null,
+                                "id": null,
+                                "itemId": null,
+                                "labelWidth": 140,
+                                "layout|anchor": null,
+                                "layout|x": 100,
+                                "layout|y": 0,
+                                "name": "cat_id",
+                                "queryMode": "local",
+                                "store": "StOrgCat",
+                                "value": null,
+                                "valueField": "cat_id",
+                                "width": 420
+                            },
+                            "name": "MyComboBox1",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "c2c298dc-2267-4803-8f6e-7457b2cd56bd"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Полное",
+                                "grow": true,
+                                "height": null,
+                                "labelWidth": 70,
+                                "layout|anchor": null,
+                                "layout|x": 0,
+                                "layout|y": 40,
+                                "maxLength": 250,
+                                "maxLengthText": null,
+                                "name": "fname",
+                                "tabIndex": null,
+                                "value": null,
+                                "width": 870
+                            },
+                            "name": "MyTextArea4",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "c15dc1a8-ece0-4e6c-8ab1-3c1b47938b57",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextareafieldChange11",
+                                        "implHandler": [
+                                            "var nameOrgAdd = Ext.getCmp('nameOrg');",
+                                            "//console.log(faddress);",
+                                            "if (newValue) {",
+                                            "    nameOrgAdd.setValue(newValue);",
+                                            "} "
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onTextareafieldChange11",
+                                    "designerId": "1e62b705-073c-49e7-8a3b-c349d4c299f2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Краткое",
+                                "formBind": false,
+                                "height": null,
+                                "id": "nameOrg",
+                                "labelWidth": 70,
+                                "layout|anchor": null,
+                                "layout|x": 0,
+                                "layout|y": 100,
+                                "maxLength": 70,
+                                "name": "sname",
+                                "value": null,
+                                "width": 870
+                            },
+                            "name": "MyTextField118",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "cd6fc6ab-ea17-402e-9613-106920042983"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "fieldLabel": "Код ВиК",
+                                "hideTrigger": true,
+                                "labelWidth": 70,
+                                "layout|anchor": null,
+                                "layout|x": 560,
+                                "layout|y": 0,
+                                "maxWidth": null,
+                                "name": "kod_vik",
+                                "readOnly": null,
+                                "width": 145
+                            },
+                            "name": "MyNumberField278",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "c5c04997-bb8e-4a9f-904c-a6699df03243"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "fieldLabel": "Ид",
+                                "hideTrigger": true,
+                                "labelWidth": 30,
+                                "layout|anchor": null,
+                                "layout|x": 0,
+                                "layout|y": 0,
+                                "maxWidth": null,
+                                "name": "org_id",
+                                "readOnly": null,
+                                "width": 85
+                            },
+                            "name": "MyNumberField224",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "cbd0bf95-04bf-45a9-aa68-5b560186c829"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "fieldLabel": "Код ЮТКЭ",
+                                "hideTrigger": true,
+                                "labelWidth": 80,
+                                "layout|anchor": null,
+                                "layout|x": 725,
+                                "layout|y": 0,
+                                "maxWidth": null,
+                                "name": "kod_ytke",
+                                "readOnly": null,
+                                "width": 145
+                            },
+                            "name": "MyNumberField279",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "59261729-5c99-4df1-b932-21b60d56b61f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "showOrg",
+                        "itemId": null,
+                        "layout|x": 30,
+                        "layout|y": 0,
+                        "minWidth": null,
+                        "padding": "10 0 5 5",
+                        "style": "{color: #D15706; text-shadow: -1px -1px white, 1px 1px #333;font-size:14pt;}",
+                        "text": "Организация",
+                        "width": 785
+                    },
+                    "name": "MyLabel42",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "6597d19d-481f-4e08-842d-8967087a2253"
+                },
+                {
+                    "type": "Ext.tab.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "activeTab": 0,
+                        "height": 420,
+                        "layout|x": 15,
+                        "layout|y": 220,
+                        "width": 895
+                    },
+                    "name": "MyTabPanel2",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "5be152e9-5e66-428b-9e15-a445e89ee766",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 344,
+                                "layout": "fit",
+                                "title": "Реквизиты"
+                            },
+                            "name": "MyPanel5",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "d4c5fa7d-d8c8-439c-b2fe-92c10ca95200",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig9",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "6c939533-b2d6-430c-9f7b-7e3212e73042"
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|snapToGrid": 5,
+                                        "height": 325,
+                                        "layout": "absolute",
+                                        "style": null,
+                                        "title": ""
+                                    },
+                                    "name": "MyPanel8",
+                                    "configAlternates": {
+                                        "scrollable": "boolean",
+                                        "style": "string"
+                                    },
+                                    "designerId": "7a1d6691-528c-45d4-b6ac-67ed8ef6629e",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.FieldSet",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "height": 155,
+                                                "layout|x": 5,
+                                                "layout|y": 5,
+                                                "padding": "10 10 10 10",
+                                                "style": "background-color: #DCDCDC;",
+                                                "title": "Адрес",
+                                                "width": 875
+                                            },
+                                            "name": "MyFieldSet52",
+                                            "configAlternates": {
+                                                "style": "string",
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "b60e5046-034d-4314-beab-5c38518c9061",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.TextArea",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "allowBlank": false,
+                                                        "enableKeyEvents": true,
+                                                        "fieldLabel": "Юридична",
+                                                        "grow": true,
+                                                        "height": null,
+                                                        "labelWidth": 80,
+                                                        "layout|anchor": "100%",
+                                                        "maxLength": 250,
+                                                        "maxLengthText": null,
+                                                        "name": "uaddress",
+                                                        "width": 390
+                                                    },
+                                                    "name": "MyTextArea8",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "960d1037-46fa-433f-91cc-2e642f2b9d42",
+                                                    "cn": [
+                                                        {
+                                                            "type": "basiceventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onTextareafieldChange2",
+                                                                "implHandler": [
+                                                                    "var me =this;",
+                                                                    "",
+                                                                    "var faddress = Ext.getCmp('faddress');",
+                                                                    "//console.log(faddress);",
+                                                                    "if (newValue) {",
+                                                                    "    faddress.setValue(newValue);",
+                                                                    "} ",
+                                                                    ""
+                                                                ],
+                                                                "name": "change",
+                                                                "scope": "me"
+                                                            },
+                                                            "name": "onTextareafieldChange2",
+                                                            "designerId": "b786b35a-0966-426b-ae8b-5fed0acdb938"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.TextArea",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "allowBlank": false,
+                                                        "fieldLabel": "Фізичний",
+                                                        "height": null,
+                                                        "id": "faddress",
+                                                        "labelWidth": 80,
+                                                        "layout|anchor": "100%",
+                                                        "maxLength": 250,
+                                                        "maxLengthText": null,
+                                                        "name": "faddress",
+                                                        "width": 390
+                                                    },
+                                                    "name": "MyTextArea9",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "a7efe6bd-5e87-4f4c-be4d-6722cde7500b"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldSet",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "height": 170,
+                                                "layout|x": 550,
+                                                "layout|y": 170,
+                                                "style": "background-color: #DCDCDC;",
+                                                "title": "Руководство",
+                                                "width": 330
+                                            },
+                                            "name": "MyFieldSet55",
+                                            "configAlternates": {
+                                                "style": "string",
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "2b7872be-9455-44a5-803b-4a96f269b971",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Должность",
+                                                        "labelWidth": 80,
+                                                        "layout|anchor": "100%",
+                                                        "maxLength": 50,
+                                                        "name": "golova",
+                                                        "value": null
+                                                    },
+                                                    "name": "MyTextField75",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "9b3a47cc-373e-46ae-ac3c-ab9a1ea47a5c"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Ф.И.О.",
+                                                        "labelWidth": 80,
+                                                        "layout|anchor": "100%",
+                                                        "maxLength": 50,
+                                                        "name": "boss",
+                                                        "value": null
+                                                    },
+                                                    "name": "MyTextField2",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "61097792-2c5d-4b02-afd5-370b25654998"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Главбух",
+                                                        "labelWidth": 80,
+                                                        "layout|anchor": "100%",
+                                                        "maxLength": 50,
+                                                        "name": "gbuh",
+                                                        "value": null
+                                                    },
+                                                    "name": "MyTextField76",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "0d05a6e5-9059-4e08-9c9b-750e39d0a926"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Бухгалтер",
+                                                        "height": null,
+                                                        "labelWidth": 80,
+                                                        "layout|anchor": "100%",
+                                                        "maxLength": 120,
+                                                        "name": "buhgalter",
+                                                        "width": null
+                                                    },
+                                                    "name": "MyTextField116",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "3a833c9a-7953-42c8-932d-23ce3b1b61e0"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "В особі",
+                                                        "height": null,
+                                                        "labelWidth": 50,
+                                                        "layout|anchor": "100%",
+                                                        "maxLength": 120,
+                                                        "name": "vosobi",
+                                                        "width": null
+                                                    },
+                                                    "name": "MyTextField",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "288aea79-5ba3-4fbb-9d0d-e582166b112e"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.FieldSet",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|snapToGrid": 5,
+                                                "height": 255,
+                                                "layout": "absolute",
+                                                "layout|x": 5,
+                                                "layout|y": 170,
+                                                "padding": "10 10 10 10",
+                                                "style": "background-color: #DCDCDC;",
+                                                "title": "Уставные документы",
+                                                "width": 540
+                                            },
+                                            "name": "MyFieldSet53",
+                                            "configAlternates": {
+                                                "style": "string",
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "26b06742-1cf7-4613-8cba-f36b31a96997",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "allowBlank": false,
+                                                        "fieldLabel": "ЕДРПОУ",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": null,
+                                                        "layout|x": 205,
+                                                        "layout|y": 0,
+                                                        "maxLength": 12,
+                                                        "maxLengthText": null,
+                                                        "name": "edrpou",
+                                                        "value": null,
+                                                        "width": 200
+                                                    },
+                                                    "name": "MyTextField73",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "f8a56d02-329a-4b03-bcd6-67c4433c5e31"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Инн",
+                                                        "formBind": false,
+                                                        "labelWidth": 40,
+                                                        "layout|anchor": null,
+                                                        "layout|x": 0,
+                                                        "layout|y": 0,
+                                                        "maxLength": 12,
+                                                        "maxLengthText": null,
+                                                        "name": "inn",
+                                                        "value": null,
+                                                        "width": 190
+                                                    },
+                                                    "name": "MyTextField74",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "7e5ca812-fbab-484e-bf01-ba617a70cb04"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Действует на основании",
+                                                        "height": null,
+                                                        "labelWidth": 150,
+                                                        "layout|anchor": "100%",
+                                                        "layout|x": 0,
+                                                        "layout|y": 35,
+                                                        "maxLength": 120,
+                                                        "name": "statut",
+                                                        "value": null,
+                                                        "width": 485
+                                                    },
+                                                    "name": "MyTextField122",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "425bdc8a-6567-4463-a8f8-8463cf64c637"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Checkbox",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "boxLabel": "Нет",
+                                                        "fieldLabel": "Плательщик НДС",
+                                                        "inputValue": "1",
+                                                        "labelWidth": 120,
+                                                        "layout|anchor": "100%",
+                                                        "layout|x": 340,
+                                                        "layout|y": 70,
+                                                        "name": "nds",
+                                                        "shadow": null,
+                                                        "uncheckedValue": "0",
+                                                        "width": 200
+                                                    },
+                                                    "name": "MyCheckbox31",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "bf29ba83-abf6-41e7-ba22-802aba2fca6f",
+                                                    "cn": [
+                                                        {
+                                                            "type": "basiceventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onCheckboxfieldChange",
+                                                                "implHandler": [
+                                                                    "if(newValue){",
+                                                                    "    field.setBoxLabel(\"Да\");",
+                                                                    "}else{",
+                                                                    "    field.setBoxLabel(\"Нет\");",
+                                                                    "}"
+                                                                ],
+                                                                "name": "change",
+                                                                "scope": "me"
+                                                            },
+                                                            "name": "onCheckboxfieldChange",
+                                                            "designerId": "a9a263e7-fb9d-4a59-a9dc-c699dc18dce9"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Свид № ",
+                                                        "labelWidth": 60,
+                                                        "layout|anchor": null,
+                                                        "layout|x": 0,
+                                                        "layout|y": 70,
+                                                        "name": "svid_nds",
+                                                        "value": null,
+                                                        "width": 330
+                                                    },
+                                                    "name": "MyTextField77",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "f36c6b8c-9aa6-4fe8-9ef0-3c83002db1ac"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Text",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fieldLabel": "Договор",
+                                                        "layout|anchor": null,
+                                                        "layout|x": 5,
+                                                        "layout|y": 145,
+                                                        "name": "dogovor",
+                                                        "value": null,
+                                                        "width": 510
+                                                    },
+                                                    "name": "MyTextField17",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "142c0371-0e7a-4759-a898-d67c17f43c88"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Date",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "altFormats": "m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j|d-m-Y",
+                                                        "fieldLabel": "Действует с даты",
+                                                        "format": "d-m-Y",
+                                                        "labelWidth": 120,
+                                                        "layout|anchor": null,
+                                                        "layout|x": 0,
+                                                        "layout|y": 105,
+                                                        "name": "svid_sdata",
+                                                        "submitFormat": "ymd",
+                                                        "width": 245
+                                                    },
+                                                    "name": "MyDateField23",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "a0356f4b-7207-4f6c-94fb-15a21d9dd9b3"
+                                                },
+                                                {
+                                                    "type": "Ext.form.field.Date",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "altFormats": "m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j|d-m-Y",
+                                                        "fieldLabel": "Дата окончания",
+                                                        "format": "d-m-Y",
+                                                        "labelWidth": 120,
+                                                        "layout|anchor": "100%",
+                                                        "layout|x": 255,
+                                                        "layout|y": 105,
+                                                        "name": "svid_fdata",
+                                                        "submitFormat": "ymd",
+                                                        "width": 255
+                                                    },
+                                                    "name": "MyDateField24",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "73b940e6-17cd-446c-9545-e80fa2b2a09f"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "formBind": true,
+                                                "height": null,
+                                                "icon": "resources/css/images/ico/edit.png",
+                                                "id": "btnUpdateOrg",
+                                                "itemId": null,
+                                                "layout|x": 585,
+                                                "layout|y": 355,
+                                                "text": "Обновить данные по организации",
+                                                "width": 265
+                                            },
+                                            "name": "MyButton48",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "9f10a429-026d-4e69-af9e-28582d24369f"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 281,
+                                "layout": "fit",
+                                "title": "Банк"
+                            },
+                            "name": "MyPanel6",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "dce09c6a-03a5-4cb5-aca6-08123597562b",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig11",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "809f36ab-d12a-4fdb-b711-e161619e4852"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": 210,
+                                        "layout": "fit",
+                                        "padding": "10 10 10 10",
+                                        "style": "background-color: #f3f3f3;",
+                                        "title": "Банковские реквизиты",
+                                        "width": 520
+                                    },
+                                    "name": "MyFieldSet109",
+                                    "configAlternates": {
+                                        "style": "string",
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "b2e9c03f-b5c6-42a4-9c9b-4ced95e28686",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "forceFit": null,
+                                                "id": "grBankOrg",
+                                                "itemId": null,
+                                                "store": "StBanksOrg",
+                                                "title": "Банковские счета"
+                                            },
+                                            "name": "MyGridPanel44",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "67025103-2700-46bf-a28a-62a1f64784d3",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.view.Table",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "name": "MyGridView42",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "e38686f4-bea4-4c38-a194-f77b66ac0c74"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "mfo",
+                                                        "menuDisabled": true,
+                                                        "text": "Наименование банка",
+                                                        "width": 305
+                                                    },
+                                                    "name": "MyColumn187",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "2136d009-83f9-42d1-be79-bf30b3998dc2",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.ComboBox",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "anyMatch": true,
+                                                                "autoSelect": false,
+                                                                "displayField": "sname",
+                                                                "queryMode": "local",
+                                                                "store": "StBanks",
+                                                                "typeAhead": true,
+                                                                "valueField": "mfo"
+                                                            },
+                                                            "name": "MyComboBox16",
+                                                            "configAlternates": {
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "b4da5485-b6ee-4a1a-b287-6f089f7acab9"
+                                                        },
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "value",
+                                                                    "metaData",
+                                                                    "record",
+                                                                    "rowIndex",
+                                                                    "colIndex",
+                                                                    "store",
+                                                                    "view"
+                                                                ],
+                                                                "fn": "renderer",
+                                                                "implHandler": [
+                                                                    "return record.get('sname');"
+                                                                ]
+                                                            },
+                                                            "name": "renderer",
+                                                            "designerId": "0ac9d554-0ea6-4f27-92f2-0c3b9c3885e2"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Number",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "org_id",
+                                                        "hidden": true,
+                                                        "text": "Org Id"
+                                                    },
+                                                    "name": "MyNumberColumn178",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "54b18300-e5e8-42a4-91d1-7c2b2c6bec69"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "rs",
+                                                        "menuDisabled": true,
+                                                        "text": "Р.Сч",
+                                                        "width": 140
+                                                    },
+                                                    "name": "MyColumn198",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "2415ae60-6d20-49e0-9b35-d3a3b505056a",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "name": "MyTextField47",
+                                                            "configAlternates": {
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "810303ce-d841-4638-9559-992febceeeb3"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "schet",
+                                                        "menuDisabled": true,
+                                                        "text": "Счет",
+                                                        "width": 55
+                                                    },
+                                                    "name": "MyColumn185",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "15d77f52-6e79-44b0-b241-efbb99c25a1f",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "name": "MyTextField47",
+                                                            "configAlternates": {
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "1ff7bbe5-b034-4c76-a863-2f327c395721"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "filial_id",
+                                                        "hidden": null,
+                                                        "menuDisabled": true,
+                                                        "text": "филиал",
+                                                        "width": 240
+                                                    },
+                                                    "name": "MyColumn199",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "9af4ddb6-c53b-40b8-acc1-117288d84abf",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.ComboBox",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "displayField": "name",
+                                                                "queryMode": "local",
+                                                                "store": "StFilialOpl",
+                                                                "valueField": "filial_id"
+                                                            },
+                                                            "name": "MyComboBox18",
+                                                            "configAlternates": {
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "5d0a265a-7688-4cfd-8ef7-03485ccf37f6"
+                                                        },
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "value",
+                                                                    "metaData",
+                                                                    "record",
+                                                                    "rowIndex",
+                                                                    "colIndex",
+                                                                    "store",
+                                                                    "view"
+                                                                ],
+                                                                "fn": "renderer",
+                                                                "implHandler": [
+                                                                    "return record.get('filial');"
+                                                                ]
+                                                            },
+                                                            "name": "renderer",
+                                                            "designerId": "5a3d4564-064a-4807-b4a5-f3a2d61c0e13"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "rec_id",
+                                                        "hidden": true,
+                                                        "text": "rec_id"
+                                                    },
+                                                    "name": "MyColumn200",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "2d2d49a6-40e0-432a-97a7-75ac971efae3"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "osn",
+                                                        "menuDisabled": true,
+                                                        "text": "Осн",
+                                                        "width": 45
+                                                    },
+                                                    "name": "MyColumn189",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "32db4018-a691-4f13-b0cc-93c17054cc32",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Number",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "decimalPrecision": 0,
+                                                                "hideTrigger": true,
+                                                                "maxValue": 1,
+                                                                "minValue": 0,
+                                                                "name": "osn"
+                                                            },
+                                                            "name": "MyNumberField236",
+                                                            "configAlternates": {
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "b8253d2e-3507-477d-a4de-2b9cc80d0ab2"
+                                                        },
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "value",
+                                                                    "metaData",
+                                                                    "record",
+                                                                    "rowIndex",
+                                                                    "colIndex",
+                                                                    "store",
+                                                                    "view"
+                                                                ],
+                                                                "fn": "renderer",
+                                                                "implHandler": [
+                                                                    "metaData.style = 'color:#D10000;font-weight:bold;';",
+                                                                    "var retValue = '';",
+                                                                    "switch (value) {",
+                                                                    "    case 1:",
+                                                                    "    retValue ='<span><img clas=\"icon\" src=\"resources/css/images/ico/yes.png\"/></span>';",
+                                                                    "    break;",
+                                                                    "    case 0:",
+                                                                    "    retValue ='';",
+                                                                    "}",
+                                                                    "return retValue;"
+                                                                ]
+                                                            },
+                                                            "name": "renderer",
+                                                            "designerId": "3b04eae1-b4f3-4d72-9616-f518b7b33109"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Action",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "altText": null,
+                                                        "designer|displayName": "Удалить рс",
+                                                        "icon": null,
+                                                        "menuDisabled": true,
+                                                        "tooltip": "Удалить",
+                                                        "width": 38
+                                                    },
+                                                    "name": "MyActionColumn56",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "d25e35bf-e239-40e7-ab3c-39e34cfbcdfa",
+                                                    "cn": [
+                                                        {
+                                                            "type": "actioncolumnitem",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "icon": "resources/css/images/ico/no.png"
+                                                            },
+                                                            "name": "MyActionColumnItem69",
+                                                            "designerId": "d4b4c908-8894-43d0-92fd-7c28fcbe7fbd",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "fixedfunction",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|params": [
+                                                                            "view",
+                                                                            "rowIndex",
+                                                                            "colIndex",
+                                                                            "item",
+                                                                            "e",
+                                                                            "record",
+                                                                            "row"
+                                                                        ],
+                                                                        "fn": "handler",
+                                                                        "implHandler": [
+                                                                            "var grid = view.findParentByType('grid');",
+                                                                            "var store = view.store;",
+                                                                            "var plugin = grid.getPlugin('editBank');",
+                                                                            "plugin.cancelEdit();",
+                                                                            "store.proxy.setExtraParam('what', 'getBankOrg');",
+                                                                            "",
+                                                                            "Ext.MessageBox.show({",
+                                                                            "    title: 'Внимание!',",
+                                                                            "    msg: 'Вы удаляете данные ! Подтвердите свои действия!',",
+                                                                            "    buttons: Ext.MessageBox.OKCANCEL,",
+                                                                            "    icon: Ext.MessageBox.WARNING,",
+                                                                            "",
+                                                                            "    buttonText:{",
+                                                                            "        ok: \"Удалить!\",",
+                                                                            "        cancel: \"Отмена\"",
+                                                                            "    },",
+                                                                            "    fn:function(btn){",
+                                                                            "        if(btn=='ok'){",
+                                                                            "            store.remove(record);",
+                                                                            "",
+                                                                            "            store.sync({",
+                                                                            "                success: function(){",
+                                                                            "                    Ext.MessageBox.show({title: 'Удаление записи',",
+                                                                            "                        msg:\"Запись удалена\",",
+                                                                            "                        buttons: Ext.MessageBox.OK,",
+                                                                            "                        icon: Ext.MessageBox.INFO",
+                                                                            "                    });",
+                                                                            "                },",
+                                                                            "                failure: function(){",
+                                                                            "                    Ext.MessageBox.show({title: 'Удаление записи',",
+                                                                            "                        msg:\"Невозможно удалить: вид оплаты уже используется\",",
+                                                                            "                        buttons: Ext.MessageBox.OK,",
+                                                                            "                        icon: Ext.MessageBox.ERROR",
+                                                                            "                    });",
+                                                                            "",
+                                                                            "                },",
+                                                                            "                scope: this",
+                                                                            "            });",
+                                                                            "        }",
+                                                                            "    }",
+                                                                            "",
+                                                                            "});",
+                                                                            ""
+                                                                        ]
+                                                                    },
+                                                                    "name": "handler",
+                                                                    "designerId": "54fa71e3-3a5d-49cc-88a9-e149df1df9fc"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "value",
+                                                                    "metaData",
+                                                                    "record",
+                                                                    "rowIndex",
+                                                                    "colIndex",
+                                                                    "store",
+                                                                    "view"
+                                                                ],
+                                                                "fn": "editRenderer",
+                                                                "implHandler": [
+                                                                    "var val=\"\";",
+                                                                    "return val;"
+                                                                ]
+                                                            },
+                                                            "name": "editRenderer",
+                                                            "designerId": "7dfda582-e447-41cd-ac72-375f6a0ce923"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.selection.CheckboxModel",
+                                                    "reference": {
+                                                        "name": "selModel",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": "Ext.selection.CheckboxModel",
+                                                    "name": "MyCheckboxSelectionModel3",
+                                                    "designerId": "8f4d021a-41e6-4920-b34c-342a73c4114d"
+                                                },
+                                                {
+                                                    "type": "Ext.panel.Tool",
+                                                    "reference": {
+                                                        "name": "tools",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "type": "plus"
+                                                    },
+                                                    "name": "MyTool24",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "db323177-90f8-4d2e-84e3-f2fe0398a783",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "owner",
+                                                                    "tool",
+                                                                    "event"
+                                                                ],
+                                                                "fn": "callback",
+                                                                "implHandler": [
+                                                                    "var tree = Ext.getCmp('grTreeOrg');",
+                                                                    "var id = tree.getSelectionModel().getSelection()[0].data.orig_id;",
+                                                                    "var name = tree.getSelectionModel().getSelection()[0].data.text;",
+                                                                    "",
+                                                                    "var grid = tool.findParentByType('grid');",
+                                                                    "var store = grid.store;",
+                                                                    "",
+                                                                    "store.proxy.setExtraParam('org_id', id);",
+                                                                    "store.proxy.setExtraParam('what', 'addBankOrg');",
+                                                                    "",
+                                                                    "var sm = grid.getSelectionModel();",
+                                                                    "var plugin = grid.getPlugin('editBank');",
+                                                                    "plugin.cancelEdit();",
+                                                                    "",
+                                                                    "var data = {mfo: 'Выбор банка',filial_id: 'Выбор филиала', org_id:id};",
+                                                                    "var newRecord = store.model.create(data);",
+                                                                    "",
+                                                                    "store.insert(0, newRecord);",
+                                                                    "plugin.startEdit(0, 0);"
+                                                                ]
+                                                            },
+                                                            "name": "callback",
+                                                            "designerId": "ebcebef5-8b75-433b-9fb7-47fb81a684d9"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.plugin.RowEditing",
+                                                    "reference": {
+                                                        "name": "plugins",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": "Ext.grid.plugin.RowEditing",
+                                                    "userConfig": {
+                                                        "pluginId": "editBank"
+                                                    },
+                                                    "name": "MyRowEditingPlugin1",
+                                                    "designerId": "833d2f35-2ba3-4013-b026-b9f09fb4c725",
+                                                    "cn": [
+                                                        {
+                                                            "type": "basiceventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onRowEditingEdit1",
+                                                                "implHandler": [
+                                                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                                    "//LOGIN & PASSWORD",
+                                                                    "var values =stUser.getAt(0);",
+                                                                    "",
+                                                                    "var grid = editor.grid;",
+                                                                    "var store = grid.getStore();",
+                                                                    "var sm = store.getUpdatedRecords();",
+                                                                    "var data = grid.getSelectionModel();",
+                                                                    "if(sm.length) {",
+                                                                    "",
+                                                                    "    store.sync({",
+                                                                    "",
+                                                                    "        success: function(){",
+                                                                    "",
+                                                                    "            store.load({",
+                                                                    "                params:{",
+                                                                    "                    what:'getBankOrg',",
+                                                                    "                    login:values.get('login'),",
+                                                                    "                    password:values.get('password'),",
+                                                                    "                    org_id:values.get('org_id')",
+                                                                    "                },",
+                                                                    "                scope:this",
+                                                                    "            });",
+                                                                    "",
+                                                                    "        },",
+                                                                    "        scope:this",
+                                                                    "    });",
+                                                                    "",
+                                                                    "}else {",
+                                                                    "",
+                                                                    "    store.sync({",
+                                                                    "",
+                                                                    "        success: function(){",
+                                                                    "            Ext.MessageBox.show({",
+                                                                    "                title: 'Добавление записи',",
+                                                                    "                msg: 'Запись добавлена',",
+                                                                    "                buttons: Ext.MessageBox.OK,",
+                                                                    "                icon: Ext.MessageBox.INFO",
+                                                                    "            });",
+                                                                    "",
+                                                                    "            store.load({",
+                                                                    "                params:{",
+                                                                    "                    what:'getBankOrg',",
+                                                                    "                    login:values.get('login'),",
+                                                                    "                    password:values.get('password'),",
+                                                                    "                    org_id:values.get('org_id')",
+                                                                    "                },",
+                                                                    "                scope:this",
+                                                                    "            });",
+                                                                    "        },",
+                                                                    "        scope:this",
+                                                                    "",
+                                                                    "    });",
+                                                                    "",
+                                                                    "}",
+                                                                    "",
+                                                                    "",
+                                                                    ""
+                                                                ],
+                                                                "name": "edit",
+                                                                "scope": "me"
+                                                            },
+                                                            "name": "onRowEditingEdit1",
+                                                            "designerId": "d18464cd-297f-4eff-a178-dbef39683e08"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Number",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "rec_id",
+                                                        "hidden": true,
+                                                        "text": "rec_id"
+                                                    },
+                                                    "name": "MyNumberColumn194",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "b39069f8-1baf-42b0-aeed-93698962aeaf"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 259,
+                                "layout": "fit",
+                                "title": "Телефоны"
+                            },
+                            "name": "MyPanel7",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "98bc96a2-7590-4a09-9cab-7af97fe24e31",
+                            "cn": [
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "TabConfig26",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "abf73079-1db7-4d79-9270-8de0f4a68e3a"
+                                },
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "collapsible": true,
+                                        "height": 242,
+                                        "layout": "fit",
+                                        "style": "background-color: #f3f3f3;",
+                                        "title": "телефоны",
+                                        "width": 365
+                                    },
+                                    "name": "MyFieldSet57",
+                                    "configAlternates": {
+                                        "style": "string",
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "3005673e-729f-42ea-af88-4762c52110e7",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "forceFit": null,
+                                                "height": 169,
+                                                "id": "GrOrgPhones",
+                                                "itemId": null,
+                                                "minHeight": 115,
+                                                "store": "StOrgPhones",
+                                                "title": "",
+                                                "width": 854
+                                            },
+                                            "name": "MyGridPanel26",
+                                            "configAlternates": {
+                                                "scrollable": "boolean"
+                                            },
+                                            "designerId": "065dacc5-2e32-43d9-a892-66c58dd6c233",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.view.Table",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "style": null
+                                                    },
+                                                    "name": "MyGridView26",
+                                                    "configAlternates": {
+                                                        "style": "string",
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "b679cc0e-bea8-401c-9e2f-d366b1bb201b"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "pname",
+                                                        "flex": null,
+                                                        "menuDisabled": true,
+                                                        "text": "Отдел/сотрудник",
+                                                        "width": 333
+                                                    },
+                                                    "name": "MyColumn110",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "d0844579-9e0f-47cd-9cec-0d702689116a",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "name": "MyTextField78",
+                                                            "configAlternates": {
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "9435cb24-e66e-47d6-bbda-adc0be69c931"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "phone",
+                                                        "flex": null,
+                                                        "menuDisabled": true,
+                                                        "text": "Телефоы",
+                                                        "width": 514
+                                                    },
+                                                    "name": "MyColumn111",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "4dc04683-d353-44e9-9111-3745bc8a63ef",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.form.field.Text",
+                                                            "reference": {
+                                                                "name": "editor",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "name": "MyTextField79",
+                                                            "configAlternates": {
+                                                                "scrollable": "boolean"
+                                                            },
+                                                            "designerId": "51069238-c3c7-4c60-a766-62028ec729ed"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.panel.Tool",
+                                                    "reference": {
+                                                        "name": "tools",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "id": "btnGrOrgPhoneAdd",
+                                                        "itemId": null,
+                                                        "type": "plus"
+                                                    },
+                                                    "name": "MyTool18",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "4307cd31-d8b9-4062-a352-002a0e544818",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "owner",
+                                                                    "tool",
+                                                                    "event"
+                                                                ],
+                                                                "fn": "callback",
+                                                                "implHandler": [
+                                                                    "var tree = Ext.getCmp('grTreeOrg');",
+                                                                    "var id = tree.getSelectionModel().getSelection()[0].data.orig_id;",
+                                                                    "var name = tree.getSelectionModel().getSelection()[0].data.text;",
+                                                                    "",
+                                                                    "var grid = tool.findParentByType('grid');",
+                                                                    "var store = grid.store;",
+                                                                    "",
+                                                                    "store.proxy.setExtraParam('org_id', id);",
+                                                                    "store.proxy.setExtraParam('what', 'getOrgPhones');",
+                                                                    "",
+                                                                    "var sm = grid.getSelectionModel();",
+                                                                    "var plugin = grid.getPlugin('fhoneOrgEditPlugin');",
+                                                                    "plugin.cancelEdit();",
+                                                                    "",
+                                                                    "var data = {name: name, phone: 'Телефон', pname: 'Владелец', filial_id: '', org_id:id};",
+                                                                    "var newRecord = store.model.create(data);",
+                                                                    "",
+                                                                    "store.insert(0, newRecord);",
+                                                                    "plugin.startEdit(0, 0);"
+                                                                ]
+                                                            },
+                                                            "name": "callback",
+                                                            "designerId": "30cbb575-b4dc-40f9-88b1-9bf8b6fbf14a"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.panel.Tool",
+                                                    "reference": {
+                                                        "name": "tools",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "id": "btnGrOrgPhoneRemove",
+                                                        "itemId": null,
+                                                        "type": "minus"
+                                                    },
+                                                    "name": "MyTool19",
+                                                    "configAlternates": {
+                                                        "scrollable": "boolean"
+                                                    },
+                                                    "designerId": "40601a95-60c8-4ff8-a05f-af5241ac4987",
+                                                    "cn": [
+                                                        {
+                                                            "type": "fixedfunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "owner",
+                                                                    "tool",
+                                                                    "event"
+                                                                ],
+                                                                "fn": "callback",
+                                                                "implHandler": [
+                                                                    "var grid = tool.findParentByType('grid');",
+                                                                    "var plugin = grid.getPlugin('fhoneOrgEditPlugin');",
+                                                                    "plugin.cancelEdit();",
+                                                                    "var store = grid.store;",
+                                                                    "store.proxy.setExtraParam('what', 'deletePhones');",
+                                                                    "var selected = grid.getSelectionModel().getSelection();",
+                                                                    "",
+                                                                    "Ext.MessageBox.show({",
+                                                                    "    title: 'Внимание!',",
+                                                                    "    msg: 'Вы удаляете данные ! Подтвердите свои действия!',",
+                                                                    "    buttons: Ext.MessageBox.OKCANCEL,",
+                                                                    "    icon: Ext.MessageBox.WARNING,",
+                                                                    "",
+                                                                    "    buttonText:{",
+                                                                    "        ok: \"Удалить!\",",
+                                                                    "        cancel: \"Отмена\"",
+                                                                    "    },",
+                                                                    "    fn:function(btn){",
+                                                                    "        if(btn=='ok'){",
+                                                                    "            store.remove(selected);",
+                                                                    "",
+                                                                    "            store.sync({",
+                                                                    "                success: function(){",
+                                                                    "                    Ext.MessageBox.show({title: 'Удаление записи',",
+                                                                    "                        msg:'Запись удалена',",
+                                                                    "                        buttons: Ext.MessageBox.OK,",
+                                                                    "                        icon: Ext.MessageBox.INFO",
+                                                                    "                    });",
+                                                                    "                },",
+                                                                    "                failure: function(){",
+                                                                    "",
+                                                                    "",
+                                                                    "",
+                                                                    "                },",
+                                                                    "                scope: this",
+                                                                    "            });",
+                                                                    "        }",
+                                                                    "    }",
+                                                                    "",
+                                                                    "});"
+                                                                ]
+                                                            },
+                                                            "name": "callback",
+                                                            "designerId": "121eff4e-d4ab-40e0-b09f-611e00781af1"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.plugin.RowEditing",
+                                                    "reference": {
+                                                        "name": "plugins",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": "Ext.grid.plugin.RowEditing",
+                                                    "userConfig": {
+                                                        "pluginId": "fhoneOrgEditPlugin"
+                                                    },
+                                                    "name": "MyRowEditingPlugin",
+                                                    "designerId": "02383cce-cb85-4f82-8b48-f9ca3f99fe17",
+                                                    "cn": [
+                                                        {
+                                                            "type": "basiceventbinding",
+                                                            "reference": {
+                                                                "name": "listeners",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "fn": "onRowEditingEdit",
+                                                                "implHandler": [
+                                                                    "var tree = Ext.getCmp('grTreeOrg');",
+                                                                    "var id = tree.getSelectionModel().getSelection()[0].data.orig_id;",
+                                                                    "var grid = editor.grid;",
+                                                                    "var store = grid.getStore();",
+                                                                    "var sm = store.getUpdatedRecords();",
+                                                                    "var data = grid.getSelectionModel();",
+                                                                    "//console.log(sm);",
+                                                                    "if(sm.length) {",
+                                                                    "",
+                                                                    "    store.sync({",
+                                                                    "",
+                                                                    "        success: function(){",
+                                                                    "",
+                                                                    "            store.load({",
+                                                                    "                params:{",
+                                                                    "                    what:'getOrgPhones',",
+                                                                    "                    org_id:id",
+                                                                    "                },",
+                                                                    "                scope:this",
+                                                                    "            });",
+                                                                    "",
+                                                                    "        },",
+                                                                    "        scope:this",
+                                                                    "    });",
+                                                                    "",
+                                                                    "}else {",
+                                                                    "",
+                                                                    "    store.sync({",
+                                                                    "",
+                                                                    "        success: function(){",
+                                                                    "            store.load({",
+                                                                    "                params:{",
+                                                                    "                    what:'getOrgPhones',",
+                                                                    "                    org_id:id",
+                                                                    "                },",
+                                                                    "                scope:this",
+                                                                    "            });",
+                                                                    "        },",
+                                                                    "        scope:this",
+                                                                    "",
+                                                                    "    });",
+                                                                    "",
+                                                                    "}",
+                                                                    ""
+                                                                ],
+                                                                "name": "edit",
+                                                                "scope": "me"
+                                                            },
+                                                            "name": "onRowEditingEdit",
+                                                            "designerId": "b90c5762-dc57-4525-b36b-4a03bcb1503e"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

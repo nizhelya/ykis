@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winaddaktclaim",
+        "designer|userClassName": "sprav.WinAddAktClaimViewModel"
+    },
+    "designerId": "2fc51f3b-f52b-4e47-9ffc-f5b6c3858c85"
+}

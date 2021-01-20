@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winaddaktclaim",
+        "designer|userClassName": "sprav.WinAddAktClaimViewController"
+    },
+    "designerId": "1532451c-aa61-402f-9d0d-fdcd76c679c2"
+}

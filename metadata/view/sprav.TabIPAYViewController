@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabipay",
+        "designer|userClassName": "sprav.TabIPAYViewController"
+    },
+    "name": "sprav.TabPBViewController1",
+    "designerId": "c4be96f8-384c-44d0-9563-4ada2706efc0"
+}

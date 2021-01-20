@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabfilial",
+        "designer|userClassName": "org.TabFilialViewModel"
+    },
+    "designerId": "8cc28f76-9d9d-4d91-9942-0a1426305528"
+}

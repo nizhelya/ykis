@@ -1,0 +1,92 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "autoSync": null,
+        "designer|userAlias": "StPB",
+        "designer|userClassName": "StPB",
+        "groupDir": "DESC",
+        "groupField": "period",
+        "model": "MdPB",
+        "pageSize": null,
+        "storeId": "StPB"
+    },
+    "name": "StGerz1",
+    "designerId": "b2dede75-a9bc-43c8-874e-a159a4c232d1",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "read: 'QuerySprav.getResults',",
+                    "update: 'QuerySprav.updateRecords'",
+                    "}"
+                ],
+                "directFn": null,
+                "extraParams": [
+                    " {'what':'getPB'}"
+                ]
+            },
+            "name": "MyDirectProxy53",
+            "designerId": "457dd337-54bc-4248-91dc-489974bd4ecc",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader55",
+                    "designerId": "66455703-0b57-4aeb-ae1e-1dae5687fbc6"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter1",
+                    "designerId": "8e29930d-d887-4784-b144-274908264f69"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreUpdate",
+                "implHandler": [
+                    "record.data.what = \"getPB\";",
+                    ""
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "name": "onDirectstoreUpdate",
+            "designerId": "391ae0f7-5ee6-4a18-a08e-f0421cdb0fc5"
+        }
+    ]
+}

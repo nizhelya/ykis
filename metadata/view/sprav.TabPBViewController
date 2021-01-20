@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabpb",
+        "designer|userClassName": "sprav.TabPBViewController"
+    },
+    "name": "sprav.TabGerzViewController1",
+    "designerId": "6ab89f10-e4ef-49e4-95e9-40b033855b5b"
+}

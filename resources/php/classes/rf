@@ -1,0 +1,1 @@
+DELETE FROM `RF` WHERE `data` < "20200401"

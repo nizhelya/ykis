@@ -1,0 +1,53 @@
+Добрый день. Поясните пожалуйста по 
+"СПЕЦИФИКАЦИЯ ПРОТОКОЛА ОБМЕНА ДАННЫМИ О ЗАДОЛЖЕННОСТИ И ПРИНЯТЫХ ПЛАТЕЖАХ МЕЖДУ ПРЕДПРИЯТИЕМ И БАНКОМ В РЕЖИМЕ ON-LINE" ver2 
+
+предварительный поиск (Presearch)
+1.1.3 Пример запроса ПП по лицевому счету. 
+Человек зная свой лс вводит его ПП передает ПШ.
+ПШ находит его в базе и отвечает по протоколу
+1.2 Пример ответа на предварительный поиск 
+<Header name="fio"/>
+<Header name="ls"/>
+Человек увидев свои данные подтверждает их задействуя протокол 
+2. ОСНОВНОЙ ПОИСК ПОСЛЕ ПРЕДВАРИТЕЛЬНОГО
+2.1 Пример основного поиска после предварительного:
+ action="Search">
+xsi:type="Payer" presearchId="12102348"/>
+Вопрос? мне передается presearchId="12102348" что это? лицевой счет ,если нет то как я должен по нему искать плательщика.
+Кто его присваивает?. 
+# xmlOut
+'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+									<Transfer xmlns="http://debt.privatbank.ua/Transfer" interface="Debt" action="Search">
+									<Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DebtPack" 
+									billPeriod=202004 actualBills =2020-04-13>
+									<Message>
+									Данные о задолженности можно получить в личном кабинете на сайте https://is.yuzhny.com/is 
+									</Message>
+									<PayerInfo billIdentifier=1333>
+									<Fio>Колесник Т.А.</Fio>
+									<Phone> 063-182-78-26,0639515788</Phone>
+									<Address>Миру 26/17</Address>
+									</PayerInfo>
+									<ServiceGroup>
+									<DebtService metersGlobalTarif=8.500 serviceCode="401" >
+									<CompanyInfo mfo=328704 okpo=40970860 account= UAUA3932870400000260030543190 >
+									<CompanyCode>40970860</CompanyCode>
+									<CompanyName>ОСББ «МИРНИЙ».-26»</CompanyName>
+									</CompanyInfo>
+									<DebtInfo amountToPay=1177.02 debt=1177.02>
+									<Year>2020</Year>
+									<Month>4</Month>
+									<ActualBills>2020-04-13</ActualBills>
+									<Charge>0.00</Charge>
+									<Recalc>0.00</Recalc>
+									<Subsidies>0.00</Subsidies>
+									<Remission>0.00</Remission>
+									<LastPaying>0.00</LastPaying>
+									</DebtInfo>
+									<ServiceName>Внески на утримання будинку та прибудинкової території</ServiceName>
+									<Destination>Оплата за услугу "Внески на утримання будинку та прибудинкової території"</Destination>
+									<PayerInfo billIdentifier=1333 ls=1333>
+									<Fio>Колесник Т.А.</Fio>
+									<Phone> 063-182-78-26,0639515788</Phone>
+									</PayerInfo>
+									</DebtService>'

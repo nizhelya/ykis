@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabcatsobstv",
+        "designer|userClassName": "sprav.TabCatSobstvViewModel"
+    },
+    "designerId": "bb15fb83-90ac-49be-942c-01df424bd5ad"
+}

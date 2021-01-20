@@ -1,0 +1,47 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StApp",
+        "groupField": "house",
+        "model": "MdAppartment",
+        "storeId": "StApp"
+    },
+    "name": "StAppartment1",
+    "designerId": "1147ea48-4ba0-4608-9152-5b6d9a285901",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": null,
+                "directFn": "QueryAddress.getResults"
+            },
+            "name": "MyDirectProxy75",
+            "designerId": "21c8daac-ed9a-422e-8d0e-cf7b5905463b",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader77",
+                    "designerId": "b136f5a4-6d59-4f08-9b8d-c50a51c175b0"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+    "type": "xmltreestore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defaultRootId": null,
+        "defaultRootProperty": null,
+        "defaultRootText": null,
+        "designer|userAlias": "stPBankXml",
+        "designer|userClassName": "stPBankXml",
+        "model": "MdPBankXml",
+        "storeId": "stPBankXml"
+    },
+    "name": "MyXmlTreeStore",
+    "designerId": "79beb3f9-b9df-450e-af86-2c2e9b346440",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "read: 'QueryPBXml.getResults'",
+                    "",
+                    "}"
+                ],
+                "extraParams": [
+                    "{what:\"xmlData\"}"
+                ],
+                "filterParam": null,
+                "url": "/pb/pb.php"
+            },
+            "name": "MyRestProxy",
+            "designerId": "a7922485-af50-4e1b-b024-d3ac90e7d16a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Xml",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "record": "Data",
+                        "rootProperty": "Transfer"
+                    },
+                    "name": "MyXmlReader",
+                    "designerId": "9e55f5fd-1114-46f7-ab74-f77765cb519b"
+                }
+            ]
+        }
+    ]
+}

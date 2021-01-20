@@ -1,0 +1,91 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "autoSync": null,
+        "designer|userClassName": "StIPAY",
+        "groupDir": "DESC",
+        "groupField": "period",
+        "model": "MdPB",
+        "pageSize": null,
+        "storeId": "StIPAY"
+    },
+    "name": "StPB1",
+    "designerId": "fc015035-fdf0-4a9c-994b-ad43154093f4",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "read: 'QuerySprav.getResults',",
+                    "update: 'QuerySprav.updateRecords'",
+                    "}"
+                ],
+                "directFn": null,
+                "extraParams": [
+                    " {'what':'getIPAY'}"
+                ]
+            },
+            "name": "MyDirectProxy53",
+            "designerId": "678110a4-da40-43bb-b83d-909246e4164d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader55",
+                    "designerId": "547cb2af-e84e-4915-b611-a530c00ff8a4"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter1",
+                    "designerId": "1ffb65e3-cf75-4d50-94cd-31744e3ef4f4"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreUpdate",
+                "implHandler": [
+                    "record.data.what = \"getIPAY\";",
+                    ""
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "name": "onDirectstoreUpdate",
+            "designerId": "0b20ddaf-e9c6-408f-882c-5400a48bf58f"
+        }
+    ]
+}

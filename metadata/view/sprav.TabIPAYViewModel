@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabipay",
+        "designer|userClassName": "sprav.TabIPAYViewModel"
+    },
+    "name": "sprav.TabPBViewModel1",
+    "designerId": "a03a65e3-a1e8-44fb-9b75-95882b4b74ce"
+}

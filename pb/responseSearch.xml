@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Transfer xmlns="http://debt.privatbank.ua/Transfer" interface="Debt" action="Search">
+<Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DebtPack"\	billPeriod="202004" actualBills ="2020-04-14">
+<Message>Данные о задолженности можно получить в личном кабинете на сайте https://is.yuzhny.com/is</Message>
+<PayerInfo billIdentifier="1333">
+<Fio>Колесник Т.А.</Fio>
+<Phone> 063-182-78-26,0639515788</Phone>
+<Address>Миру 26/17</Address>
+</PayerInfo><ServiceGroup>
+<DebtService metersGlobalTarif="8.500" serviceCode="401" >
+<CompanyInfo mfo="328704" okpo="40970860" account=" UAUA3932870400000260030543190" >
+<CompanyCode>40970860</CompanyCode>
+<CompanyName>ОСББ «МИРНИЙ».-26»</CompanyName>
+</CompanyInfo>
+<DebtInfo amountToPay="825.79" debt="1177.02">
+<Year>2020</Year>
+<Month>4</Month>
+<ActualBills>2020-04-14</ActualBills>
+<Charge>544.77</Charge>
+<Recalc>0.00</Recalc>
+<Subsidies>0.00</Subsidies>
+<Remission>0.00</Remission>
+<LastPaying>896.00</LastPaying>
+</DebtInfo>
+<ServiceName>Внески на утримання будинку та прибудинкової території</ServiceName>
+<Destination>Оплата за послугу "Внески на утримання будинку та прибудинкової території"</Destination>
+</DebtService>
+</ServiceGroup><ServiceGroup>
+<DebtService metersGlobalTarif="1394.900" serviceCode="101" >
+<CompanyInfo mfo="328704" okpo="26134519" account="UA363287040000026007054340182">
+<CompanyCode>26134519</CompanyCode>
+<CompanyName>КП ТМ "ЮЖТЕПЛОКОМУНЕНЕРГО"</CompanyName>
+</CompanyInfo>
+<DebtInfo amountToPay="1058.83" debt="1558.83">
+<Year>2020</Year>
+<Month>4</Month>
+<ActualBills>2020-04-14</ActualBills>
+<Charge>0.00</Charge>
+<Recalc>0.00</Recalc>
+<Subsidies>0.00</Subsidies>
+<Remission>0.00</Remission>
+<LastPaying>500.00</LastPaying>
+</DebtInfo>
+<ServiceName>Опалення</ServiceName>
+<Destination>Оплата за послугу "Опалення"</Destination>
+</DebtService>
+<DebtService metersGlobalTarif="3.6087" serviceCode="102" >
+<DebtInfo amountToPay="5438.06" debt="5216.88">
+<Year>2020</Year>
+<Month>4</Month>
+<ActualBills>2020-04-14</ActualBills>
+<Charge>221.18</Charge>
+<Recalc>0.00</Recalc>
+<Subsidies>0.00</Subsidies>
+<Remission>0.00</Remission>
+<LastPaying>0.00</LastPaying>
+</DebtInfo>
+<ServiceName>ПТН</ServiceName>
+<Destination>Оплата за послугу "ПТН"</Destination>
+</DebtService>
+<DebtService  serviceCode="104" >
+<DebtInfo amountToPay="0.00" debt="0.00">
+<Year>2020</Year>
+<Month>4</Month>
+<ActualBills>2020-04-14</ActualBills>
+</DebtInfo>
+<ServiceName>Подогрів</ServiceName>
+<Destination>Оплата за послугу "Подогрів"</Destination>
+</DebtService>
+</ServiceGroup><ServiceGroup>
+<DebtService metersGlobalTarif="17.148" serviceCode="201" >
+<CompanyInfo mfo="328704" okpo="31783053" account="UA563287040000026006054340826">
+<CompanyCode>31783053</CompanyCode>
+<CompanyName>КП "Южводоканал"</CompanyName>
+</CompanyInfo>
+<DebtInfo amountToPay="-0.13" debt="-0.13">
+<Year>2020</Year>
+<Month>4</Month>
+<ActualBills>2020-04-14</ActualBills>
+<Charge>0.00</Charge>
+<Recalc>0.00</Recalc>
+<Subsidies>0.00</Subsidies>
+<Remission>0.00</Remission>
+<LastPaying>0.00</LastPaying>
+</DebtInfo>
+<ServiceName>Водопостачання </ServiceName>
+<Destination>Оплата за послугу "Водопостачання "</Destination>
+</DebtService>
+<DebtService metersGlobalTarif="10.104" serviceCode="202" >
+<DebtInfo amountToPay="-0.07" debt="-0.07">
+<Year>2020</Year>
+<Month>4</Month>
+<ActualBills>2020-04-14</ActualBills>
+<Charge>0.00</Charge>
+<Recalc>0.00</Recalc>
+<Subsidies>0.00</Subsidies>
+<Remission>0.00</Remission>
+<LastPaying>0.00</LastPaying>
+</DebtInfo>
+<ServiceName>Водовідведення </ServiceName>
+<Destination>Оплата за послугу "Водовідведення "</Destination>
+</DebtService>
+</ServiceGroup><ServiceGroup>
+<DebtService metersGlobalTarif="17.450" serviceCode="301" >
+<CompanyInfo mfo="328704" okpo="30750184" account="UA583281680000000026004219661">
+<CompanyCode>30750184</CompanyCode>
+<CompanyName>КП «ЮЖТРАНС» </CompanyName>
+</CompanyInfo>
+<DebtInfo amountToPay="52.84" debt="104.49">
+<Year>2020</Year>
+<Month>4</Month>
+<ActualBills>2020-04-14</ActualBills>
+<Charge>0.00</Charge>
+<Recalc>0.00</Recalc>
+<Subsidies>0.00</Subsidies>
+<Remission>0.00</Remission>
+<LastPaying>104.00</LastPaying>
+</DebtInfo>
+<ServiceName>Вивіз ТПВ </ServiceName>
+<Destination>Оплата за послугу "Вивіз ТПВ "</Destination>
+</DebtService></ServiceGroup></Data>
+</Transfer>

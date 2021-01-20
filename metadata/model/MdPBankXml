@@ -1,0 +1,55 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MdPBankXml"
+    },
+    "name": "MdRaion1",
+    "designerId": "a56a4fee-7afe-4d45-a68b-5383e3ab4ef0",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "sortType": null
+            },
+            "name": "MyInteger122",
+            "designerId": "7b335cb6-ed60-4ba7-92f1-480b659840b0"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "name": "MyString144",
+            "designerId": "50d856aa-2f1d-47f6-9da3-7a84ab1beb80"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "email"
+            },
+            "name": "MyString59",
+            "designerId": "771da4d8-af24-43d2-84c8-4ece3d50b15e"
+        }
+    ]
+}

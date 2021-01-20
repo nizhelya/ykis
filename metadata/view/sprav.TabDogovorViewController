@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabdogovor",
+        "designer|userClassName": "sprav.TabDogovorViewController"
+    },
+    "designerId": "acf39c3b-6b15-4ce7-8180-d6c5c1dbaa3c"
+}

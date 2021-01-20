@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabdvodomer",
+        "designer|userClassName": "sprav.TabDvodomerViewController"
+    },
+    "designerId": "2e0c45e1-ecb1-479e-a548-65442c706b7e"
+}

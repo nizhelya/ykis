@@ -1,0 +1,560 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "tabtemp",
+        "designer|userClassName": "sprav.TabTemp",
+        "height": null,
+        "id": "tabTemp",
+        "itemId": null,
+        "title": "Температура",
+        "width": null
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "bb5ff35a-1117-49da-babd-5eb47a3602fb",
+    "viewControllerInstanceId": "514e0431-25dc-48cc-a4b5-cc5570ed574d",
+    "viewModelInstanceId": "773006dc-1c7d-47b8-8dd8-59672f9b7571",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapseDirection": "top",
+                "collapsible": null,
+                "forceFit": null,
+                "height": null,
+                "id": "grTemp",
+                "itemId": null,
+                "maxWidth": null,
+                "minHeight": null,
+                "store": "StTemp",
+                "title": "Средняя расчетная температура нарухного воздуха за период",
+                "width": null
+            },
+            "name": "MyGridPanel57",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "fcaa35f1-189c-4407-b993-e34e4103a121",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView57",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "5e8d47c0-4d41-4028-afdb-047c3b07863d"
+                },
+                {
+                    "type": "Ext.panel.Tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Добавить запись",
+                        "id": "btnGrTempAdd",
+                        "itemId": null,
+                        "tooltip": "Добавить запись",
+                        "tooltipType": "title",
+                        "type": "plus"
+                    },
+                    "name": "MyTool32",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "8a545688-e7ad-4777-bed2-cece27448434",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnGrTempAddClick",
+                                "implHandler": [
+                                    "var me = this;",
+                                    "var grid = tool.findParentByType('grid');",
+                                    "var gr = grid.getView().getFeature('groupTemp');",
+                                    "//console.log(gr);",
+                                    "var store = grid.store;",
+                                    "//store.proxy.setExtraParam('what', 'insTemperature');",
+                                    "var sm = grid.getSelectionModel();",
+                                    "var plugin = grid.getPlugin('rowEditTemperature');",
+                                    "var dt = new Date();",
+                                    "plugin.cancelEdit();",
+                                    "gr.disable();",
+                                    "",
+                                    "var what = \"insTemperature\";",
+                                    "var dataNew = Ext.Date.format(dt, 'Ymd');",
+                                    "var god = Ext.Date.format(dt, 'Y');",
+                                    "var newRecord = store.model.create();",
+                                    "",
+                                    "var mec =  Ext.Date.format(dt, 'n');",
+                                    "var otopl = 0;",
+                                    "var qty_day = 0;",
+                                    "",
+                                    "if(mec > 5 && mec < 10){",
+                                    "    otopl = 0;",
+                                    "    qty_day = 0;",
+                                    "} else {",
+                                    "    otopl = 1;",
+                                    "    qty_day = Ext.Date.format(dt, 't');",
+                                    "}",
+                                    "newRecord = {god:god,data:dataNew,temp:0,otoplenie:otopl,day_ot:qty_day,day_gv:qty_day,what:what};",
+                                    "store.insert(0, newRecord);",
+                                    "plugin.startEdit(0,0);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onBtnGrTempAddClick",
+                            "designerId": "0590bdc5-d925-49a4-9994-39d498759fed"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Удалить запись",
+                        "id": "btnGrTempRemove",
+                        "itemId": null,
+                        "tooltip": "Удалить запись",
+                        "type": "minus"
+                    },
+                    "name": "MyTool33",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "7c7dc742-b121-49d8-85c9-ab95e060ab50",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnGrTempRemoveClick",
+                                "implHandler": [
+                                    "var grid = tool.findParentByType('grid');",
+                                    "var plugin = grid.getPlugin('rowEditTemperature');",
+                                    "plugin.cancelEdit();",
+                                    "var store = grid.store;",
+                                    "store.proxy.setExtraParam('what', 'getTemperature');",
+                                    "var selected = grid.getSelectionModel().getSelection();",
+                                    "",
+                                    "Ext.MessageBox.show({",
+                                    "    title: 'Внимание!',",
+                                    "    msg: 'Вы удаляете данные ! Подтвердите свои действия!',",
+                                    "    buttons: Ext.MessageBox.OKCANCEL,",
+                                    "    icon: Ext.MessageBox.WARNING,",
+                                    "",
+                                    "    buttonText:{",
+                                    "        ok: \"Удалить!\",",
+                                    "        cancel: \"Отмена\"",
+                                    "    },",
+                                    "    fn:function(btn){",
+                                    "        if(btn=='ok'){",
+                                    "            store.remove(selected);",
+                                    "",
+                                    "            store.sync({",
+                                    "                success: function(){",
+                                    "                    Ext.MessageBox.show({title: 'Удаление записи',",
+                                    "                        msg:'Запись удалена',",
+                                    "                        buttons: Ext.MessageBox.OK,",
+                                    "                        icon: Ext.MessageBox.INFO",
+                                    "                    });",
+                                    "                },",
+                                    "                failure: function(){",
+                                    "",
+                                    "",
+                                    "",
+                                    "                },",
+                                    "                scope: this",
+                                    "            });",
+                                    "        }",
+                                    "    }",
+                                    "",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onBtnGrTempRemoveClick",
+                            "designerId": "5f3e7bd3-4799-4e1f-bb7c-dd8b9dacff3e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "userConfig": {
+                        "pluginId": "rowEditTemperature"
+                    },
+                    "name": "MyRowEditingPlugin7",
+                    "designerId": "51ac488b-6e84-4405-955a-1fa18a6be6d0",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowEditingEdit",
+                                "implHandler": [
+                                    "",
+                                    "var grid = editor.grid;",
+                                    "var gr = grid.getView().getFeature('groupTemp');",
+                                    "var store = grid.getStore();",
+                                    "//store.proxy.setExtraParam('what', 'getTemperature');",
+                                    "",
+                                    "var sm = store.getUpdatedRecords();",
+                                    "var data = grid.getSelectionModel();",
+                                    "",
+                                    "if(sm.length) {",
+                                    "    store.sync({",
+                                    "        success: function(){",
+                                    "",
+                                    "            store.load();",
+                                    "",
+                                    "        }",
+                                    "    });",
+                                    "",
+                                    "} else {",
+                                    "    store.sync({",
+                                    "        success: function(){",
+                                    "            Ext.MessageBox.show({",
+                                    "                title: 'Добавление записи',",
+                                    "                msg: 'Запись добавлена',",
+                                    "                buttons: Ext.MessageBox.OK,",
+                                    "                icon: Ext.MessageBox.INFO",
+                                    "            });",
+                                    "",
+                                    "           store.load();",
+                                    "            gr.enable();",
+                                    "        }",
+                                    "    });",
+                                    "",
+                                    "}",
+                                    ""
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "name": "onRowEditingEdit",
+                            "designerId": "b3447fb5-3030-4ee0-a111-e9650dfcf498"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "god",
+                        "format": "Y",
+                        "menuDisabled": true,
+                        "text": "Год"
+                    },
+                    "name": "MyDateColumn47",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "713f10f9-9bb3-433d-a566-1de0695f922f"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "data",
+                        "format": "F,Y",
+                        "maxWidth": null,
+                        "menuDisabled": true,
+                        "text": "Период",
+                        "width": 120
+                    },
+                    "name": "MyDateColumn48",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "78353d4a-1b89-4796-9901-8581d2814d00",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "format": "d-m-Y",
+                                "submitFormat": "Ymd"
+                            },
+                            "name": "MyDateField67",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "8e18ac39-f58d-4e6d-8cc7-0f9dc377d54e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "temp",
+                        "format": "0.00",
+                        "maxWidth": null,
+                        "menuDisabled": true,
+                        "summaryType": "average",
+                        "text": "Температура",
+                        "width": 120
+                    },
+                    "name": "MyNumberColumn340",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "79df808d-5a84-48e1-99b7-65f8faa27d0f",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "step": 0.1
+                            },
+                            "name": "MyNumberField224",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "a69ea3a6-0de8-4db3-8d36-b3f487a9dc0c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "otoplenie",
+                        "falseText": "отключено",
+                        "menuDisabled": true,
+                        "text": "Отопление",
+                        "trueText": "Включено"
+                    },
+                    "name": "MyBooleanColumn",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "f5471554-1b19-4e5c-8a73-7d31dc936870",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "boxLabel": "Вкл",
+                                "inputValue": "1"
+                            },
+                            "name": "MyCheckbox81",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "e614e890-6886-46b0-a837-50be8152abdd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "day_ot",
+                        "format": "0",
+                        "menuDisabled": true,
+                        "text": "Дней с отопл",
+                        "width": 130
+                    },
+                    "name": "MyNumberColumn341",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "d01cdb68-9625-4181-b634-6e0fbab5fc22",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField225",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3207a11b-6a6b-4d52-af40-231ce3d87cb6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "day_gv",
+                        "format": "0",
+                        "menuDisabled": true,
+                        "text": "Дней с Гв "
+                    },
+                    "name": "MyNumberColumn342",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "ced41a3c-41ce-4183-bc36-02c130f607d5",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField226",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "8f0e6c65-415f-4a6e-bae4-3caeaa24c1c1"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGrTempSelectionChange",
+                        "implHandler": [
+                            "var btn  = this.down('#btnGrTempRemove');",
+                            "btn.setDisabled(false);"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "name": "onGrTempSelectionChange",
+                    "designerId": "3c783d2a-ea8d-4832-b266-1bbeac701849"
+                },
+                {
+                    "type": "Ext.grid.feature.Grouping",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "groupTemp"
+                    },
+                    "name": "MyGroupingFeature",
+                    "designerId": "ea0b9daa-1a50-49e8-837a-1caf23d730cc",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "id",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTabTempActivate",
+                "implHandler": [
+                    "/*",
+                    "//console.log('---');",
+                    "",
+                    "var login = Ext.data.StoreManager.get(\"StUser\").getAt(0).get('login');",
+                    "var password = Ext.data.StoreManager.get(\"StUser\").getAt(0).get('password');",
+                    "",
+                    "var StTemp = Ext.data.StoreManager.get(\"StTemp\");",
+                    "",
+                    "StTemp.proxy.setExtraParam('what_id', '');",
+                    "StTemp.proxy.setExtraParam('login', login);",
+                    "StTemp.proxy.setExtraParam('password', password);",
+                    "StTemp.load();",
+                    "*/"
+                ],
+                "name": "activate",
+                "scope": "me"
+            },
+            "name": "onTabTempActivate",
+            "designerId": "fde8e036-ee54-41dc-ab45-b21d48e35745"
+        }
+    ]
+}

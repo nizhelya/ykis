@@ -1,0 +1,1652 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyBorder": false,
+        "closable": true,
+        "designer|userAlias": "tabenergoaudit",
+        "designer|userClassName": "sprav.TabEnergoAudit",
+        "id": "tabEnergoAudit",
+        "layout": "fit",
+        "scrollable": true,
+        "title": "Єнергоаудіт",
+        "width": null
+    },
+    "name": "sprav.TabOsmdHouses1",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "53cde0da-5f08-41c9-88d0-a050be713187",
+    "viewControllerInstanceId": "cd39f17d-c4a9-4d3c-9310-dc4003c3dda0",
+    "viewModelInstanceId": "336423e5-9be5-405e-b9f8-cba5a125d052",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "designer|snapToGrid": 5,
+                "height": 705,
+                "id": "fmEnergoAudit",
+                "layout": "absolute",
+                "scrollable": true,
+                "standardSubmit": true,
+                "style": null,
+                "title": "",
+                "width": null
+            },
+            "name": "MyForm35",
+            "configAlternates": {
+                "scrollable": "boolean",
+                "style": "string"
+            },
+            "designerId": "82ebff5b-0b6e-47a9-a421-310f629d2d23",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyBorder": true,
+                        "height": 710,
+                        "id": "grEnauditOut",
+                        "layout|x": 0,
+                        "layout|y": 5,
+                        "scrollable": true,
+                        "store": "StHouseEnOut",
+                        "title": "Список будинків без енергоаудіта",
+                        "width": 265
+                    },
+                    "name": "MyGridPanel47",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "b57dc40f-070d-47f9-99f1-f185f52c8105",
+                    "cn": [
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "frame": null,
+                                "height": 421
+                            },
+                            "name": "MyGridView47",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "c7c82e05-7c23-4394-bd8d-fe0e7dc93a8b"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "name": "MyToolbar2",
+                            "designerId": "7f76d1b9-07f0-4b06-af04-712d2943eb4f",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "displayField": "raion",
+                                        "editable": false,
+                                        "emptyText": "Выбор района",
+                                        "fieldLabel": "Район",
+                                        "forceSelection": null,
+                                        "id": "cbRaionEnaudit",
+                                        "itemId": null,
+                                        "labelWidth": 60,
+                                        "layout|flex": null,
+                                        "maxHeight": null,
+                                        "maxWidth": null,
+                                        "minHeight": null,
+                                        "minWidth": null,
+                                        "name": "raion_id",
+                                        "padding": "5 5 5 5",
+                                        "queryMode": "local",
+                                        "store": "StRaionOrg",
+                                        "typeAhead": null,
+                                        "valueField": "raion_id",
+                                        "width": 225
+                                    },
+                                    "name": "MyComboBox28",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "50517d02-83f2-4401-a353-a4e9df54aa6b",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onCbRaionEnaudit",
+                                                "implHandler": [
+                                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var values =stUser.getAt(0);",
+                                                    "var login = values.get('login');",
+                                                    "var password = values.get('password');",
+                                                    "var btnAddHousesEnaudit = Ext.getCmp('btnAddHousesEnaudit');",
+                                                    "var btnDelHousesEnaudit = Ext.getCmp('btnDelHousesEnaudit');",
+                                                    "var tnb = Ext.getCmp('tnb');",
+                                                    "var store =combo.getStore();",
+                                                    "var selected = record;",
+                                                    "var StHouseEnIn = Ext.data.StoreManager.get(\"StHouseEnIn\");",
+                                                    "var StHouseEnOut = Ext.data.StoreManager.get(\"StHouseEnOut\");",
+                                                    "var StOrgByDteplomer = Ext.data.StoreManager.get(\"StOrgByDteplomer\");",
+                                                    "var StAddressDt = Ext.data.StoreManager.get(\"StAddressDt\");",
+                                                    "switch (values.get('role')){",
+                                                    "    case \"2\":",
+                                                    "    case \"7\":",
+                                                    "        if (selected ) {",
+                                                    "            btnAddHousesEnaudit.setDisabled(false);",
+                                                    "            btnDelHousesEnaudit.setDisabled(false);",
+                                                    "            tnb.setValue(0);",
+                                                    "            StHouseEnIn.removeAll();",
+                                                    "            StHouseEnOut.removeAll();",
+                                                    "            StOrgByDteplomer.removeAll();",
+                                                    "            StAddressDt.removeAll();",
+                                                    "            StHouseEnIn.load({",
+                                                    "                params: {",
+                                                    "                    what:'enaudit_in',",
+                                                    "                    login:login,",
+                                                    "                    raion_id:selected.get(\"raion_id\"),",
+                                                    "                    password:password",
+                                                    "                },",
+                                                    "                scope:this",
+                                                    "            });",
+                                                    "            StHouseEnOut.load({",
+                                                    "                params: {",
+                                                    "                    what:'enaudit_out',",
+                                                    "                    login:login,",
+                                                    "                    raion_id:selected.get(\"raion_id\"),",
+                                                    "                    password:password",
+                                                    "                },",
+                                                    "                scope:this",
+                                                    "            });",
+                                                    "        }",
+                                                    "        break;",
+                                                    "    default:",
+                                                    "        Ext.MessageBox.show({",
+                                                    "            title: 'Ошибка ',",
+                                                    "            msg: 'У Вас нет прав загружать базу енергоаудита',",
+                                                    "            buttons: Ext.MessageBox.OK,",
+                                                    "            icon: Ext.MessageBox.ERROR",
+                                                    "        });",
+                                                    "}"
+                                                ],
+                                                "name": "select",
+                                                "scope": "me"
+                                            },
+                                            "name": "onCbRaionEnaudit",
+                                            "designerId": "0dbcf885-72a3-4a50-ad0b-57f21890e669"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "frame": null
+                            },
+                            "name": "MyToolbar1",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "382ade31-7427-4e85-9c4f-a8c397ed179f",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "arrowAlign": null,
+                                        "disabled": true,
+                                        "formBind": null,
+                                        "icon": "resources/css/images/ico/yes.png",
+                                        "iconAlign": null,
+                                        "id": "btnAddHousesEnaudit",
+                                        "layout|flex": null,
+                                        "text": "Додати в список",
+                                        "width": 155
+                                    },
+                                    "name": "MyButton99",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "8a0d30df-e00f-4427-a4fc-562272934f93",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var me = this;",
+                                                    "var StUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var values =StUser.getAt(0);",
+                                                    "",
+                                                    "var StHouseEnOut = Ext.data.StoreManager.get(\"StHouseEnOut\");",
+                                                    "var StHouseEnIn = Ext.data.StoreManager.get(\"StHouseEnIn\");",
+                                                    "var raion_id =  Ext.getCmp('cbRaionEnaudit').getValue();",
+                                                    "",
+                                                    "//V",
+                                                    "var grid = Ext.getCmp('grEnauditOut');",
+                                                    "var gridRowSelectedRecords  = grid.getView().getSelectionModel().getSelection();",
+                                                    "var size = Ext.Object.getSize(gridRowSelectedRecords) ;",
+                                                    "var houses =[];",
+                                                    "if (size >= 1){",
+                                                    "",
+                                                    "    Ext.Object.each(gridRowSelectedRecords, function(key, val, myself) {",
+                                                    "        Ext.Object.merge(val.data, houses);",
+                                                    "        houses.push(val.data.house_id);",
+                                                    "    });",
+                                                    "",
+                                                    "}",
+                                                    "",
+                                                    "if (size) {",
+                                                    "",
+                                                    "",
+                                                    "    var value = {",
+                                                    "        login:values.get('login'),",
+                                                    "        password:values.get('password'),",
+                                                    "        what:'EnauditAddHouses',",
+                                                    "        qty:size,",
+                                                    "        houses: houses",
+                                                    "    };",
+                                                    "",
+                                                    "    QueryReport.getResults(value,function(data){",
+                                                    "        if (data){",
+                                                    "",
+                                                    "            StHouseEnIn.load({",
+                                                    "                params: {",
+                                                    "                    what:'enaudit_in',",
+                                                    "                    login:values.get('login'),",
+                                                    "                    raion_id:raion_id,",
+                                                    "                    password:values.get('password')",
+                                                    "                },",
+                                                    "                scope:this",
+                                                    "            });",
+                                                    "            StHouseEnOut.load({",
+                                                    "                params: {",
+                                                    "                    what:'enaudit_out',",
+                                                    "                    login:values.get('login'),",
+                                                    "                    password:values.get('password'),",
+                                                    "                    raion_id:raion_id",
+                                                    "",
+                                                    "                },",
+                                                    "                scope:this",
+                                                    "            });",
+                                                    "            Ext.MessageBox.show({",
+                                                    "                title: 'Енергоаудит добавление.. ',",
+                                                    "                msg: data.msg,",
+                                                    "                buttons: Ext.MessageBox.OK,",
+                                                    "                icon: Ext.MessageBox.INFO",
+                                                    "            });",
+                                                    "        } else {",
+                                                    "            Ext.MessageBox.show({",
+                                                    "                title: 'Енергоаудит добавление..',",
+                                                    "                msg: data.msg,",
+                                                    "                buttons: Ext.MessageBox.OK,",
+                                                    "                icon: Ext.MessageBox.ERROR",
+                                                    "            });",
+                                                    "        }",
+                                                    "",
+                                                    "",
+                                                    "    });",
+                                                    "",
+                                                    "",
+                                                    "}",
+                                                    "button.setDisabled(false);",
+                                                    ""
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "87c1d22c-f0bf-435d-ad12-a117c00436ed"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.CheckboxModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.CheckboxModel",
+                            "userConfig": {
+                                "mode": "SIMPLE",
+                                "showHeaderCheckbox": true
+                            },
+                            "name": "MyCheckboxSelectionModel2",
+                            "designerId": "4736bfb3-b113-4846-a067-d0764802ed67"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "house_id",
+                                "format": "0",
+                                "menuDisabled": true,
+                                "text": "ид",
+                                "width": 50
+                            },
+                            "name": "MyNumberColumn388",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "da528479-f6eb-48b0-ae65-4fa934af3ca9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "house",
+                                "menuDisabled": true,
+                                "text": "Дом",
+                                "width": 156
+                            },
+                            "name": "MyColumn120",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "05cd7480-8639-40d2-8f87-19863a24ca07"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGrEnauditOutSelect",
+                                "implHandler": [
+                                    "var btnAddHousesEnaudit = Ext.getCmp('btnAddHousesEnaudit');",
+                                    "var btnDelHousesEnaudit = Ext.getCmp('btnDelHousesEnaudit');",
+                                    "btnAddHousesEnaudit.setDisabled(false);",
+                                    "btnDelHousesEnaudit.setDisabled(true);",
+                                    ""
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onGrEnauditOutSelect",
+                            "designerId": "0c540aa7-5956-45f8-bc9d-0ef15d21fac0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyBorder": true,
+                        "height": 500,
+                        "id": "grEnauditKv",
+                        "layout|x": 775,
+                        "layout|y": 5,
+                        "scrollable": true,
+                        "store": "StAddressDt",
+                        "title": "Список квартир",
+                        "width": 335
+                    },
+                    "name": "MyGridPanel",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "c9e53ede-b0ad-41bc-8cfe-cf0227bd4dae",
+                    "cn": [
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "frame": null,
+                                "height": 500
+                            },
+                            "name": "MyGridView47",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "14f18088-aac1-4634-b3f7-405f20a830de"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "enaudit_id",
+                                "format": "0",
+                                "hidden": true,
+                                "menuDisabled": true,
+                                "text": "en_id",
+                                "width": 41
+                            },
+                            "name": "MyNumberColumn26",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "b45a8687-2b70-42fc-87ab-6f053cb691ff"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "otoplenie",
+                                "menuDisabled": true,
+                                "text": "вкл",
+                                "width": 36
+                            },
+                            "name": "MyColumn21",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "f0ebc639-eaa3-4791-93e2-f0390f12531c",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "switch (value) {",
+                                            "    case \"да\":",
+                                            "        metaData='<span><img clas=\"icon\" src=\"resources/css/images/ico/yes.png\"/></span>';",
+                                            "        break;",
+                                            "    case \"нет\":",
+                                            "        metaData='<span><img clas=\"icon\" src=\"resources/css/images/ico/no.png\"/></span>';",
+                                            "        break;",
+                                            "}",
+                                            "return metaData;",
+                                            ""
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "a332aa1f-5684-40c9-ab59-2596cfdc337d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "address",
+                                "menuDisabled": true,
+                                "text": "Адрес",
+                                "width": 148
+                            },
+                            "name": "MyColumn120",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "cd44613d-85e5-47bf-b618-6426496a207d"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "area_otopl",
+                                "format": "0.00",
+                                "menuDisabled": true,
+                                "summaryType": "sum",
+                                "text": "S_(м&sup2;)",
+                                "width": 64
+                            },
+                            "name": "MyNumberColumn1",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "9d0729e2-9a51-412f-8943-1a880e49b067"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "area_otopl",
+                                "format": "0.00",
+                                "menuDisabled": true,
+                                "summaryType": "sum",
+                                "text": "S_(контр)",
+                                "width": 64
+                            },
+                            "name": "MyNumberColumn9",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "ef978e06-3c82-428f-b119-4a11970fba89"
+                        },
+                        {
+                            "type": "Ext.grid.feature.Summary",
+                            "reference": {
+                                "name": "features",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "name": "MySummaryFeature7",
+                            "designerId": "3340e531-19a2-4136-862a-f7968297aef7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyBorder": true,
+                        "height": 500,
+                        "id": "grEnauditIn",
+                        "layout|x": 270,
+                        "layout|y": 5,
+                        "scrollable": true,
+                        "store": "StHouseEnIn",
+                        "title": "Список будинків які провели енергоаудит",
+                        "width": 500
+                    },
+                    "name": "MyGridPanel49",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "65d41334-5efc-42eb-ae6d-51c47def2a66",
+                    "cn": [
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "frame": null,
+                                "height": 626
+                            },
+                            "name": "MyGridView47",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "581a2f13-b973-49de-944f-d4176d2d910f",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "record",
+                                            "rowIndex",
+                                            "rowParams",
+                                            "store"
+                                        ],
+                                        "fn": "getRowClass",
+                                        "implHandler": [
+                                            "",
+                                            "if(record.get('check') === 1 ){",
+                                            "",
+                                            "    return  'change_color_red';",
+                                            "}",
+                                            ""
+                                        ]
+                                    },
+                                    "name": "getRowClass",
+                                    "designerId": "b9cf8821-0880-4e96-bd93-1de90325fcc4"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "frame": null
+                            },
+                            "name": "MyToolbar1",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "1592bf96-2f03-470f-9dc2-f00f647947e9",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "arrowAlign": null,
+                                        "disabled": true,
+                                        "formBind": null,
+                                        "icon": "resources/css/images/ico/no.png",
+                                        "iconAlign": null,
+                                        "id": "btnDelHousesEnaudit",
+                                        "layout|flex": null,
+                                        "text": "Видалити зі списку ",
+                                        "width": 140
+                                    },
+                                    "name": "MyButton99",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "06d351c0-44eb-4ebd-ba65-6f2fafad5775",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var me = this;",
+                                                    "var StUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var values =StUser.getAt(0);",
+                                                    "var StOrgByDteplomer = Ext.data.StoreManager.get(\"StOrgByDteplomer\");",
+                                                    "var StAddressDt = Ext.data.StoreManager.get(\"StAddressDt\");",
+                                                    "var raion_id =  Ext.getCmp('cbRaionEnaudit').getValue();",
+                                                    "",
+                                                    "var StHouseEnOut = Ext.data.StoreManager.get(\"StHouseEnOut\");",
+                                                    "var StHouseEnIn = Ext.data.StoreManager.get(\"StHouseEnIn\");",
+                                                    "",
+                                                    "//V",
+                                                    "var grid = Ext.getCmp('grEnauditIn');",
+                                                    "var gridRowSelectedRecords  = grid.getView().getSelectionModel().getSelection();",
+                                                    "var size = Ext.Object.getSize(gridRowSelectedRecords) ;",
+                                                    "var houses =[];",
+                                                    "if (size >= 1){",
+                                                    "",
+                                                    "    Ext.Object.each(gridRowSelectedRecords, function(key, val, myself) {",
+                                                    "        Ext.Object.merge(val.data, houses);",
+                                                    "        houses.push(val.data.house_id);",
+                                                    "    });",
+                                                    "",
+                                                    "}",
+                                                    "",
+                                                    "if (size) {",
+                                                    "",
+                                                    "StOrgByDteplomer.removeAll();",
+                                                    "StAddressDt.removeAll();",
+                                                    "",
+                                                    "    var value = {",
+                                                    "        login:values.get('login'),",
+                                                    "        password:values.get('password'),",
+                                                    "        what:'EnauditDelHouses',",
+                                                    "        houses: houses",
+                                                    "    };",
+                                                    "",
+                                                    "QueryReport.getResults(value,function(data){",
+                                                    "        if (data){",
+                                                    "",
+                                                    "            StHouseEnIn.load({",
+                                                    "                params: {",
+                                                    "                    what:'enaudit_in',",
+                                                    "                    login:values.get('login'),",
+                                                    "                    password:values.get('password'),",
+                                                    "                    raion_id:raion_id",
+                                                    "",
+                                                    "                },",
+                                                    "                scope:this",
+                                                    "            });",
+                                                    "            StHouseEnOut.load({",
+                                                    "                params: {",
+                                                    "                    what:'enaudit_out',",
+                                                    "                    login:values.get('login'),",
+                                                    "                    password:values.get('password'),",
+                                                    "                    raion_id:raion_id",
+                                                    "",
+                                                    "                },",
+                                                    "                scope:this",
+                                                    "            });",
+                                                    "            Ext.MessageBox.show({",
+                                                    "                title: 'Енергоаудит добавление.. ',",
+                                                    "                msg: data.msg,",
+                                                    "                buttons: Ext.MessageBox.OK,",
+                                                    "                icon: Ext.MessageBox.INFO",
+                                                    "            });",
+                                                    "        } else {",
+                                                    "            Ext.MessageBox.show({",
+                                                    "                title: 'Енергоаудит добавление..',",
+                                                    "                msg: data.msg,",
+                                                    "                buttons: Ext.MessageBox.OK,",
+                                                    "                icon: Ext.MessageBox.ERROR",
+                                                    "            });",
+                                                    "        }",
+                                                    "",
+                                                    "",
+                                                    "    });",
+                                                    "",
+                                                    "",
+                                                    "}",
+                                                    "button.setDisabled(false);",
+                                                    ""
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "a14da322-72fc-48c9-a4d6-5ee71ca3d07a"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "decimalPrecision": 6,
+                                        "disabled": true,
+                                        "fieldLabel": "ТНБ",
+                                        "hideTrigger": true,
+                                        "id": "tnb",
+                                        "labelWidth": 30,
+                                        "layout|flex": null,
+                                        "name": "tnb",
+                                        "value": [
+                                            "0.000"
+                                        ],
+                                        "width": 101
+                                    },
+                                    "name": "MyNumberField12",
+                                    "designerId": "45fe483e-2bbf-4066-abfe-38d97beaa325"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "arrowAlign": null,
+                                        "disabled": true,
+                                        "formBind": null,
+                                        "icon": "resources/css/images/ico/yes.png",
+                                        "iconAlign": null,
+                                        "id": "btnInsTnb",
+                                        "layout|flex": null,
+                                        "text": "начислить тнб",
+                                        "width": 115
+                                    },
+                                    "name": "MyButton2",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "a707e3d7-58c3-4f49-94ea-f586d79d54b6",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var me = this;",
+                                                    "var StUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var values =StUser.getAt(0);",
+                                                    "",
+                                                    "var StHouseEnIn = Ext.data.StoreManager.get(\"StHouseEnIn\");",
+                                                    "var tnb = Ext.getCmp('tnb').getValue();",
+                                                    "var raion_id =  Ext.getCmp('cbRaionEnaudit').getValue();",
+                                                    "",
+                                                    "var grid = Ext.getCmp('grEnauditIn');",
+                                                    "var gridRowSelectedRecords  = grid.getView().getSelectionModel().getSelection();",
+                                                    "var size = Ext.Object.getSize(gridRowSelectedRecords) ;",
+                                                    "var houses =[];",
+                                                    "if (size >= 1 & tnb !==0){",
+                                                    "",
+                                                    "    Ext.Object.each(gridRowSelectedRecords, function(key, val, myself) {",
+                                                    "        Ext.Object.merge(val.data, houses);",
+                                                    "        houses.push(val.data.house_id);",
+                                                    "    });",
+                                                    "",
+                                                    "    var value = {",
+                                                    "        login:values.get('login'),",
+                                                    "        password:values.get('password'),",
+                                                    "        what:'EnauditInsTnb',",
+                                                    "        tnb:tnb,",
+                                                    "        houses: houses",
+                                                    "    };",
+                                                    "",
+                                                    "    QueryReport.getResults(value,function(data){",
+                                                    "        if (data){",
+                                                    "",
+                                                    "            StHouseEnIn.load({",
+                                                    "                params: {",
+                                                    "                    what:'enaudit_in',",
+                                                    "                    login:values.get('login'),",
+                                                    "                    password:values.get('password'),",
+                                                    "                    raion_id:raion_id",
+                                                    "",
+                                                    "                },",
+                                                    "                scope:this",
+                                                    "            });",
+                                                    "",
+                                                    "            Ext.MessageBox.show({",
+                                                    "                title: 'Начисление Нагрузки.. ',",
+                                                    "                msg:data.msg,",
+                                                    "                buttons: Ext.MessageBox.OK,",
+                                                    "                icon: Ext.MessageBox.INFO",
+                                                    "            });",
+                                                    "        } else {",
+                                                    "            Ext.MessageBox.show({",
+                                                    "                title: 'Начисление Нагрузки.. ',",
+                                                    "                msg:data.msg,",
+                                                    "                buttons: Ext.MessageBox.OK,",
+                                                    "                icon: Ext.MessageBox.ERROR",
+                                                    "            });",
+                                                    "        }",
+                                                    "",
+                                                    "",
+                                                    "    });",
+                                                    "} else {",
+                                                    "    Ext.MessageBox.show({",
+                                                    "        title: 'Начисление Нагрузки.. ',",
+                                                    "        msg:\"Не выбраны дома или не введена нагрузка\",",
+                                                    "        buttons: Ext.MessageBox.OK,",
+                                                    "        icon: Ext.MessageBox.ERROR",
+                                                    "    });",
+                                                    "",
+                                                    "}",
+                                                    "",
+                                                    ""
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "9769f15d-7581-43c7-a30e-d2e2d8cc7989"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "arrowAlign": null,
+                                        "disabled": true,
+                                        "formBind": null,
+                                        "icon": "resources/css/images/ico/xsldbg_refresh.png",
+                                        "iconAlign": null,
+                                        "id": "btnEnControl",
+                                        "layout|flex": null,
+                                        "text": "контроль S_(м&sup2;)",
+                                        "width": 115
+                                    },
+                                    "name": "MyButton8",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "9f558695-c0b7-4c4c-b52d-eeb58c1f1a94",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "button",
+                                                    "event"
+                                                ],
+                                                "fn": "handler",
+                                                "implHandler": [
+                                                    "var StHouseEnIn = Ext.data.StoreManager.get(\"StHouseEnIn\");",
+                                                    "var StUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var values =StUser.getAt(0);",
+                                                    "var raion_id =  Ext.getCmp('cbRaionEnaudit').getValue();",
+                                                    "",
+                                                    "var params = {",
+                                                    "    login:values.get('login'),",
+                                                    "    password:values.get('password'),",
+                                                    "    what:'EnauditControl'",
+                                                    "};",
+                                                    "",
+                                                    "QueryAddress.updateRecords(params,function(results){",
+                                                    "    if(results.success===\"1\"){",
+                                                    "        StHouseEnIn.load({",
+                                                    "            params: {",
+                                                    "                what:'enaudit_in',",
+                                                    "                login:values.get('login'),",
+                                                    "                password:values.get('password'),",
+                                                    "                raion_id:raion_id",
+                                                    "",
+                                                    "            }",
+                                                    "        });",
+                                                    "",
+                                                    "        Ext.MessageBox.show({",
+                                                    "            title: 'Контроль площадей по нагрузки..',",
+                                                    "            msg: results.msg,",
+                                                    "            buttons: Ext.MessageBox.OK,",
+                                                    "            icon: Ext.MessageBox.INFO",
+                                                    "        });",
+                                                    "    } else {",
+                                                    "        Ext.MessageBox.show({",
+                                                    "            title: 'Контроль площадей по нагрузки.. ',",
+                                                    "            msg: results.msg,",
+                                                    "            buttons: Ext.MessageBox.OK,",
+                                                    "            icon: Ext.MessageBox.ERROR",
+                                                    "        });",
+                                                    "",
+                                                    "    }",
+                                                    "",
+                                                    "});"
+                                                ]
+                                            },
+                                            "name": "handler",
+                                            "designerId": "04eb76db-10b1-45a0-ab01-a8f9f99e952d"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.CheckboxModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.CheckboxModel",
+                            "userConfig": {
+                                "checkOnly": null,
+                                "showHeaderCheckbox": null
+                            },
+                            "name": "MyCheckboxSelectionModel2",
+                            "designerId": "b4eb9121-649d-4d0f-86d4-1d722c7ba79d"
+                        },
+                        {
+                            "type": "Ext.grid.column.Action",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "Добавить - удалить ",
+                                "icon": null,
+                                "maxWidth": 25,
+                                "menuDisabled": true,
+                                "minWidth": 25,
+                                "width": 112
+                            },
+                            "name": "MyActionColumn",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "b3374ab4-dcc3-482c-80fb-f3bfd8b8c681",
+                            "cn": [
+                                {
+                                    "type": "actioncolumnitem",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "добавить",
+                                        "icon": "resources/css/images/ico/elbow-plus.png",
+                                        "tooltip": "добавить обьект к вводу (Дводомеру)"
+                                    },
+                                    "name": "MyActionColumnItem54",
+                                    "designerId": "c196efd7-5a86-4040-b586-25fc7be141e7",
+                                    "cn": [
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|params": [
+                                                    "v",
+                                                    "metadata",
+                                                    "r",
+                                                    "rowIndex",
+                                                    "colIndex",
+                                                    "store"
+                                                ],
+                                                "fn": "getClass",
+                                                "implHandler": [
+                                                    "var en = r.get('qty');",
+                                                    "if (en === 1 ) {",
+                                                    "    metaData = 'x-hide-display';",
+                                                    "} else {",
+                                                    "    metaData = 'x-grid-center-icon';",
+                                                    "}",
+                                                    "return metaData;"
+                                                ]
+                                            },
+                                            "name": "getClass",
+                                            "designerId": "a2aa1958-0709-427b-a0b4-7f963fe60da5"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "house_id",
+                                "format": "0",
+                                "hidden": true,
+                                "menuDisabled": true,
+                                "text": "ид",
+                                "width": 50
+                            },
+                            "name": "MyNumberColumn206",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "356dfdc4-af2e-40de-8970-cd2fd5fae1db"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "enaudit_id",
+                                "format": "0",
+                                "hidden": true,
+                                "menuDisabled": true,
+                                "text": "ен_ид",
+                                "width": 45
+                            },
+                            "name": "MyNumberColumn182",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "8d5f2c09-fbcb-480b-bfbc-da45d3f509ab"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "house",
+                                "menuDisabled": true,
+                                "text": "Дом",
+                                "width": 120
+                            },
+                            "name": "MyColumn218",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "a801460d-ded8-4a52-a180-5f4c9b71a2ec"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "enaudit_area",
+                                "format": "0.00",
+                                "menuDisabled": true,
+                                "summaryType": "sum",
+                                "text": "S_(м&sup2;)",
+                                "width": 65
+                            },
+                            "name": "MyNumberColumn177",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "ec467352-e79b-4615-bac7-b7d2cd9de942"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "control_area",
+                                "format": "0.00",
+                                "menuDisabled": true,
+                                "summaryType": "sum",
+                                "text": "S_(контр)",
+                                "width": 65
+                            },
+                            "name": "MyNumberColumn5",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "e5a0867b-dc5c-404a-a4b9-4d16ea0c0004"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "tnb",
+                                "format": "0.000000",
+                                "menuDisabled": true,
+                                "summaryType": "sum",
+                                "text": "ТНБ",
+                                "width": 72
+                            },
+                            "name": "MyNumberColumn24",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "3cfca492-4f42-4290-aac9-d35abb01b613"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "gkal_hour",
+                                "format": "0.0000000000000",
+                                "menuDisabled": true,
+                                "text": "ТНБ(м&sup2;)",
+                                "width": 107
+                            },
+                            "name": "MyNumberColumn63",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "dddaf003-b1d5-42ba-b220-80307b3f365a"
+                        },
+                        {
+                            "type": "Ext.grid.feature.GroupingSummary",
+                            "reference": {
+                                "name": "features",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "enableGroupingMenu": false
+                            },
+                            "name": "MyGroupingSummaryFeature",
+                            "designerId": "1f6a881f-e4b3-4d08-b63b-44b729db2f65"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGrEnauditInSelect",
+                                "implHandler": [
+                                    "var btnAddHousesEnaudit = Ext.getCmp('btnAddHousesEnaudit');",
+                                    "var btnDelHousesEnaudit = Ext.getCmp('btnDelHousesEnaudit');",
+                                    "var btnEnControl = Ext.getCmp('btnEnControl');",
+                                    "var btnInsTnb = Ext.getCmp('btnInsTnb');",
+                                    "var tnb = Ext.getCmp('tnb');",
+                                    "",
+                                    "btnAddHousesEnaudit.setDisabled(true);",
+                                    "btnDelHousesEnaudit.setDisabled(false);",
+                                    "btnInsTnb.setDisabled(false);",
+                                    "btnEnControl.setDisabled(false);",
+                                    "tnb.setDisabled(false);",
+                                    "",
+                                    ""
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "name": "onGrEnauditInSelect",
+                            "designerId": "9d604359-0126-4959-b53f-020420ea814b"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGrEnauditInRowClick",
+                                "implHandler": [
+                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                    "var StOrgByDteplomer = Ext.data.StoreManager.get(\"StOrgByDteplomer\");",
+                                    "var StAddressDt = Ext.data.StoreManager.get(\"StAddressDt\");",
+                                    "var values =stUser.getAt(0);",
+                                    "var login = values.get('login');",
+                                    "var password = values.get('password');",
+                                    "StOrgByDteplomer.removeAll();",
+                                    "StAddressDt.removeAll();",
+                                    "//console.log(record);",
+                                    "",
+                                    "if (record) {",
+                                    "    StAddressDt.load({",
+                                    "        params:",
+                                    "        {",
+                                    "            login:login,",
+                                    "            password:password,",
+                                    "            house_id:record.data.house_id",
+                                    "        },",
+                                    "        scope:this",
+                                    "    });",
+                                    "    StOrgByDteplomer.load({",
+                                    "        params: {",
+                                    "            login:login,",
+                                    "            password:password,",
+                                    "            house_id:record.data.house_id,",
+                                    "            what:\"AllOrgByHouse\",",
+                                    "        },",
+                                    "        scope:this",
+                                    "    });",
+                                    "}"
+                                ],
+                                "name": "rowclick",
+                                "scope": "me"
+                            },
+                            "name": "onGrEnauditInRowClick",
+                            "designerId": "af0d1ede-2e84-406f-bc42-28b8da74782a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "collapsed": null,
+                        "collapsible": null,
+                        "disabled": null,
+                        "forceFit": null,
+                        "height": 205,
+                        "id": "grEnauditOrg",
+                        "itemId": null,
+                        "layout|x": 270,
+                        "layout|y": 510,
+                        "store": "StOrgByDteplomer",
+                        "title": "список об'єктів",
+                        "width": 840
+                    },
+                    "name": "MyGridPanel1",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "beab0f50-9643-471c-b6f4-3b6db64985d3",
+                    "cn": [
+                        {
+                            "type": "Ext.view.Table",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyGridView34",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "05c97b17-04b7-4f59-aba6-e3ee475b086f"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "enaudit_id",
+                                "format": "0",
+                                "hidden": true,
+                                "menuDisabled": true,
+                                "text": "en_id",
+                                "width": 46
+                            },
+                            "name": "MyNumberColumn25",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "5cb3043d-005b-4050-a13d-85aa17917198"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "vkl_otopl",
+                                "menuDisabled": true,
+                                "text": "вкл",
+                                "width": 36
+                            },
+                            "name": "MyColumn23",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "553e0c0c-49f5-4c8d-9cf8-1460f9049843",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "switch (value) {",
+                                            "    case \"1\":",
+                                            "        metaData='<span><img clas=\"icon\" src=\"resources/css/images/ico/yes.png\"/></span>';",
+                                            "        break;",
+                                            "    case \"0\":",
+                                            "        metaData='<span><img clas=\"icon\" src=\"resources/css/images/ico/no.png\"/></span>';",
+                                            "        break;",
+                                            "}",
+                                            "return metaData;",
+                                            ""
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "fb2c6294-da18-4f68-8d54-1b5b7634e05c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "fname",
+                                "text": "Найменування об'єкта",
+                                "width": 421
+                            },
+                            "name": "MyColumn141",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "9bc0689f-78bd-4c4c-87a5-4e8f0df5760e",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "value",
+                                            "metaData",
+                                            "record",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "store",
+                                            "view"
+                                        ],
+                                        "fn": "renderer",
+                                        "implHandler": [
+                                            "return Ext.String.format('<div  <b>{0}</b><br><span >{1} </span></div>',",
+                                            "                         value,",
+                                            "                         record.get('name') || \"\");"
+                                        ]
+                                    },
+                                    "name": "renderer",
+                                    "designerId": "390fd6d6-aa46-448a-8ca7-46d7bcada6d3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "area",
+                                "format": "0.00",
+                                "menuDisabled": true,
+                                "summaryType": "sum",
+                                "text": "S_(м&sup2;)",
+                                "width": 76
+                            },
+                            "name": "MyNumberColumn139",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "bceba4ff-614e-4c79-8c6c-5b70866be18d"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "area",
+                                "format": "0.00",
+                                "menuDisabled": true,
+                                "summaryType": "sum",
+                                "text": "S_(контр)",
+                                "width": 69
+                            },
+                            "name": "MyNumberColumn11",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "7c34c183-8d9c-41bf-b38f-d51f31fa5a0a"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "gkal_h_ot",
+                                "format": "0.000000",
+                                "menuDisabled": true,
+                                "text": "ТНБ 1 м&sup2;  год",
+                                "width": 100
+                            },
+                            "name": "MyNumberColumn143",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "5cddc0fd-bf54-4e7c-870d-5ef8f788d2dd"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "align": "center",
+                                "dataIndex": "gkal_y_ot",
+                                "format": "0.000",
+                                "menuDisabled": true,
+                                "text": "ТНБ 1 м&sup2;  рік",
+                                "width": 91
+                            },
+                            "name": "MyNumberColumn2",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "ea083830-a128-4182-8ad4-5f94145a80f0"
+                        },
+                        {
+                            "type": "Ext.grid.feature.Summary",
+                            "reference": {
+                                "name": "features",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "name": "MySummaryFeature8",
+                            "designerId": "acbd8749-9eb7-4500-80ce-b0e3d0db5504"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

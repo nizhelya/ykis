@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winaddfilial",
+        "designer|userClassName": "org.WinAddFilialViewModel"
+    },
+    "designerId": "d9b051ee-7912-498b-b78c-3fb292e7047d"
+}

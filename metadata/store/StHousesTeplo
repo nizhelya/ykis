@@ -1,0 +1,46 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userClassName": "StHousesTeplo",
+        "model": "MdHouses",
+        "storeId": "StHousesTeplo"
+    },
+    "name": "StHouses1",
+    "designerId": "888f3342-6a54-43e7-b7d6-a7618649f5cb",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QueryAddress.getResults"
+            },
+            "name": "MyDirectProxy44",
+            "designerId": "41e2cd3d-df5b-4e94-b0ea-8dc5ab4e0773",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader46",
+                    "designerId": "052aafd4-0b1b-40d2-a94d-145b58fd54fd"
+                }
+            ]
+        }
+    ]
+}

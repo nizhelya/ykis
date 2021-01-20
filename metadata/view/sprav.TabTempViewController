@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabtemp",
+        "designer|userClassName": "sprav.TabTempViewController"
+    },
+    "designerId": "514e0431-25dc-48cc-a4b5-cc5570ed574d"
+}

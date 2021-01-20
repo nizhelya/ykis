@@ -1,0 +1,5 @@
+<?php 
+ define('LOGIN',	'cthubq');
+ define('PASSWORD',	'hfljyt;crbq');
+?>
+ 

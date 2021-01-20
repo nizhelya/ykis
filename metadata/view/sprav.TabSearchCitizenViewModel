@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabsearchcitizen",
+        "designer|userClassName": "sprav.TabSearchCitizenViewModel"
+    },
+    "name": "sprav.TabLgotnikViewModel1",
+    "designerId": "f193b949-d63c-47fc-b660-6fbe3ac8fa93"
+}

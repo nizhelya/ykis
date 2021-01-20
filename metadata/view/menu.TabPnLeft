@@ -1,0 +1,984 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeTab": 0,
+        "animCollapse": true,
+        "bodyPadding": null,
+        "border": false,
+        "collapseDirection": "left",
+        "designer|userAlias": "tabpnleft",
+        "designer|userClassName": "menu.TabPnLeft",
+        "headerPosition": "bottom",
+        "height": 678,
+        "id": "tabPnLeft",
+        "maxWidth": null,
+        "minWidth": null,
+        "padding": null,
+        "plain": null,
+        "removePanelHeader": false,
+        "width": null
+    },
+    "configAlternates": {
+        "border": "boolean",
+        "scrollable": "boolean"
+    },
+    "designerId": "64623cb5-9c54-42da-88bd-35c71b6c6137",
+    "viewControllerInstanceId": "91255a7c-f786-459a-9e91-08de4a145354",
+    "viewModelInstanceId": "b36d67f3-ed6a-488b-8865-02bc877880fc",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyStyle": null,
+                "border": false,
+                "container|align": "stretch",
+                "header": false,
+                "id": "tabMenuLifeFond",
+                "itemId": null,
+                "layout": "vbox",
+                "scrollable": true,
+                "title": "ЖФ",
+                "width": null
+            },
+            "name": "MyPanel5",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "d0f4e1f1-1635-4ff7-9eab-89d50ee21f56",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "frame": false,
+                        "iconCls": "icon-home"
+                    },
+                    "name": "TabConfig26",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "bdf306e8-e7f2-4e95-91c7-2da5de13c2ea"
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "layout|flex": null,
+                        "padding": "5 0 5 0",
+                        "style": "background-color: #DCDCDC;",
+                        "title": ""
+                    },
+                    "name": "MyFieldSet121",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "f23baaba-ee43-4d60-810e-75ab307a068e",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "showAddress",
+                                "margin": "0 0 10 20",
+                                "style": "color: #D15706; text-shadow: -1px -1px white, 1px 1px #333;font-size:14pt;text-align:left;",
+                                "text": "Адрес",
+                                "width": 62
+                            },
+                            "name": "MyLabel26",
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "5472f693-6331-42be-8c74-1125e6c859dd"
+                        },
+                        {
+                            "type": "Ext.form.RadioGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "fieldLabel": "",
+                                "id": "rbTypeClick",
+                                "padding": "0 0 0 30",
+                                "width": 150
+                            },
+                            "name": "MyRadioGroup1",
+                            "designerId": "bb444926-24d4-43e4-8b8a-f2f96a221f53",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "адрес",
+                                        "checked": true,
+                                        "fieldLabel": null,
+                                        "inputValue": "address",
+                                        "name": "typeClick"
+                                    },
+                                    "name": "MyRadio2",
+                                    "designerId": "8b81441a-9679-4d2a-be45-b6cdb74d10dc"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "дом",
+                                        "fieldLabel": null,
+                                        "inputValue": "house",
+                                        "name": "typeClick"
+                                    },
+                                    "name": "MyRadio3",
+                                    "designerId": "c4507182-450d-490a-9cb7-5cd2a822fa93"
+                                },
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onRbTypeClickChange",
+                                        "implHandler": [
+                                            "",
+                                            "",
+                                            "var  cbStreet = Ext.getCmp('cbStreet');",
+                                            "var  cbHouses = Ext.getCmp('cbHouses');",
+                                            "var  cbRaion = Ext.getCmp('cbRaion');",
+                                            "",
+                                            "var  viewHouses = Ext.getCmp('listHousesView');",
+                                            "",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var stHouses = Ext.data.StoreManager.get(\"StHouses\");",
+                                            "var stHouse = Ext.data.StoreManager.get(\"StHouse\");",
+                                            "",
+                                            "var StStreet = Ext.data.StoreManager.get(\"StStreet\");",
+                                            "var StAddress = Ext.data.StoreManager.get(\"StAddress\");",
+                                            "var raion_id = cbRaion.getValue();",
+                                            "",
+                                            "var values =stUser.getAt(0);",
+                                            "var login = values.get('login');",
+                                            "var password = values.get('password');",
+                                            "",
+                                            "",
+                                            "cbHouses.setDisabled(false);",
+                                            "",
+                                            "    cbStreet.clearValue();",
+                                            "    cbHouses.clearValue();",
+                                            "    if (raion_id == 5) {",
+                                            "        cbHouses.setDisabled(true);",
+                                            "    }",
+                                            "    StStreet.load({",
+                                            "        params: {",
+                                            "            login:login,",
+                                            "            password:password,",
+                                            "            what:'StreetsFromRaion',",
+                                            "            what_id: raion_id",
+                                            "        },",
+                                            "        scope: this",
+                                            "    });",
+                                            "    stHouses.load({",
+                                            "        params: {",
+                                            "            what:'HousesFromRaion',",
+                                            "            what_id: raion_id,",
+                                            "            login:login,",
+                                            "            password:password",
+                                            "        },",
+                                            "        scope: this",
+                                            "    });",
+                                            "     stHouse.load({",
+                                            "        params: {",
+                                            "            what:'HousesFromRaion',",
+                                            "            what_id: raion_id,",
+                                            "            login:login,",
+                                            "            password:password",
+                                            "        },",
+                                            "        scope: this",
+                                            "    });",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "name": "onRbTypeClickChange",
+                                    "designerId": "b4277c7a-6154-4a90-a183-0dc52161ce6d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "raion",
+                                "emptyText": "Выбрать район",
+                                "fieldLabel": "",
+                                "id": "cbRaion",
+                                "itemId": null,
+                                "maxHeight": null,
+                                "maxWidth": null,
+                                "minHeight": null,
+                                "minWidth": null,
+                                "padding": "0 0 0 10",
+                                "queryMode": "local",
+                                "store": "StRaion",
+                                "style": null,
+                                "valueField": "raion_id",
+                                "width": 200
+                            },
+                            "name": "MyComboBox16",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "d269a084-07b9-4351-99bf-43be2b5df52a",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCbRaionSelect",
+                                        "implHandler": [
+                                            "",
+                                            "",
+                                            "var  cbStreet = Ext.getCmp('cbStreet');",
+                                            "var  cbHouses = Ext.getCmp('cbHouses');",
+                                            "",
+                                            "var  viewHouses = Ext.getCmp('listHousesView');",
+                                            "var  rbTypeClick = Ext.getCmp('rbTypeClick');",
+                                            "",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var stHouses = Ext.data.StoreManager.get(\"StHouses\");",
+                                            "var stHouse = Ext.data.StoreManager.get(\"StHouse\");",
+                                            "",
+                                            "var StStreet = Ext.data.StoreManager.get(\"StStreet\");",
+                                            "var StAddress = Ext.data.StoreManager.get(\"StAddress\");",
+                                            "",
+                                            "var values =stUser.getAt(0);",
+                                            "var login = values.get('login');",
+                                            "var password = values.get('password');",
+                                            "",
+                                            "",
+                                            "cbHouses.setDisabled(false);",
+                                            "",
+                                            "if (record) {",
+                                            "    cbStreet.clearValue();",
+                                            "    cbHouses.clearValue();",
+                                            "    rbTypeClick.setDisabled(false);",
+                                            "",
+                                            "    if (record.get('raion_id') == 5) {",
+                                            "        cbHouses.setDisabled(true);",
+                                            "    }",
+                                            "    StStreet.load({",
+                                            "        params: {",
+                                            "            login:login,",
+                                            "            password:password,",
+                                            "            what:'StreetsFromRaion',",
+                                            "            what_id: record.get('raion_id')",
+                                            "        },",
+                                            "        scope: this",
+                                            "    });",
+                                            "    stHouses.load({",
+                                            "        params: {",
+                                            "            what:'HousesFromRaion',",
+                                            "            what_id: record.get('raion_id'),",
+                                            "            login:login,",
+                                            "            password:password",
+                                            "        },",
+                                            "        scope: this",
+                                            "    });",
+                                            "    stHouse.load({",
+                                            "        params: {",
+                                            "            what:'HousesFromRaion',",
+                                            "            what_id: record.get('raion_id'),",
+                                            "            login:login,",
+                                            "            password:password",
+                                            "        },",
+                                            "        scope: this",
+                                            "    });",
+                                            "}",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onCbRaionSelect",
+                                    "designerId": "d0a70735-2c39-440a-b161-ed85aec985e3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "street",
+                                "emptyText": "Выбрать улицу",
+                                "fieldLabel": "",
+                                "id": "cbStreet",
+                                "itemId": null,
+                                "maxWidth": null,
+                                "minWidth": null,
+                                "padding": "0 0 0 10",
+                                "queryMode": "local",
+                                "store": "StStreet",
+                                "valueField": "street_id",
+                                "width": 200
+                            },
+                            "name": "MyComboBox17",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "57a35ecd-b93a-495a-bc6d-8bf707fbf899",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCbStreetSelect",
+                                        "implHandler": [
+                                            "var  cbHouses = Ext.getCmp('cbHouses');",
+                                            "var  cbStreet = Ext.getCmp('cbStreet');",
+                                            "",
+                                            "var  viewHouses = Ext.getCmp('listHousesView');",
+                                            "",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var stHouses = Ext.data.StoreManager.get(\"StHouses\");",
+                                            "var stHouse = Ext.data.StoreManager.get(\"StHouse\");",
+                                            "",
+                                            "var StStreet = Ext.data.StoreManager.get(\"StStreet\");",
+                                            "var StAddress = Ext.data.StoreManager.get(\"StAddress\");",
+                                            "",
+                                            "",
+                                            "var values =stUser.getAt(0);",
+                                            "var login = values.get('login');",
+                                            "",
+                                            "var password = values.get('password');",
+                                            "if (record) {",
+                                            "    cbHouses.clearValue();",
+                                            "",
+                                            "    stHouses.load({",
+                                            "        params: {",
+                                            "            what:'HousesFromStreet',",
+                                            "            what_id: record.get('street_id'),",
+                                            "            privat: record.get('privat'),",
+                                            "            login:login,",
+                                            "            password:password",
+                                            "        },",
+                                            "        scope: this",
+                                            "    });",
+                                            "    stHouse.load({",
+                                            "        params: {",
+                                            "            what:'HousesFromStreet',",
+                                            "            what_id: record.get('street_id'),",
+                                            "            privat: record.get('privat'),",
+                                            "            login:login,",
+                                            "            password:password",
+                                            "        },",
+                                            "        scope: this",
+                                            "    });",
+                                            "     if (record.get('privat')) {",
+                                            "        cbHouses.setDisabled(true);",
+                                            "    }",
+                                            "",
+                                            "}"
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onCbStreetSelect",
+                                    "designerId": "2683adc1-e5b0-49cd-913d-d143a940f81b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "displayField": "house",
+                                "emptyText": "Выбрать дом",
+                                "fieldLabel": "",
+                                "id": "cbHouses",
+                                "itemId": null,
+                                "maxWidth": null,
+                                "minWidth": null,
+                                "padding": "0 0 0 10",
+                                "queryMode": "local",
+                                "store": "StHouse",
+                                "valueField": "house_id",
+                                "width": 200
+                            },
+                            "name": "MyComboBox19",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "ecb8386c-3b0a-4e32-ad1b-6a6d47dda2f3",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCbHousesSelect",
+                                        "implHandler": [
+                                            "var  viewHouses = Ext.getCmp('listHousesView');",
+                                            "",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var stHouses = Ext.data.StoreManager.get(\"StHouses\");",
+                                            "var stHouse = Ext.data.StoreManager.get(\"StHouse\");",
+                                            "",
+                                            "",
+                                            "var values =stUser.getAt(0);",
+                                            "var login = values.get('login');",
+                                            "",
+                                            "var password = values.get('password');",
+                                            "if (record) {",
+                                            "    stHouses.load({",
+                                            "        params: {",
+                                            "            what:'AddressFromHouse',",
+                                            "            what_id: record.get('house_id'),",
+                                            "            login:login,",
+                                            "            password:password",
+                                            "        },",
+                                            "        scope: this",
+                                            "    });",
+                                            "    ",
+                                            "",
+                                            "}",
+                                            ""
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onCbHousesSelect",
+                                    "designerId": "2a3c8772-103e-48f0-ae0d-8e9f8a99278f"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "collapseFirst": false,
+                        "height": null,
+                        "id": "listHouses",
+                        "itemId": null,
+                        "layout": "fit",
+                        "layout|flex": 1,
+                        "margin": null,
+                        "maxWidth": null,
+                        "padding": null,
+                        "style": "background-color: #DCDCDC;",
+                        "title": "",
+                        "width": null
+                    },
+                    "name": "MyPanel6",
+                    "configAlternates": {
+                        "scrollable": "boolean",
+                        "style": "string"
+                    },
+                    "designerId": "81d7e842-c8ac-4e85-bcdd-f7320d2132f0",
+                    "cn": [
+                        {
+                            "type": "Ext.view.View",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "border": null,
+                                "cls": [
+                                    "feed-list"
+                                ],
+                                "emptyText": "",
+                                "id": "listHousesView",
+                                "itemSelector": ".feed-list-item",
+                                "overItemCls": "feed-list-item-hover",
+                                "scrollable": true,
+                                "store": "StHouses",
+                                "style": "background-color: #DCDCDC;"
+                            },
+                            "name": "MyView",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "62fee1e7-be73-4335-a5b4-99b31d88ff66",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "tpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "tpl",
+                                        "implHandler": [
+                                            "<tpl for=\".\"><div class=\"feed-list-item\">{item}</div></tpl>"
+                                        ]
+                                    },
+                                    "name": "tpl",
+                                    "designerId": "28be9c31-fc53-4320-92cf-9022ed66ced8"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "decimalPrecision": 0,
+                        "fieldLabel": "Label",
+                        "hidden": true,
+                        "id": "indexTabLifeFond",
+                        "layout|flex": 1,
+                        "name": "indexTabLifeFond",
+                        "value": [
+                            "0",
+                            ""
+                        ]
+                    },
+                    "name": "MyNumberField154",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "b1fe377c-e050-4f47-8324-2bfbdd640141"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "decimalPrecision": 0,
+                        "fieldLabel": "Label",
+                        "hidden": true,
+                        "id": "indexTabOrg",
+                        "layout|flex": 1,
+                        "name": "indexTabOrg",
+                        "value": [
+                            "4"
+                        ]
+                    },
+                    "name": "MyNumberField155",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "a89cfdae-d310-44ee-b78d-5278a499da8e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "header": false,
+                "iconCls": "",
+                "id": "tabMenuOrg",
+                "itemId": null,
+                "layout": "vbox",
+                "scrollable": true,
+                "title": "Орг"
+            },
+            "name": "MyPanel7",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "87daa5e1-bf52-47ca-ac37-fc8660b70393",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "icon-factory"
+                    },
+                    "name": "TabConfig27",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "89f355df-10cd-4e89-9552-ea1adf3034b9"
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyPadding": null,
+                        "dock": null,
+                        "height": 70,
+                        "layout": "fit",
+                        "layout|flex": null,
+                        "style": null,
+                        "title": "",
+                        "width": 100
+                    },
+                    "name": "MyForm31",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "b1813cda-97c1-4e15-9f40-88b581ff31da",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 45,
+                                "style": "background-color: #e4dbdb;",
+                                "title": ""
+                            },
+                            "name": "MyFieldSet122",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "574ba118-572a-442e-ad15-8e90d119f9fd",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconCls": "icon-add",
+                                        "id": "btnAddOrg",
+                                        "itemId": null,
+                                        "layout|anchor": "100%",
+                                        "text": "Добавить организацию",
+                                        "width": 134
+                                    },
+                                    "name": "MyButton86",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "9c3f3509-dd9f-43a7-b706-ee276d6e0624"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "anyMatch": true,
+                                        "caseSensitive": null,
+                                        "displayField": "sname",
+                                        "fieldLabel": "",
+                                        "id": "grOrgSearchField",
+                                        "layout|anchor": "100%",
+                                        "store": "StOrgOpl",
+                                        "valueField": "org_id"
+                                    },
+                                    "name": "MyComboBox54",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
+                                    "designerId": "064604ff-8aa6-48a3-9086-b6ca2e0aaede",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onGrOrgSearchFieldSelect",
+                                                "implHandler": [
+                                                    "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                                    "var values =stUser.getAt(0);",
+                                                    "var login = values.get('login');",
+                                                    "var password = values.get('password');",
+                                                    "var StTreeOrg = Ext.data.StoreManager.get(\"StTreeOrg\");",
+                                                    "var store = combo.getStore();",
+                                                    "var selected = record;",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "if (selected && !store.getById(selected.get(\"org_id\"))) {",
+                                                    "",
+                                                    "",
+                                                    "    StTreeOrg.load({",
+                                                    "        params: {",
+                                                    "            org_id:selected.get('org_id')",
+                                                    "        },",
+                                                    "        scope: this",
+                                                    "    });",
+                                                    "    //console.log(newValue);",
+                                                    "",
+                                                    "}",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    ""
+                                                ],
+                                                "name": "select",
+                                                "scope": "me"
+                                            },
+                                            "name": "onGrOrgSearchFieldSelect",
+                                            "designerId": "20fdd456-a0f7-4a6f-a4e3-abe3b1011d96"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tree.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "emptyText": "Организация не найдена",
+                        "header": false,
+                        "height": null,
+                        "id": "grTreeOrg",
+                        "layout|flex": 1,
+                        "rootVisible": false,
+                        "scrollable": null,
+                        "singleExpand": true,
+                        "store": "StTreeOrg",
+                        "title": "",
+                        "useArrows": null,
+                        "width": null
+                    },
+                    "name": "MyTreePanel",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "08639470-c7c1-4f8c-b7a8-1ecea16da798",
+                    "cn": [
+                        {
+                            "type": "Ext.tree.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": null,
+                                "id": "viewOrgMenu",
+                                "rootVisible": false,
+                                "style": "background-color: #e4dbdb;"
+                            },
+                            "name": "MyTreeView",
+                            "configAlternates": {
+                                "loadMask": "boolean",
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "55675898-80f3-4ad0-a4e8-953469d10cba"
+                        },
+                        {
+                            "type": "Ext.tree.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "text",
+                                "detachOnRemove": false,
+                                "emptyCellText": null,
+                                "enableColumnHide": false,
+                                "flex": 1,
+                                "height": null,
+                                "resizable": false,
+                                "style": "background-color: #e4dbdb;",
+                                "text": "наименование организаций",
+                                "tooltip": null,
+                                "width": null
+                            },
+                            "name": "MyTreeColumn",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "77392ca9-0dc2-4bae-a5ed-546e26ed02c7"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "header": false,
+                "id": "tabMenuSprav",
+                "itemId": null,
+                "layout": "fit",
+                "scrollable": true,
+                "title": "Инфо"
+            },
+            "name": "MyPanel8",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "e10788bb-3cc1-4951-a510-6ce5824cadf0",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "icon-sprav",
+                        "layout|flex": 1
+                    },
+                    "name": "TabConfig28",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "13968f08-74b9-43e7-8429-c5ea1d953582"
+                },
+                {
+                    "type": "Ext.tree.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "collapsed": null,
+                        "collapsible": null,
+                        "forceFit": true,
+                        "id": "treeMenuSprav",
+                        "itemId": null,
+                        "root": null,
+                        "rootVisible": false,
+                        "store": "StTreeSprav",
+                        "title": ""
+                    },
+                    "name": "MyTreePanel1",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "36f88f35-6301-44d9-9221-09592ca8c1a3",
+                    "cn": [
+                        {
+                            "type": "Ext.tree.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "treeMenuSpravView",
+                                "itemId": null,
+                                "loadingText": "Загрузка...",
+                                "style": "background-color: #e4dbdb;"
+                            },
+                            "name": "MyTreeView1",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "70f1e811-d5de-43b2-885d-6e1b1f5fe1e8"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

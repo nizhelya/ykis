@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabcatsobstv",
+        "designer|userClassName": "sprav.TabCatSobstvViewController"
+    },
+    "designerId": "1b49737e-fe1a-49d4-9378-9e1874c00985"
+}

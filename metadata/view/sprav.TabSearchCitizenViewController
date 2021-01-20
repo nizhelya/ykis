@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabsearchcitizen",
+        "designer|userClassName": "sprav.TabSearchCitizenViewController"
+    },
+    "name": "sprav.TabLgotnikViewController1",
+    "designerId": "8114eb9c-7899-46e8-8c26-2577f30605f8"
+}

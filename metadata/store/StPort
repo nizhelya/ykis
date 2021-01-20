@@ -1,0 +1,109 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "autoSync": null,
+        "designer|userClassName": "StPort",
+        "groupField": "house",
+        "model": "MdPort",
+        "storeId": "StPort"
+    },
+    "name": "StGerz1",
+    "designerId": "ade6a5ea-2cd0-4bcd-8a80-777a54d9ac33",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "read: 'QuerySprav.getResults',",
+                    "update: 'QuerySprav.updateRecords',",
+                    "destroy: 'QuerySprav.destroyRecord'",
+                    "}"
+                ],
+                "directFn": null,
+                "extraParams": [
+                    " {'what':'getPort'}"
+                ]
+            },
+            "name": "MyDirectProxy53",
+            "designerId": "91164e0d-1c1f-453b-9da1-4244e6b9a4b7",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader55",
+                    "designerId": "9e3cae43-863d-4984-9f46-883616d1a809"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter",
+                    "designerId": "473b5864-dc74-4852-a975-ab620208f3b2"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreRemove",
+                "implHandler": [
+                    "records[0].data.what = \"getPort\";",
+                    ""
+                ],
+                "name": "remove",
+                "scope": "me"
+            },
+            "name": "onDirectstoreRemove",
+            "designerId": "8e4ac1ca-f242-4c78-9b64-76d673ba9e3d"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreUpdate",
+                "implHandler": [
+                    "record.data.what = \"getPort\";",
+                    ""
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "name": "onDirectstoreUpdate",
+            "designerId": "83d9137e-76f3-4f04-9259-70e15d56bf2c"
+        }
+    ]
+}

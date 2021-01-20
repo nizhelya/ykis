@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "orgwindogovororg",
+        "designer|userClassName": "org.WinDogovorOrgViewController"
+    },
+    "name": "flat.WinDogovorViewController1",
+    "designerId": "d2953108-6b62-4e7b-9c8f-9db53d4ab6aa"
+}

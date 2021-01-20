@@ -1,0 +1,87 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userClassName": "StOsmdRko",
+        "model": "MdHouses",
+        "storeId": "StOsmdRko"
+    },
+    "name": "StOsmd2",
+    "designerId": "ba642b26-117a-4305-bfa3-42b25f17bfcd",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    read: 'QuerySprav.getResults',",
+                    "    update: 'QuerySprav.updateRecords'    ",
+                    "}"
+                ],
+                "directFn": null,
+                "extraParams": [
+                    "{what:'getOsmdRko'}"
+                ]
+            },
+            "name": "MyDirectProxy44",
+            "designerId": "f21b92eb-48d9-4cf0-ac5c-3e86d0124a8b",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader46",
+                    "designerId": "e27a0d65-6984-4d9a-bb7f-0a264365250e"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter5",
+                    "designerId": "bc55f712-f8cd-41d6-8591-619b986507f1"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreUpdate",
+                "implHandler": [
+                    "record.data.what = \"getOsmdRko\";",
+                    ""
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "name": "onDirectstoreUpdate",
+            "designerId": "faf2aadf-01d6-434c-8d41-dc0729a1f9ab"
+        }
+    ]
+}

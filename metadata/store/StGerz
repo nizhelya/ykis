@@ -1,0 +1,110 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "autoSync": null,
+        "designer|userClassName": "StGerz",
+        "groupDir": "DESC",
+        "groupField": "god",
+        "model": "MdOplata",
+        "storeId": "StGerz"
+    },
+    "name": "StSubsidia1",
+    "designerId": "8d9de9c4-019c-4018-a21d-4ad03eca8730",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "read: 'QuerySprav.getResults',",
+                    "update: 'QuerySprav.updateRecords',",
+                    "destroy: 'QuerySprav.destroyRecord'",
+                    "}"
+                ],
+                "directFn": null,
+                "extraParams": [
+                    " {'what':'getGerz'}"
+                ]
+            },
+            "name": "MyDirectProxy53",
+            "designerId": "949578bf-412d-404b-9efa-55ab28c271d2",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader55",
+                    "designerId": "091bfa9e-fcc2-4fea-a588-4d08cf736c73"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter",
+                    "designerId": "3e8a632d-9a88-4134-a01a-97f7ee81dffa"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreRemove",
+                "implHandler": [
+                    "records[0].data.what = \"getGerz\";",
+                    ""
+                ],
+                "name": "remove",
+                "scope": "me"
+            },
+            "name": "onDirectstoreRemove",
+            "designerId": "2fb067e7-a111-4967-a884-4facdaa25c53"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreUpdate",
+                "implHandler": [
+                    "record.data.what = \"getGerz\";",
+                    ""
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "name": "onDirectstoreUpdate",
+            "designerId": "b009f487-2f1c-41ce-9eff-2aa9770405f4"
+        }
+    ]
+}

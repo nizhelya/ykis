@@ -1,0 +1,274 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "tabsearchcitizen",
+        "designer|userClassName": "sprav.TabSearchCitizen",
+        "height": 761,
+        "id": "tabSearchCitizen",
+        "itemId": null,
+        "layout": "fit",
+        "scrollable": true,
+        "title": "Поиск Квартиросьемшика",
+        "width": null
+    },
+    "name": "sprav.TabLgotnik1",
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "4ead16b2-f439-457b-a598-552304582379",
+    "viewControllerInstanceId": "8114eb9c-7899-46e8-8c26-2577f30605f8",
+    "viewModelInstanceId": "f193b949-d63c-47fc-b660-6fbe3ac8fa93",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": null,
+                "height": null,
+                "id": "grSearchCitizen",
+                "itemId": null,
+                "scrollable": true,
+                "store": "StApp",
+                "title": "",
+                "width": null
+            },
+            "name": "MyGridPanel49",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "7cb4a23e-16bc-425b-a89b-96efc504cbf2",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "emptyText": "Нет записей по льготе",
+                        "height": null
+                    },
+                    "name": "MyGridView49",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "e1797572-485f-409e-9fb6-0eef9f20cf5d"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "address",
+                        "menuDisabled": true,
+                        "text": "Адрес",
+                        "width": 180
+                    },
+                    "name": "MyColumn228",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "bd4db174-d118-4e1f-b296-bfe43c814ff8"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "address_id",
+                        "format": "0",
+                        "hidden": null,
+                        "items": [
+                            "{",
+                            "xtype: 'textfield',",
+                            "flex : 1,",
+                            "margin: 2,",
+                            "enableKeyEvents: true,",
+                            "listeners: {",
+                            "keyup: function() {",
+                            "var store = this.up('tablepanel').store;",
+                            "store.clearFilter();",
+                            "if (this.value) {",
+                            "store.filter({",
+                            "property     : 'address_id',",
+                            "value         : this.value,",
+                            "anyMatch      : true,",
+                            "caseSensitive : false",
+                            "});",
+                            "}",
+                            "},",
+                            "buffer: 1000",
+                            "}",
+                            "}"
+                        ],
+                        "menuDisabled": true,
+                        "text": "Ид",
+                        "width": 72
+                    },
+                    "name": "MyNumberColumn162",
+                    "configAlternates": {
+                        "scrollable": "boolean",
+                        "items": "object"
+                    },
+                    "designerId": "1afafcc0-f340-4e12-952b-f321e4849ebb",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "items",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nanim",
+                        "items": [
+                            "{",
+                            "xtype: 'textfield',",
+                            "flex : 1,",
+                            "margin: 2,",
+                            "enableKeyEvents: true,",
+                            "listeners: {",
+                            "keyup: function() {",
+                            "var store = this.up('tablepanel').store;",
+                            "store.clearFilter();",
+                            "if (this.value) {",
+                            "store.filter({",
+                            "property     : 'nanim',",
+                            "value         : this.value,",
+                            "anyMatch      : true,",
+                            "caseSensitive : false",
+                            "});",
+                            "}",
+                            "},",
+                            "buffer: 1000",
+                            "}",
+                            "}"
+                        ],
+                        "menuDisabled": true,
+                        "text": "главный наниматель",
+                        "width": 351
+                    },
+                    "name": "MyColumn167",
+                    "configAlternates": {
+                        "scrollable": "boolean",
+                        "items": "object"
+                    },
+                    "designerId": "ee604f20-3d2b-4421-a1c4-6e0755789ef8",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "items",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "owner",
+                        "hidden": null,
+                        "items": [
+                            "{",
+                            "xtype: 'textfield',",
+                            "flex : 1,",
+                            "margin: 2,",
+                            "enableKeyEvents: true,",
+                            "listeners: {",
+                            "keyup: function() {",
+                            "var store = this.up('tablepanel').store;",
+                            "store.clearFilter();",
+                            "if (this.value) {",
+                            "store.filter({",
+                            "property     : 'owner',",
+                            "value         : this.value,",
+                            "anyMatch      : true,",
+                            "caseSensitive : false",
+                            "});",
+                            "}",
+                            "},",
+                            "buffer: 1000",
+                            "}",
+                            "}"
+                        ],
+                        "text": "Собственник",
+                        "width": 338
+                    },
+                    "name": "MyColumn234",
+                    "configAlternates": {
+                        "scrollable": "boolean",
+                        "item": "object",
+                        "items": "object"
+                    },
+                    "designerId": "5cd26ba2-8b5a-40c1-b098-dfd1195ab04a",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "items",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.feature.Grouping",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "startCollapsed": true
+                    },
+                    "name": "MyGroupingFeature3",
+                    "designerId": "d402b576-ee9d-41f3-8e70-3b797cd7249e",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "groupHeaderTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "groupHeaderTpl",
+                                "implHandler": [
+                                    "{name}"
+                                ]
+                            },
+                            "name": "groupHeaderTpl",
+                            "designerId": "49c9619a-c1bd-4fe5-8563-1c43943a87ab"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

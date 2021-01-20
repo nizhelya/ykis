@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabsprtypehot",
+        "designer|userClassName": "sprav.TabSprTypeHotViewController"
+    },
+    "designerId": "d3c8f0ca-637d-498d-8c75-8ebfb9fc1740"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winaddoplataorg",
+        "designer|userClassName": "sprav.WinAddOplataOrgViewController"
+    },
+    "designerId": "89cf5fe5-5928-40c9-9d07-e9735adb9e37"
+}

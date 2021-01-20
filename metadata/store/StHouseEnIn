@@ -1,0 +1,50 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "designer|userClassName": "StHouseEnIn",
+        "groupField": "enaudit_id",
+        "model": "MdTarif",
+        "storeId": "StHouseEnIn"
+    },
+    "name": "StHouse1",
+    "designerId": "93bb687c-6328-4543-8944-aa5d8f02dd9b",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "QueryLoad.getResults",
+                "extraParams": [
+                    "{'what':'enaudit_in'}"
+                ]
+            },
+            "name": "MyDirectProxy21",
+            "designerId": "ca0a56d6-677f-4097-926c-ea8ce522627a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader21",
+                    "designerId": "942956cc-677a-4a99-9fdc-93476226999d"
+                }
+            ]
+        }
+    ]
+}

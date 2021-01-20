@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabdteplomer",
+        "designer|userClassName": "sprav.TabDteplomerViewModel"
+    },
+    "designerId": "5f7d2643-3ef0-49cb-abf5-db6ad6bf7665"
+}

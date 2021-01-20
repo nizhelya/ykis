@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winprintschetvik",
+        "designer|userClassName": "sprav.WinPrintSchetVikViewController"
+    },
+    "designerId": "70971bf2-87be-403c-9abd-fb21e5155d23"
+}

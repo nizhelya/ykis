@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabworkgrafik",
+        "designer|userClassName": "sprav.TabWorkGrafikViewController"
+    },
+    "designerId": "23b7fde4-bdb9-4c2f-8194-2678dff37025"
+}

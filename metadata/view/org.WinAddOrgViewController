@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winaddorg",
+        "designer|userClassName": "org.WinAddOrgViewController"
+    },
+    "designerId": "7b3a115d-8926-4b4b-a450-3f16b067cea5"
+}

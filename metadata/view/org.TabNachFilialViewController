@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabnachfilial",
+        "designer|userClassName": "org.TabNachFilialViewController"
+    },
+    "designerId": "8783b9da-97c5-46e3-879e-19193ac4e7cf"
+}

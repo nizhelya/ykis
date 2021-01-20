@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabdogovor",
+        "designer|userClassName": "sprav.TabDogovorViewModel"
+    },
+    "designerId": "95a234a6-3817-48ca-9348-8e306c0d1131"
+}

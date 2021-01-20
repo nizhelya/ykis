@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabvozvratsubsidia",
+        "designer|userClassName": "sprav.TabVozvratSubsidiaViewController"
+    },
+    "designerId": "b64075b8-5526-4294-8b07-c588fcf57db8"
+}

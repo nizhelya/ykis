@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabschetvik",
+        "designer|userClassName": "org.TabSchetVikViewController"
+    },
+    "designerId": "8c420fe8-4c1d-4883-921a-a6de325edbd6"
+}

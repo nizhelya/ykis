@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "taborgvodomer",
+        "designer|userClassName": "org.TabOrgVodomerViewController"
+    },
+    "name": "flat.TabAppVodomerViewController1",
+    "designerId": "d9146e18-5fda-4a25-8651-04de0b03d936"
+}

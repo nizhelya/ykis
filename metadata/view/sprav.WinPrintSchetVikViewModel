@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winprintschetvik",
+        "designer|userClassName": "sprav.WinPrintSchetVikViewModel"
+    },
+    "designerId": "1491b984-ada8-4117-81ec-f0a8445274b7"
+}

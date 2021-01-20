@@ -1,0 +1,109 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StAktClaim",
+        "model": "MdPriborUcheta",
+        "storeId": "StAktClaim"
+    },
+    "name": "StMop1",
+    "designerId": "17b8648c-8215-40f2-bbb0-25f2fed7ca2c",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "create: 'QuerySprav.createRecord',",
+                    "read: 'QuerySprav.getResults',",
+                    "update: 'QuerySprav.updateRecords',",
+                    "destroy: 'QuerySprav.destroyRecord'",
+                    "}"
+                ],
+                "directFn": "QuerySprav.getResults",
+                "extraParams": [
+                    "{",
+                    "what: 'getAktClaim'",
+                    "}"
+                ]
+            },
+            "name": "MyDirectProxy33",
+            "designerId": "e6ea5973-ab5c-44d7-9291-78755731699e",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader33",
+                    "designerId": "ce2060c4-1f53-49c1-945e-ea8265d30fcd"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": true
+                    },
+                    "name": "MyJsonWriter",
+                    "designerId": "8167cced-371f-42f2-bc15-9cbffb97088b"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreRemove",
+                "implHandler": [
+                    "records[0].data.what = \"getAktClaim\";",
+                    ""
+                ],
+                "name": "remove",
+                "scope": "me"
+            },
+            "name": "onDirectstoreRemove",
+            "designerId": "ed3fa12b-477f-430f-aec0-e77e6efa2248"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDirectstoreUpdate",
+                "implHandler": [
+                    "record.data.what = \"getAktClaim\";",
+                    ""
+                ],
+                "name": "update",
+                "scope": "me"
+            },
+            "name": "onDirectstoreUpdate",
+            "designerId": "f36248d7-aaf4-45e3-815d-9776eab58910"
+        }
+    ]
+}

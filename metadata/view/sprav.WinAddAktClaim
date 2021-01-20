@@ -1,0 +1,342 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "winaddaktclaim",
+        "designer|userClassName": "sprav.WinAddAktClaim",
+        "height": 343,
+        "id": "winAddAktClaim",
+        "itemId": null,
+        "layout": "fit",
+        "modal": true,
+        "title": "Акт претензиии",
+        "width": 335
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "160ec202-b5a4-4bb6-9b51-d7762f06a3fd",
+    "viewControllerInstanceId": "1532451c-aa61-402f-9d0d-fdcd76c679c2",
+    "viewModelInstanceId": "2fc51f3b-f52b-4e47-9ffc-f5b6c3858c85",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": null,
+                "bodyPadding": null,
+                "height": 803,
+                "id": "fnAddAktClaim",
+                "itemId": null,
+                "layout": "fit",
+                "title": "",
+                "width": 763
+            },
+            "name": "MyForm44",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "10744064-bab2-4072-8fa3-7c8bc2b30a19",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|snapToGrid": 5,
+                        "height": 370,
+                        "layout": "absolute",
+                        "style": "background-color: #DCDCDC;",
+                        "title": "",
+                        "width": 390
+                    },
+                    "name": "MyFieldSet178",
+                    "configAlternates": {
+                        "style": "string",
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "3c5dcd19-bac9-4367-8ca8-ab4d150f82a8",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "allowOnlyWhitespace": null,
+                                "fieldLabel": "Акт №",
+                                "formBind": null,
+                                "layout|x": 10,
+                                "layout|y": 20,
+                                "name": "nomer",
+                                "width": 280
+                            },
+                            "name": "MyTextField",
+                            "designerId": "1ed9aa65-6d14-4bdd-a891-2f806ff6f76e"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "disabled": null,
+                                "displayField": "address",
+                                "emptyText": "вибрати квартиру",
+                                "fieldLabel": "Адреса",
+                                "formBind": null,
+                                "hidden": null,
+                                "id": null,
+                                "itemId": null,
+                                "labelWidth": 60,
+                                "layout|anchor": null,
+                                "layout|x": 5,
+                                "layout|y": 90,
+                                "name": "address_id",
+                                "padding": 10,
+                                "queryMode": "local",
+                                "store": "StAddressDt",
+                                "typeAhead": true,
+                                "value": null,
+                                "valueField": "address_id",
+                                "valueNotFoundText": "0",
+                                "width": 280
+                            },
+                            "name": "MyComboBox61",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "f7b11eb2-d982-4e99-a4c3-4909268b84cf",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxSelect",
+                                        "implHandler": [
+                                            "var form = combo.findParentByType('form');",
+                                            "var square = form.getForm().findField('square');",
+                                            "var address = form.getForm().findField('address');",
+                                            "//var dteplomer_id = form.getForm().findField('dteplomer_id');",
+                                            "",
+                                            "var stUser = Ext.data.StoreManager.get(\"StUser\");",
+                                            "var StFilialOpl = Ext.data.StoreManager.get(\"StFilialOpl\");",
+                                            "var values =stUser.getAt(0);",
+                                            "",
+                                            "//console.log(record);",
+                                            "if (record ) {",
+                                            "    address.setValue(record.get(\"address\"));",
+                                            "    square.setValue(record.get(\"area_otopl\"));",
+                                            "   // dteplomer_id.setValue(record.get(\"dteplomer_id\"));",
+                                            "}",
+                                            ""
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "name": "onComboboxSelect",
+                                    "designerId": "cea0abca-fee8-4b16-92d3-47dee40678ed"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "height": 30,
+                                "icon": "resources/css/images/ico/add.png",
+                                "id": "btnInsertAktClaim",
+                                "itemId": null,
+                                "layout|x": 100,
+                                "layout|y": 245,
+                                "text": "Добавить запись",
+                                "width": 190
+                            },
+                            "name": "MyButton156",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "a6281c77-5d94-4b5a-9c17-35ed711f7bf8"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "name": "address"
+                            },
+                            "name": "MyHiddenField1",
+                            "designerId": "ae85ee1c-ab22-452b-a8e3-074907f195d5"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "name": "pok_id"
+                            },
+                            "name": "MyHiddenField4",
+                            "designerId": "405792ce-c901-4533-8612-35e2115be539"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 30,
+                                "icon": "resources/css/images/ico/delete.png",
+                                "id": null,
+                                "itemId": null,
+                                "layout|x": 10,
+                                "layout|y": 245,
+                                "text": "Отмена",
+                                "width": 80
+                            },
+                            "name": "MyButton157",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "4bc2e468-778b-4fa8-b8fc-86a69f35070f",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "event"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "this.up('#winAddAktClaim').close();"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "7bb4603c-4b8a-453b-826e-e0aee9c070c1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Дата акта",
+                                "formBind": null,
+                                "format": "d-m-Y",
+                                "layout|x": 10,
+                                "layout|y": 60,
+                                "name": "data",
+                                "submitFormat": "Ymd",
+                                "width": 280
+                            },
+                            "name": "MyDateField1",
+                            "designerId": "9353af4c-a632-4886-8728-a76a6d6dbc9d"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Температура в помещении",
+                                "formBind": null,
+                                "hideTrigger": true,
+                                "labelWidth": 200,
+                                "layout|x": 15,
+                                "layout|y": 190,
+                                "name": "temp",
+                                "width": 280
+                            },
+                            "name": "MyNumberField3",
+                            "designerId": "fafaf701-5625-495a-b82e-52ddc073dd1e"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowBlank": false,
+                                "fieldLabel": "Площадь помещения",
+                                "formBind": null,
+                                "hideTrigger": true,
+                                "labelWidth": 200,
+                                "layout|x": 15,
+                                "layout|y": 145,
+                                "name": "square",
+                                "width": 280
+                            },
+                            "name": "MyNumberField4",
+                            "designerId": "ef417830-fd48-457e-b8ed-aba36f830566"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Label",
+                        "name": "dteplomer_id"
+                    },
+                    "name": "MyHiddenField11",
+                    "designerId": "20a25fa2-b614-42d5-a900-62c57be09ba0"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabenergoaudit",
+        "designer|userClassName": "sprav.TabEnergoAuditViewModel"
+    },
+    "name": "sprav.TabOsmdHousesViewModel1",
+    "designerId": "336423e5-9be5-405e-b9f8-cba5a125d052"
+}

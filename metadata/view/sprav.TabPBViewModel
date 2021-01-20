@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabpb",
+        "designer|userClassName": "sprav.TabPBViewModel"
+    },
+    "name": "sprav.TabGerzViewModel1",
+    "designerId": "33093d91-c588-4e9c-bd37-4bee104af575"
+}

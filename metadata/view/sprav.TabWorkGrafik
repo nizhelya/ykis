@@ -1,0 +1,503 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "closable": true,
+        "designer|userAlias": "tabworkgrafik",
+        "designer|userClassName": "sprav.TabWorkGrafik",
+        "height": null,
+        "id": "tabWorkGrafik",
+        "itemId": null,
+        "layout": "fit",
+        "title": "График работы",
+        "width": null
+    },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
+    "designerId": "fd84d491-0edc-4a87-ae49-7271fef6d21c",
+    "viewControllerInstanceId": "23b7fde4-bdb9-4c2f-8194-2678dff37025",
+    "viewModelInstanceId": "78fb03a5-f5fa-4179-9036-096610557fa8",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "collapseDirection": "top",
+                "collapsible": null,
+                "forceFit": null,
+                "height": null,
+                "id": "grWorkGrafik",
+                "itemId": null,
+                "maxWidth": null,
+                "minHeight": null,
+                "store": "StGrafikWork",
+                "title": "График работы дневного персонала",
+                "width": null
+            },
+            "name": "MyGridPanel60",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
+            "designerId": "6b5d480e-ca8a-4506-ac1a-36b04fcbf1a3",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridView60",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "ad9bf731-a7f5-41ea-99b8-df0136dbb864"
+                },
+                {
+                    "type": "Ext.panel.Tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Добавить запись",
+                        "id": "btnGrWorkGrafikAdd",
+                        "itemId": null,
+                        "tooltip": "Добавить запись",
+                        "type": "plus"
+                    },
+                    "name": "MyTool34",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "6911179e-0b90-4de7-9ed1-8fed5ff22565",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnGrWorkGrafikAddClick",
+                                "implHandler": [
+                                    "var me = this;",
+                                    "var grid = tool.findParentByType('grid');",
+                                    "var gr = grid.getView().getFeature('groupGrafikWork');",
+                                    "var store = grid.store;",
+                                    "var sm = grid.getSelectionModel();",
+                                    "var plugin = grid.getPlugin('rowEditGrafik');",
+                                    "var dt = new Date();",
+                                    "",
+                                    "plugin.cancelEdit();",
+                                    "gr.disable();",
+                                    "",
+                                    "var dataNew = Ext.Date.format(dt, 'Ymd');",
+                                    "",
+                                    "var god = Ext.Date.format(dt, 'Y');",
+                                    "var newRecord = store.model.create();",
+                                    "newRecord = {god:god,data:dataNew,kalendar_hour:'0',grafik_hour:'0',work_day:'0'};",
+                                    "//console.log(newRecord);",
+                                    "store.insert(0, newRecord);",
+                                    "plugin.startEdit(0, 0);"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onBtnGrWorkGrafikAddClick",
+                            "designerId": "6abeca06-20bf-4cca-9b85-10824ad09164"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Удалить запись",
+                        "disabled": true,
+                        "id": "btnGrWorkGrafikRemove",
+                        "itemId": null,
+                        "tooltip": "Удалить запись",
+                        "type": "minus"
+                    },
+                    "name": "MyTool35",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "dfd323f1-04be-42c7-9893-2386d3ff875b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnGrWorkGrafikRemoveClick",
+                                "implHandler": [
+                                    "var grid = tool.findParentByType('grid');",
+                                    "var rowEditGrafik = grid.getPlugin('rowEditGrafik');",
+                                    "rowEditGrafik.cancelEdit();",
+                                    "var store = grid.store;",
+                                    "store.proxy.setExtraParam('what', 'getGrafikWorkDays');",
+                                    "var selected = grid.getSelectionModel().getSelection();",
+                                    "",
+                                    "Ext.MessageBox.show({",
+                                    "    title: 'Внимание!',",
+                                    "    msg: 'Вы удаляете данные ! Подтвердите свои действия!',",
+                                    "    buttons: Ext.MessageBox.OKCANCEL,",
+                                    "    icon: Ext.MessageBox.WARNING,",
+                                    "",
+                                    "    buttonText:{",
+                                    "        ok: \"Удалить!\",",
+                                    "        cancel: \"Отмена\"",
+                                    "    },",
+                                    "    fn:function(btn){",
+                                    "        if(btn=='ok'){",
+                                    "            store.remove(selected);",
+                                    "",
+                                    "            store.sync({",
+                                    "                success: function(){",
+                                    "                    Ext.MessageBox.show({title: 'Удаление записи',",
+                                    "                        msg:'Запись удалена',",
+                                    "                        buttons: Ext.MessageBox.OK,",
+                                    "                        icon: Ext.MessageBox.INFO",
+                                    "                    });",
+                                    "                },",
+                                    "                failure: function(){",
+                                    "",
+                                    "",
+                                    "",
+                                    "                },",
+                                    "                scope: this",
+                                    "            });",
+                                    "        }",
+                                    "    }",
+                                    "",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "name": "onBtnGrWorkGrafikRemoveClick",
+                            "designerId": "3d01cb5c-786e-4e92-8595-f11900f6960f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "userConfig": {
+                        "pluginId": "rowEditGrafik"
+                    },
+                    "name": "MyRowEditingPlugin8",
+                    "designerId": "650350c8-0e66-46af-843f-ff5447b3326c",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowEditingEdit",
+                                "implHandler": [
+                                    "",
+                                    "var grid = editor.grid;",
+                                    "var gr = grid.getView().getFeature('groupGrafikWork');",
+                                    "var store = grid.getStore();",
+                                    "//store.proxy.setExtraParam('what', 'getTemperature');",
+                                    "",
+                                    "var sm = store.getUpdatedRecords();",
+                                    "var data = grid.getSelectionModel();",
+                                    "",
+                                    "if(sm.length) {",
+                                    "    store.sync({",
+                                    "        success: function(){",
+                                    "",
+                                    "            store.load();",
+                                    "",
+                                    "        }",
+                                    "    });",
+                                    "",
+                                    "} else {",
+                                    "    store.sync({",
+                                    "        success: function(){",
+                                    "            Ext.MessageBox.show({",
+                                    "                title: 'Добавление записи',",
+                                    "                msg: 'Запись добавлена',",
+                                    "                buttons: Ext.MessageBox.OK,",
+                                    "                icon: Ext.MessageBox.INFO",
+                                    "            });",
+                                    "",
+                                    "           store.load();",
+                                    "            gr.enable();",
+                                    "        }",
+                                    "    });",
+                                    "",
+                                    "}",
+                                    ""
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "name": "onRowEditingEdit",
+                            "designerId": "ba080382-df06-4853-8345-af6b1ed73c1d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "god",
+                        "format": "Y",
+                        "hidden": null,
+                        "menuDisabled": true,
+                        "text": "Год",
+                        "width": 74
+                    },
+                    "name": "MyDateColumn51",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "eb51a857-88e9-400e-b2e3-ba0c5c9ecefb"
+                },
+                {
+                    "type": "Ext.grid.column.Date",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "data",
+                        "format": "Y,F",
+                        "menuDisabled": true,
+                        "text": "Период",
+                        "width": 123
+                    },
+                    "name": "MyDateColumn52",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "667daa61-7794-4eef-9ad0-e97454d1c5c7",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "altFormats": "m/d/Y|n/j/Y|n/j/y|m/j/y|n/d/y|m/j/Y|n/d/Y|m-d-y|m-d-Y|m/d|m-d|md|mdy|mdY|d|Y-m-d|n-j|n/j|dmY|Ymd",
+                                "format": "Y,F",
+                                "submitFormat": "Y-m-d"
+                            },
+                            "name": "MyDateField72",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "cae8f26a-46d4-4168-ba0a-3a722d20f7f9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "kalendar_hour",
+                        "format": "0",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "Часы по календарю",
+                        "width": 159
+                    },
+                    "name": "MyNumberColumn440",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "3f6291b5-cb90-4884-901f-c0eec923f8e3",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField238",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "50487cf3-ea9c-4ec6-aa78-c1673cbb45c4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "work_day",
+                        "format": "0",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "Рабочие дни",
+                        "width": 112
+                    },
+                    "name": "MyNumberColumn441",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "5be5935c-33f8-40a8-bee0-7ca559681811",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField239",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "801c6054-7878-4170-acce-b7a948b58f72"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "grafik_hour",
+                        "format": "0",
+                        "menuDisabled": true,
+                        "summaryType": "sum",
+                        "text": "Дни с гор водой",
+                        "width": 126
+                    },
+                    "name": "MyNumberColumn442",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
+                    "designerId": "02246af4-4207-4cba-9b4f-c6ac3766dbf7",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberField240",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "58532ca1-05be-4f00-8e86-23219c77755e"
+                        }
+                    ]
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGrWorkGrafikSelectionChange",
+                        "implHandler": [
+                            "var btn  = this.down('#btnGrWorkGrafikRemove');",
+                            "btn.setDisabled(false);"
+                        ],
+                        "name": "selectionchange",
+                        "scope": "me"
+                    },
+                    "name": "onGrWorkGrafikSelectionChange",
+                    "designerId": "3c91f4bb-e79c-401f-99a9-8f570be30124"
+                },
+                {
+                    "type": "Ext.grid.feature.Grouping",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "groupGrafikWork"
+                    },
+                    "name": "MyGroupingFeature1",
+                    "designerId": "59a878b6-9121-4f57-ab80-0be662b43f94",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "id",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTabWorkGrafikActivate",
+                "implHandler": [
+                    "//in use",
+                    "var stGrafikWork = Ext.data.StoreManager.get(\"StGrafikWork\");",
+                    "stGrafikWork.proxy.setExtraParam('what', 'getGrafikWorkDays');",
+                    "",
+                    "stGrafikWork.load();"
+                ],
+                "name": "activate",
+                "scope": "me"
+            },
+            "name": "onTabWorkGrafikActivate",
+            "designerId": "b4084986-1c67-44a4-ab68-9a2e8a66cd5d"
+        }
+    ]
+}
