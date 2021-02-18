@@ -1,0 +1,56 @@
+на код Ид 2636 - УОЮМР перенести фил. с кодами 1405; 1490; 290; 1057; 1058; 1077; 2066; 2068; 
+
+на код Ид 2635 - УКСМЮМР перенести фил. с кодами 1069; 1064; 289; 1063; 1065 филиалы  1067 и 2065 объединить два счетчика должны быть на одном 
+
+
+INSERT INTO `TM_ORG_FILIAL`( `kod_vik`, `kod_ytke`, `org_id`, `golovnoe`, `ind`, `org`, `address_id`, `raion_id`, `street_id`, `house_id`, `dvodomer`, `dvodomer_id`, `dteplomer_id`, `dteplomer`, `is_flat`, `sobstv_id`, `usobstv_id`, `type_id`, `typeh_id`, `appartment`, `address`, `area`, `visota`, `volume`, `people`, `rwork_id`, `tarif_gv`, `tarif_xv`, `tarif_st`, `tarif_ot`, `name`, `fname`, `dogovor_id`, `rteplo`, `rvoda`, `gkal_hw_gvs`, `gkal_yw_gvs`, `gkal_h_ot`, `gkal_y_ot`, `gkal_ys_gvs`, `gkal_hs_gvs`, `nrx_gvs_d`, `nrx_xv_d`, `pstoki`, `qty_hour`, `vkl_gvoda`, `vkl_otopl`, `vkl_xvoda`, `vkl_stoki`, `norma_xv`, `norma_gv`, `xvodomer`, `gvodomer`, `teplomer`, `distributor`, `type_voda`, `type_teplo`, `enaudit`, `enaudit_id`, `tne`, `kte`, `length`, `diametr`, `heated`, `vibor` )
+SELECT  t1.`kod_vik`, t1.`kod_ytke`, 2636, t1.`golovnoe`, t1.`ind`, t1.`org`, t1.`address_id`, t1.`raion_id`, t1.`street_id`, t1.`house_id`, t1.`dvodomer`, t1.`dvodomer_id`, t1.`dteplomer_id`, t1.`dteplomer`, t1.`is_flat`, t1.`sobstv_id`, t1.`usobstv_id`, t1.`type_id`, t1.`typeh_id`, t1.`appartment`, t1.`address`, t1.`area`, t1.`visota`, t1.`volume`, t1.`people`, t1.`rwork_id`, t1.`tarif_gv`, t1.`tarif_xv`, t1.`tarif_st`, t1.`tarif_ot`, t1.`name`, t1.`fname`, t1.`dogovor_id`, t1.`rteplo`, t1.`rvoda`, t1.`gkal_hw_gvs`, t1.`gkal_yw_gvs`, t1.`gkal_h_ot`, t1.`gkal_y_ot`, t1.`gkal_ys_gvs`, t1.`gkal_hs_gvs`, t1.`nrx_gvs_d`, t1.`nrx_xv_d`, t1.`pstoki`, t1.`qty_hour`, t1.`vkl_gvoda`, t1.`vkl_otopl`, t1.`vkl_xvoda`, t1.`vkl_stoki`, t1.`norma_xv`, t1.`norma_gv`, t1.`xvodomer`, t1.`gvodomer`, t1.`teplomer`, t1.`distributor`, t1.`type_voda`, t1.`type_teplo`, t1.`enaudit`, t1.`enaudit_id`, t1.`tne`, t1.`kte`, t1.`length`, t1.`diametr`, t1.`heated`, t1.`vibor` FROM TM_ORG_FILIAL as t1 
+WHERE t1.filial_id in( 11405, 1490, 290, 1057, 1058, 1077, 2066, 2068,1068,2188,2036)
+
+
+INSERT INTO YISGRAND.VODA (`filial_id`, `org_id`, `address_id`, `house_id`, `dvodomer_id`, `address`, `data`, `god`, `mec`, `data_pred`, `data_tek`, `nrx_xv_d`, `kub_avg`, `day_xv`, `day_gv`, `zadol`, `people`, `xkubn`, `gkubn`, `xkub`, `gkub`, `pkub`, `tarif`, `norma_xv`, `norma_gv`, `xvoda`, `gvoda`, `xvoda_avg`, `xvoda_add`, `nds`, `perer`, `ptarif`, `nachisleno`, `itogo`, `penya`, `oplacheno`, `dolg`, `raion_id`, `usluga`, `note`, `pr`, `operator`, `data_in`) 
+SELECT t1.`filial_id`, 2636, t1.`address_id`, t1.`house_id`, t1.`dvodomer_id`, t1.`address`, t1.`data`, t1.`god`, t1.`mec`, t1.`data_pred`, t1.`data_tek`, t1.`nrx_xv_d`, t1.`kub_avg`, t1.`day_xv`, t1.`day_gv`, t1.`zadol`, t1.`people`, t1.`xkubn`, t1.`gkubn`, t1.`xkub`, t1.`gkub`, t1.`pkub`, t1.`tarif`, t1.`norma_xv`, t1.`norma_gv`, t1.`xvoda`, t1.`gvoda`, t1.`xvoda_avg`, t1.`xvoda_add`, t1.`nds`, t1.`perer`, t1.`ptarif`, t1.`nachisleno`, t1.`itogo`, t1.`penya`, t1.`oplacheno`, t1.`dolg`, t1.`raion_id`, t1.`usluga`, t1.`note`, t1.`pr`, t1.`operator`, t1.`data_in` FROM YISGRAND.VODA as t1 
+WHERE t1.`filial_id` in( 1405, 1490, 290, 1057, 1058, 1077, 2066, 2068,1068,2188,2036) and t1.`data` = "20201201" 
+
+/////////////////////// 2035
+
+
+INSERT INTO `TM_ORG_FILIAL`( `kod_vik`, `kod_ytke`, `org_id`, `golovnoe`, `ind`, `org`, `address_id`, `raion_id`, `street_id`, `house_id`, `dvodomer`, `dvodomer_id`, `dteplomer_id`, `dteplomer`, `is_flat`, `sobstv_id`, `usobstv_id`, `type_id`, `typeh_id`, `appartment`, `address`, `area`, `visota`, `volume`, `people`, `rwork_id`, `tarif_gv`, `tarif_xv`, `tarif_st`, `tarif_ot`, `name`, `fname`, `dogovor_id`, `rteplo`, `rvoda`, `gkal_hw_gvs`, `gkal_yw_gvs`, `gkal_h_ot`, `gkal_y_ot`, `gkal_ys_gvs`, `gkal_hs_gvs`, `nrx_gvs_d`, `nrx_xv_d`, `pstoki`, `qty_hour`, `vkl_gvoda`, `vkl_otopl`, `vkl_xvoda`, `vkl_stoki`, `norma_xv`, `norma_gv`, `xvodomer`, `gvodomer`, `teplomer`, `distributor`, `type_voda`, `type_teplo`, `enaudit`, `enaudit_id`, `tne`, `kte`, `length`, `diametr`, `heated`, `vibor` )
+
+SELECT  t1.`kod_vik`, t1.`kod_ytke`, 2635, t1.`golovnoe`, t1.`ind`, t1.`org`, t1.`address_id`, t1.`raion_id`, t1.`street_id`, t1.`house_id`, t1.`dvodomer`, t1.`dvodomer_id`, t1.`dteplomer_id`, t1.`dteplomer`, t1.`is_flat`, t1.`sobstv_id`, t1.`usobstv_id`, t1.`type_id`, t1.`typeh_id`, t1.`appartment`, t1.`address`, t1.`area`, t1.`visota`, t1.`volume`, t1.`people`, t1.`rwork_id`, t1.`tarif_gv`, t1.`tarif_xv`, t1.`tarif_st`, t1.`tarif_ot`, t1.`name`, t1.`fname`, t1.`dogovor_id`, t1.`rteplo`, t1.`rvoda`, t1.`gkal_hw_gvs`, t1.`gkal_yw_gvs`, t1.`gkal_h_ot`, t1.`gkal_y_ot`, t1.`gkal_ys_gvs`, t1.`gkal_hs_gvs`, t1.`nrx_gvs_d`, t1.`nrx_xv_d`, t1.`pstoki`, t1.`qty_hour`, t1.`vkl_gvoda`, t1.`vkl_otopl`, t1.`vkl_xvoda`, t1.`vkl_stoki`, t1.`norma_xv`, t1.`norma_gv`, t1.`xvodomer`, t1.`gvodomer`, t1.`teplomer`, t1.`distributor`, t1.`type_voda`, t1.`type_teplo`, t1.`enaudit`, t1.`enaudit_id`, t1.`tne`, t1.`kte`, t1.`length`, t1.`diametr`, t1.`heated`, t1.`vibor` FROM TM_ORG_FILIAL as t1 
+WHERE t1.filial_id in(1069, 1064, 289, 1063, 1065, 1067 ,2303,2304,2006) 
+
+
+SELECT t2.`sname`,t1.`filial_id` ,t1.`org_id`,t1.`golovnoe` ,t1.`name`, t1.`fname`,  t1.`rteplo`, t1.`rvoda`,
+ t1.`pstoki`, t1.`vkl_otopl`, t1.`vkl_xvoda`, t1.`vkl_stoki`, t1.`xvodomer`,  t1.`teplomer` FROM TM_ORG_FILIAL as t1 LEFT JOIN TM_ORG as t2 ON t2.`org_id`=t1.`org_id`
+WHERE t1.org_id  = 2636
+
+SELECT t2.`kname`,t1.`filial_id` ,t1.`org_id`,t1.`golovnoe` ,t1.`name`, t1.`fname`,  t1.`rteplo`, t1.`rvoda`,
+ t1.`pstoki`, t1.`vkl_otopl`, t1.`vkl_xvoda`, t1.`vkl_stoki`, t1.`xvodomer`,  t1.`teplomer` FROM TM_ORG_FILIAL as t1 LEFT JOIN TM_ORG as t2 ON t2.`org_id`=t1.`org_id`
+WHERE t1.filial_id in( 1069, 1064, 289, 1063, 1065, 1067 , 2065,2303,2304,2006)
+
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2446  ,`org_id` = 2636 WHERE `filial_id` = 290;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2447  ,`org_id` = 2636 WHERE `filial_id` = 1057;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2448  ,`org_id` = 2636 WHERE `filial_id` = 1058;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2450  ,`org_id` = 2636 WHERE `filial_id` = 1077;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2465  ,`org_id` = 2636 WHERE `filial_id` = 1405;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2451  ,`org_id` = 2636 WHERE `filial_id` = 1490;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2452  ,`org_id` = 2636 WHERE `filial_id` = 2036;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2453  ,`org_id` = 2636 WHERE `filial_id` = 2066;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2454  ,`org_id` = 2636 WHERE `filial_id` = 2068;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2449  ,`org_id` = 2636 WHERE `filial_id` = 1068;
+
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2456  ,`org_id` = 2635 WHERE `filial_id` = 289;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2457  ,`org_id` = 2635 WHERE `filial_id` = 1063;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2458  ,`org_id` = 2635 WHERE `filial_id` = 1064;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2459  ,`org_id` = 2635 WHERE `filial_id` = 1065;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2460  ,`org_id` = 2635 WHERE `filial_id` = 1067;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2461  ,`org_id` = 2635 WHERE `filial_id` = 1069;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2462  ,`org_id` = 2635 WHERE `filial_id` = 2006;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2463  ,`org_id` = 2635 WHERE `filial_id` = 2303;
+UPDATE YISGRAND.VODOMER   SET `filial_id` = 2464  ,`org_id` = 2635 WHERE `filial_id` = 2304;
+
+UPDATE WATER as t1 , VODOMER as t2  SET t1.`filial_id` = t2.`filial_id` , t1.`data_in`  = t1.`data_in` WHERE t2.`vodomer_id` = t1.`vodomer_id`
+UPDATE PTEPLOMER as t1  SET t1.`filial_id` = 2449  t1.`data_in`  = t1.`data_in` WHERE t1.`teplomer_id` = 5
+
+5

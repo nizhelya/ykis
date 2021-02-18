@@ -242,7 +242,7 @@ class QueryKassa
 			     //print_r($this->sql); 
 			break;
 			case "TekNachAllApp":		  
-			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 10){ 
+			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 6 || $this->raion_id == 7 || $this->raion_id == 10){ 
 				  $this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2,'
 					      .' t1.zadol as zadol1,t2.zadol as zadol2,'
 					      .' t1.zadol + t2.zadol as zadol ,'
@@ -325,10 +325,12 @@ class QueryKassa
 					      .'t4.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")  AND t5.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")  AND '
 					      .'t6.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01") AND t7.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")';
 				}
+							// print_r($this->sql); 
+
 		    break;
 
 			    case "TekNachAllApp1":		  
-			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 10){ 
+			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 6 || $this->raion_id == 7 || $this->raion_id == 10){ 
 				  $this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2,'
 					      .' t1.zadol as zadol1,t2.zadol as zadol2,'
 					      .' t1.zadol + t2.zadol as zadol ,'
@@ -419,13 +421,13 @@ class QueryKassa
 					      .'t5.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")  AND '
 					      .'t6.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")  AND '
 					      .'t7.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")';
-			 //  print_r($this->sql); 
+			  // print_r($this->sql); 
 
 				}
 		    break;
 
 			    case "TekNachAllApp2":		  
-			    if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 10){ 
+			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 6 || $this->raion_id == 7 || $this->raion_id == 10){ 
 				  $this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2,'
 					      .' t1.zadol as zadol1,t2.zadol as zadol2,'
 					      .' t1.zadol + t2.zadol as zadol ,'
@@ -518,11 +520,12 @@ class QueryKassa
 					      .'t6.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")  AND '
 					      .'t7.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")';
 					      
-			 //  print_r($this->sql); 
 			  }
+			  			 //  print_r($this->sql); 
+
 		    break;
 		    case "TekNachAllApp3":		  
-			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 10){ 
+			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 6 || $this->raion_id == 7 || $this->raion_id == 10){ 
 				  $this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2,'
 					      .' t1.zadol as zadol1,t2.zadol as zadol2,'
 					      .' t1.zadol + t2.zadol as zadol ,'

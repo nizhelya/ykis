@@ -58,7 +58,8 @@ class QueryLoad
 
 		switch ($this->what) {
 		case "StOrg"://in use			
-		  $this->sql='SELECT t1.`org_id`,t1.`sname` FROM YISGRAND.TM_ORG as  t1 WHERE  t1.`sname` like "%'.$this->query.'%" OR  t1.`edrpou` like "%'.$this->query.'%" ORDER BY t1.`sname`';
+		  $this->sql='SELECT t1.`org_id`,replace(replace(t1.`sname`,"\n",""),"\"","") as sname 
+		  FROM YISGRAND.TM_ORG as  t1 WHERE  t1.`sname` like  replace("%'.$this->query.'%","\"","")  OR  t1.`edrpou` like replace("%'.$this->query.'%","\"","") ORDER BY t1.`sname`';
 					  // print_r($this->sql); 
 			break;
 		case "getOrg"://in use			
@@ -160,8 +161,8 @@ class QueryLoad
 			   // print($_sql);
 			  
 		    break;
-		    case "AddressDt":
-		      $this->sql='SELECT t1.address_id,t1.enaudit,t1.enaudit_id,t1.address,t1.area_otopl,t1.otoplenie,t1.dteplomer_id FROM YIS.APPARTMENT as t1 WHERE t1.house_id= '.$this->house_id.'';
+	case "AddressDt":
+	$this->sql='SELECT t1.address_id,t1.enaudit,t1.enaudit_id,t1.address,t1.area_full,t1.area_otopl,t1.otoplenie,t1.dteplomer_id FROM YIS.APPARTMENT as t1 WHERE t1.house_id= '.$this->house_id.'';
 			   // print($_sql);
 			  
 		    break;

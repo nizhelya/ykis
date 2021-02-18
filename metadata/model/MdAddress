@@ -249,6 +249,19 @@
             },
             "name": "MyString190",
             "designerId": "8493ef6b-065e-4c22-afc6-0cfa9851ef68"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "area_full"
+            },
+            "name": "MyNumber204",
+            "designerId": "43b696b7-5737-42d5-99fa-7e263506551f"
         }
     ]
 }

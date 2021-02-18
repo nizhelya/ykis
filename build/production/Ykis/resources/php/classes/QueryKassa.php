@@ -242,7 +242,7 @@ class QueryKassa
 			     //print_r($this->sql); 
 			break;
 			case "TekNachAllApp":		  
-			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 10){ 
+			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 6 || $this->raion_id == 7 || $this->raion_id == 10){ 
 				  $this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2,'
 					      .' t1.zadol as zadol1,t2.zadol as zadol2,'
 					      .' t1.zadol + t2.zadol as zadol ,'
@@ -261,7 +261,39 @@ class QueryKassa
 					      .'FROM YIS.VODA as t1,YIS.STOKI as t2'
 					      .' WHERE t1.address_id='.$this->id.'  AND t2.address_id='.$this->id.'  AND t1.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")  AND '
 					      .'t2.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01") ';
-				} else {
+				} else if ($this->house_id == 22 ) {
+				$this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2, CONCAT_WS(" ",t3.mec,t3.god) as period3,'
+					      .'CONCAT_WS(" ",t8.mec,t8.god) as period8,CONCAT_WS(" ",t4.mec,t4.god) as period4, CONCAT_WS(" ",t5.mec,t5.god) as period5,'
+					      .'CONCAT_WS(" ",t6.mec,t6.god) as period6, CONCAT_WS(" ",t7.mec,t7.god) as period7,'
+					      .'t1.zadol as zadol1,t2.zadol as zadol2,t3.zadol as zadol3,t8.zadol as zadol8,t4.zadol as zadol4,t5.zadol as zadol5,'
+					      .'t6.zadol -t6.kzadol  as zadol6,t7.zadol as zadol7,'
+					      .'(t1.zadol + t2.zadol + t3.zadol + t8.zadol + t4.zadol  + t5.zadol + t6.zadol -t6.kzadol + t7.zadol) as zadol ,'
+					      .'t1.nachisleno as nachisleno1,t2.nachisleno as nachisleno2,t3.nachisleno as nachisleno3,t8.nachisleno as nachisleno8,'
+					      .'t4.nachisleno  as nachisleno4,t5.nachisleno as nachisleno5,t6.nachisleno - t6.knachisleno + t6.koplata as nachisleno6,t7.nachisleno as nachisleno7,'
+					      .'t1.nachisleno + t2.nachisleno + t3.nachisleno + t3.nachisleno + t4.nachisleno + t5.nachisleno + t6.nachisleno + t7.nachisleno as nachisleno,'
+					      .'(t1.budjet+t1.pbudjet) as budjet1,(t2.budjet+t2.pbudjet) as budjet2,(t3.budjet+t3.pbudjet) as budjet3,'
+					      .'(t4.budjet+t4.pbudjet) as budjet4,(t5.budjet+t5.pbudjet) as budjet5,(t6.budjet+t6.pbudjet) as budjet6,(t7.budjet+t7.pbudjet) as budjet7,'
+					      .'((t1.budjet+t1.pbudjet) + (t2.budjet+t2.pbudjet)+(t3.budjet+t3.pbudjet) +'
+					      .'(t4.budjet+t4.pbudjet) + (t5.budjet+t5.pbudjet) +(t6.budjet+t6.pbudjet) + (t7.budjet+t7.pbudjet)) as budjet ,'
+					      .'t1.oplacheno as oplacheno1,t2.oplacheno as oplacheno2,t3.oplacheno as oplacheno3, t8.oplacheno as oplacheno8, '
+					      .'t4.oplacheno  as oplacheno4,t5.oplacheno as oplacheno5,t6.oplacheno as oplacheno6,t7.oplacheno as oplacheno7,'
+					      .'t1.oplacheno+t2.oplacheno+t3.oplacheno +t8.oplacheno + t4.oplacheno +t5.oplacheno+t6.oplacheno +t7.oplacheno as oplacheno,'
+					      .'t1.subsidia as subsidia1,t2.subsidia as subsidia2,t3.subsidia as subsidia3,'
+					      .'t4.subsidia as subsidia4,t5.subsidia as subsidia5,t6.subsidia as subsidia6, t7.subsidia as subsidia7,'
+					      .'t1.subs as subs1,t2.subs as subs2,t3.subs as subs3,t4.subs as subs4,t5.subs as subs5,t6.subs as subs6,t7.subs as subs7, '
+					      .'t1.subsidia+t2.subsidia+t3.subsidia+t4.subsidia+t5.subsidia+t6.subsidia +t7.subsidia as subsidia,t1.subs+t2.subs+t3.subs+t4.subs+'
+					      .'t5.subs+t6.subs +t7.subs as subs,'
+					      .'t1.dolg as dolg1,t2.dolg as dolg2,t3.dolg as dolg3,t8.dolg as dolg8,t4.dolg as dolg4,t5.dolg as dolg5,t3.fdolg,t3.fdolg as dolg9,t3.ddolg,'
+					      .'t3.ddolg as dolg10,t6.dolg-t6.kdolg as dolg6 ,t7.dolg as dolg7 ,'
+					      .'t1.dolg +t2.dolg+t3.dolg +t8.dolg +t4.dolg   +t5.dolg+t6.dolg -t6.kdolg +t7.dolg  as dolg '					      
+					      .'FROM YIS.VODA as t1,YIS.STOKI as t2,OSBB.KVARTPLATA as t3,OSBB.TBO as t4,YIS.PODOGREV as t5,YIS.OTOPLENIE as t6 ,YIS.PTN as t7,OSBB.RFOND as t8  '
+					      .' WHERE t1.address_id='.$this->id.'  AND t2.address_id='.$this->id.' AND t3.address_id='.$this->id.'  AND t4.address_id='.$this->id.' AND '
+					      .' t5.address_id='.$this->id.'  AND t6.address_id='.$this->id.' AND t7.address_id='.$this->id.'  AND t8.address_id='.$this->id.' AND ' .'t1.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")  AND '
+					      .'t2.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01") AND t3.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")  AND '
+					      .'t4.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")  AND t5.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")  AND '
+					      .'t6.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01") AND t7.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01") AND '
+					      .'t8.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")';
+			      } else {
 				$this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2, CONCAT_WS(" ",t3.mec,t3.god) as period3,'
 					      .'CONCAT_WS(" ",t3.mec,t3.god) as period8,CONCAT_WS(" ",t4.mec,t4.god) as period4, CONCAT_WS(" ",t5.mec,t5.god) as period5,'
 					      .'CONCAT_WS(" ",t6.mec,t6.god) as period6, CONCAT_WS(" ",t7.mec,t7.god) as period7,'
@@ -292,13 +324,13 @@ class QueryKassa
 					      .'t2.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01") AND t3.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")  AND '
 					      .'t4.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")  AND t5.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")  AND '
 					      .'t6.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01") AND t7.data=CONCAT(EXTRACT(YEAR_MONTH FROM curdate()),"01")';
-			 // print_r($this->sql); 
-
 				}
+							// print_r($this->sql); 
+
 		    break;
 
 			    case "TekNachAllApp1":		  
-			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 10){ 
+			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 6 || $this->raion_id == 7 || $this->raion_id == 10){ 
 				  $this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2,'
 					      .' t1.zadol as zadol1,t2.zadol as zadol2,'
 					      .' t1.zadol + t2.zadol as zadol ,'
@@ -318,6 +350,42 @@ class QueryKassa
 					      .' WHERE t1.address_id='.$this->id.'  AND t2.address_id='.$this->id.'  AND '
 					      .'t1.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")  AND '
 					      .'t2.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01") ';
+				} else if ($this->house_id == 22 ) {
+				$this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2, CONCAT_WS(" ",t3.mec,t3.god) as period3,'
+					      .'CONCAT_WS(" ",t8.mec,t8.god) as period8,CONCAT_WS(" ",t4.mec,t4.god) as period4, CONCAT_WS(" ",t5.mec,t5.god) as period5,'
+					      .'CONCAT_WS(" ",t6.mec,t6.god) as period6, CONCAT_WS(" ",t7.mec,t7.god) as period7,'
+					      .'t1.zadol as zadol1,t2.zadol as zadol2,t3.zadol as zadol3,t8.zadol as zadol8,t4.zadol as zadol4,t5.zadol as zadol5,'
+					      .'t6.zadol -t6.kzadol  as zadol6,t7.zadol as zadol7,'
+					      .'(t1.zadol + t2.zadol + t3.zadol + t8.zadol + t4.zadol  + t5.zadol + t6.zadol -t6.kzadol + t7.zadol) as zadol ,'
+					      .'t1.nachisleno as nachisleno1,t2.nachisleno as nachisleno2,t3.nachisleno as nachisleno3,t8.nachisleno as nachisleno8,'
+					      .'t4.nachisleno  as nachisleno4,t5.nachisleno as nachisleno5,t6.nachisleno - t6.knachisleno + t6.koplata as nachisleno6,t7.nachisleno as nachisleno7,'
+					      .'t1.nachisleno + t2.nachisleno + t3.nachisleno + t3.nachisleno + t4.nachisleno + t5.nachisleno + t6.nachisleno + t7.nachisleno as nachisleno,'
+					      .'(t1.budjet+t1.pbudjet) as budjet1,(t2.budjet+t2.pbudjet) as budjet2,(t3.budjet+t3.pbudjet) as budjet3,'
+					      .'(t4.budjet+t4.pbudjet) as budjet4,(t5.budjet+t5.pbudjet) as budjet5,(t6.budjet+t6.pbudjet) as budjet6,(t7.budjet+t7.pbudjet) as budjet7,'
+					      .'((t1.budjet+t1.pbudjet) + (t2.budjet+t2.pbudjet)+(t3.budjet+t3.pbudjet) +'
+					      .'(t4.budjet+t4.pbudjet) + (t5.budjet+t5.pbudjet) +(t6.budjet+t6.pbudjet) + (t7.budjet+t7.pbudjet)) as budjet ,'
+					      .'t1.oplacheno as oplacheno1,t2.oplacheno as oplacheno2,t3.oplacheno as oplacheno3, t8.oplacheno as oplacheno8, '
+					      .'t4.oplacheno  as oplacheno4,t5.oplacheno as oplacheno5,t6.oplacheno as oplacheno6,t7.oplacheno as oplacheno7,'
+					      .'t1.oplacheno+t2.oplacheno+t3.oplacheno +t8.oplacheno + t4.oplacheno +t5.oplacheno+t6.oplacheno +t7.oplacheno as oplacheno,'
+					      .'t1.subsidia as subsidia1,t2.subsidia as subsidia2,t3.subsidia as subsidia3,'
+					      .'t4.subsidia as subsidia4,t5.subsidia as subsidia5,t6.subsidia as subsidia6, t7.subsidia as subsidia7,'
+					      .'t1.subs as subs1,t2.subs as subs2,t3.subs as subs3,t4.subs as subs4,t5.subs as subs5,t6.subs as subs6,t7.subs as subs7, '
+					      .'t1.subsidia+t2.subsidia+t3.subsidia+t4.subsidia+t5.subsidia+t6.subsidia +t7.subsidia as subsidia,t1.subs+t2.subs+t3.subs+t4.subs+'
+					      .'t5.subs+t6.subs +t7.subs as subs,'
+					      .'t1.dolg as dolg1,t2.dolg as dolg2,t3.dolg as dolg3,t8.dolg as dolg8,t4.dolg as dolg4,t5.dolg as dolg5,t3.fdolg,t3.fdolg as dolg9,t3.ddolg,'
+					      .'t3.ddolg as dolg10,t6.dolg-t6.kdolg as dolg6 ,t7.dolg as dolg7 ,'
+					      .'t1.dolg +t2.dolg+t3.dolg +t8.dolg +t4.dolg   +t5.dolg+t6.dolg -t6.kdolg +t7.dolg  as dolg '			      
+					      .'FROM YIS.VODA as t1,YIS.STOKI as t2,OSBB.KVARTPLATA as t3,OSBB.TBO as t4,YIS.PODOGREV as t5,YIS.OTOPLENIE as t6 ,YIS.PTN as t7,OSBB.RFOND as t8  '
+					      .' WHERE t1.address_id='.$this->id.'  AND t2.address_id='.$this->id.' AND t3.address_id='.$this->id.'  AND t4.address_id='.$this->id.' AND '
+					      .' t5.address_id='.$this->id.'  AND t6.address_id='.$this->id.' AND t7.address_id='.$this->id.' AND t8.address_id='.$this->id.' AND '
+					      .'t1.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")  AND '
+					      .'t2.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01") AND '
+					      .'t3.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")  AND '
+					      .'t4.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")  AND '
+					      .'t5.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")  AND '
+					      .'t6.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")  AND '
+					      .'t7.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")  AND '
+					      .'t8.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")';
 				} else {
 				$this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2, CONCAT_WS(" ",t3.mec,t3.god) as period3,'
 					      .'CONCAT_WS(" ",t3.mec,t3.god) as period8,CONCAT_WS(" ",t4.mec,t4.god) as period4, CONCAT_WS(" ",t5.mec,t5.god) as period5,'
@@ -353,13 +421,13 @@ class QueryKassa
 					      .'t5.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")  AND '
 					      .'t6.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")  AND '
 					      .'t7.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 1 MONTH)),"01")';
-			 //  print_r($this->sql); 
+			  // print_r($this->sql); 
 
 				}
 		    break;
 
 			    case "TekNachAllApp2":		  
-			    if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 10){ 
+			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 6 || $this->raion_id == 7 || $this->raion_id == 10){ 
 				  $this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2,'
 					      .' t1.zadol as zadol1,t2.zadol as zadol2,'
 					      .' t1.zadol + t2.zadol as zadol ,'
@@ -379,6 +447,43 @@ class QueryKassa
 					      .' WHERE t1.address_id='.$this->id.'  AND t2.address_id='.$this->id.'  AND '
 					      .'t1.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")  AND '
 					      .'t2.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01") ';
+			      } elseif ($this->house_id == 22 ) {
+			      $this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2, CONCAT_WS(" ",t3.mec,t3.god) as period3,'
+					      .'CONCAT_WS(" ",t8.mec,t8.god) as period8,CONCAT_WS(" ",t4.mec,t4.god) as period4, CONCAT_WS(" ",t5.mec,t5.god) as period5,'
+					      .'CONCAT_WS(" ",t6.mec,t6.god) as period6, CONCAT_WS(" ",t7.mec,t7.god) as period7,'
+					      .'t1.zadol as zadol1,t2.zadol as zadol2,t3.zadol as zadol3,t8.zadol as zadol8,t4.zadol as zadol4,t5.zadol as zadol5,'
+					      .'t6.zadol -t6.kzadol  as zadol6,t7.zadol as zadol7,'
+					      .'(t1.zadol + t2.zadol + t3.zadol + t8.zadol + t4.zadol  + t5.zadol + t6.zadol -t6.kzadol + t7.zadol) as zadol ,'
+					      .'t1.nachisleno as nachisleno1,t2.nachisleno as nachisleno2,t3.nachisleno as nachisleno3,t8.nachisleno as nachisleno8,'
+					      .'t4.nachisleno  as nachisleno4,t5.nachisleno as nachisleno5,t6.nachisleno - t6.knachisleno + t6.koplata as nachisleno6,t7.nachisleno as nachisleno7,'
+					      .'t1.nachisleno + t2.nachisleno + t3.nachisleno + t3.nachisleno + t4.nachisleno + t5.nachisleno + t6.nachisleno + t7.nachisleno as nachisleno,'
+					      .'(t1.budjet+t1.pbudjet) as budjet1,(t2.budjet+t2.pbudjet) as budjet2,(t3.budjet+t3.pbudjet) as budjet3,'
+					      .'(t4.budjet+t4.pbudjet) as budjet4,(t5.budjet+t5.pbudjet) as budjet5,(t6.budjet+t6.pbudjet) as budjet6,(t7.budjet+t7.pbudjet) as budjet7,'
+					      .'((t1.budjet+t1.pbudjet) + (t2.budjet+t2.pbudjet)+(t3.budjet+t3.pbudjet) +'
+					      .'(t4.budjet+t4.pbudjet) + (t5.budjet+t5.pbudjet) +(t6.budjet+t6.pbudjet) + (t7.budjet+t7.pbudjet)) as budjet ,'
+					      .'t1.oplacheno as oplacheno1,t2.oplacheno as oplacheno2,t3.oplacheno as oplacheno3, t8.oplacheno as oplacheno8, '
+					      .'t4.oplacheno  as oplacheno4,t5.oplacheno as oplacheno5,t6.oplacheno as oplacheno6,t7.oplacheno as oplacheno7,'
+					      .'t1.oplacheno+t2.oplacheno+t3.oplacheno +t8.oplacheno + t4.oplacheno +t5.oplacheno+t6.oplacheno +t7.oplacheno as oplacheno,'
+					      .'t1.subsidia as subsidia1,t2.subsidia as subsidia2,t3.subsidia as subsidia3,'
+					      .'t4.subsidia as subsidia4,t5.subsidia as subsidia5,t6.subsidia as subsidia6, t7.subsidia as subsidia7,'
+					      .'t1.subs as subs1,t2.subs as subs2,t3.subs as subs3,t4.subs as subs4,t5.subs as subs5,t6.subs as subs6,t7.subs as subs7, '
+					      .'t1.subsidia+t2.subsidia+t3.subsidia+t4.subsidia+t5.subsidia+t6.subsidia +t7.subsidia as subsidia,t1.subs+t2.subs+t3.subs+t4.subs+'
+					      .'t5.subs+t6.subs +t7.subs as subs,'
+					      .'t1.dolg as dolg1,t2.dolg as dolg2,t3.dolg as dolg3,t8.dolg as dolg8,t4.dolg as dolg4,t5.dolg as dolg5,t3.fdolg,t3.fdolg as dolg9,t3.ddolg,'
+					      .'t3.ddolg as dolg10,t6.dolg-t6.kdolg as dolg6 ,t7.dolg as dolg7 ,'
+					      .'t1.dolg +t2.dolg+t3.dolg +t8.dolg +t4.dolg   +t5.dolg+t6.dolg -t6.kdolg +t7.dolg  as dolg '					      
+					      .'FROM YIS.VODA as t1,YIS.STOKI as t2,OSBB.KVARTPLATA as t3,OSBB.TBO as t4,YIS.PODOGREV as t5,YIS.OTOPLENIE as t6 ,YIS.PTN as t7,OSBB.RFOND as t8  '
+					      .' WHERE t1.address_id='.$this->id.'  AND t2.address_id='.$this->id.' AND t3.address_id='.$this->id.'  AND t4.address_id='.$this->id.' AND '
+					      .' t5.address_id='.$this->id.'  AND t6.address_id='.$this->id.' AND t7.address_id='.$this->id.' AND t8.address_id='.$this->id.' AND '
+					      .'t1.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")  AND '
+					      .'t2.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01") AND '
+					      .'t3.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")  AND '
+					      .'t4.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")  AND '
+					      .'t5.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")  AND '
+					      .'t6.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")  AND '
+					      .'t7.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")  AND '
+					      .'t8.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")';
+
 				} else {
 				$this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2, CONCAT_WS(" ",t3.mec,t3.god) as period3,'
 					      .'CONCAT_WS(" ",t3.mec,t3.god) as period8,CONCAT_WS(" ",t4.mec,t4.god) as period4, CONCAT_WS(" ",t5.mec,t5.god) as period5,'
@@ -414,11 +519,13 @@ class QueryKassa
 					      .'t5.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")  AND '
 					      .'t6.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")  AND '
 					      .'t7.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 2 MONTH)),"01")';
-			 //  print_r($this->sql); 
+					      
 			  }
+			  			 //  print_r($this->sql); 
+
 		    break;
 		    case "TekNachAllApp3":		  
-			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 10){ 
+			   if($this->raion_id == 2 ||  $this->raion_id == 5 || $this->raion_id == 6 || $this->raion_id == 7 || $this->raion_id == 10){ 
 				  $this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2,'
 					      .' t1.zadol as zadol1,t2.zadol as zadol2,'
 					      .' t1.zadol + t2.zadol as zadol ,'
@@ -438,6 +545,43 @@ class QueryKassa
 					      .' WHERE t1.address_id='.$this->id.'  AND t2.address_id='.$this->id.'  AND '
 					      .'t1.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 3 MONTH)),"01")  AND '
 					      .'t2.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 3 MONTH)),"01") ';
+			    } else if ($this->house_id == 22 ) {
+			    $this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2, CONCAT_WS(" ",t3.mec,t3.god) as period3,'
+					      .'CONCAT_WS(" ",t8.mec,t8.god) as period8,CONCAT_WS(" ",t4.mec,t4.god) as period4, CONCAT_WS(" ",t5.mec,t5.god) as period5,'
+					      .'CONCAT_WS(" ",t6.mec,t6.god) as period6, CONCAT_WS(" ",t7.mec,t7.god) as period7,'
+					      .'t1.zadol as zadol1,t2.zadol as zadol2,t3.zadol as zadol3,t8.zadol as zadol8,t4.zadol as zadol4,t5.zadol as zadol5,'
+					      .'t6.zadol -t6.kzadol  as zadol6,t7.zadol as zadol7,'
+					      .'(t1.zadol + t2.zadol + t3.zadol + t8.zadol + t4.zadol  + t5.zadol + t6.zadol -t6.kzadol + t7.zadol) as zadol ,'
+					      .'t1.nachisleno as nachisleno1,t2.nachisleno as nachisleno2,t3.nachisleno as nachisleno3,t8.nachisleno as nachisleno8,'
+					      .'t4.nachisleno  as nachisleno4,t5.nachisleno as nachisleno5,t6.nachisleno - t6.knachisleno + t6.koplata as nachisleno6,t7.nachisleno as nachisleno7,'
+					      .'t1.nachisleno + t2.nachisleno + t3.nachisleno + t3.nachisleno + t4.nachisleno + t5.nachisleno + t6.nachisleno + t7.nachisleno as nachisleno,'
+					      .'(t1.budjet+t1.pbudjet) as budjet1,(t2.budjet+t2.pbudjet) as budjet2,(t3.budjet+t3.pbudjet) as budjet3,'
+					      .'(t4.budjet+t4.pbudjet) as budjet4,(t5.budjet+t5.pbudjet) as budjet5,(t6.budjet+t6.pbudjet) as budjet6,(t7.budjet+t7.pbudjet) as budjet7,'
+					      .'((t1.budjet+t1.pbudjet) + (t2.budjet+t2.pbudjet)+(t3.budjet+t3.pbudjet) +'
+					      .'(t4.budjet+t4.pbudjet) + (t5.budjet+t5.pbudjet) +(t6.budjet+t6.pbudjet) + (t7.budjet+t7.pbudjet)) as budjet ,'
+					      .'t1.oplacheno as oplacheno1,t2.oplacheno as oplacheno2,t3.oplacheno as oplacheno3, t8.oplacheno as oplacheno8, '
+					      .'t4.oplacheno  as oplacheno4,t5.oplacheno as oplacheno5,t6.oplacheno as oplacheno6,t7.oplacheno as oplacheno7,'
+					      .'t1.oplacheno+t2.oplacheno+t3.oplacheno +t8.oplacheno + t4.oplacheno +t5.oplacheno+t6.oplacheno +t7.oplacheno as oplacheno,'
+					      .'t1.subsidia as subsidia1,t2.subsidia as subsidia2,t3.subsidia as subsidia3,'
+					      .'t4.subsidia as subsidia4,t5.subsidia as subsidia5,t6.subsidia as subsidia6, t7.subsidia as subsidia7,'
+					      .'t1.subs as subs1,t2.subs as subs2,t3.subs as subs3,t4.subs as subs4,t5.subs as subs5,t6.subs as subs6,t7.subs as subs7, '
+					      .'t1.subsidia+t2.subsidia+t3.subsidia+t4.subsidia+t5.subsidia+t6.subsidia +t7.subsidia as subsidia,t1.subs+t2.subs+t3.subs+t4.subs+'
+					      .'t5.subs+t6.subs +t7.subs as subs,'
+					      .'t1.dolg as dolg1,t2.dolg as dolg2,t3.dolg as dolg3,t8.dolg as dolg8,t4.dolg as dolg4,t5.dolg as dolg5,t3.fdolg,t3.fdolg as dolg9,t3.ddolg,'
+					      .'t3.ddolg as dolg10,t6.dolg-t6.kdolg as dolg6 ,t7.dolg as dolg7 ,'
+					      .'t1.dolg +t2.dolg+t3.dolg +t8.dolg +t4.dolg   +t5.dolg+t6.dolg -t6.kdolg +t7.dolg  as dolg '			
+					      .'FROM YIS.VODA as t1,YIS.STOKI as t2,OSBB.KVARTPLATA as t3,OSBB.TBO as t4,YIS.PODOGREV as t5,YIS.OTOPLENIE as t6 ,YIS.PTN as t7,OSBB.RFOND as t8  '
+					      .' WHERE t1.address_id='.$this->id.'  AND t2.address_id='.$this->id.' AND t3.address_id='.$this->id.'  AND t4.address_id='.$this->id.' AND '
+					      .' t5.address_id='.$this->id.'  AND t6.address_id='.$this->id.' AND t7.address_id='.$this->id.' AND t8.address_id='.$this->id.' AND '
+					      .'t1.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 3 MONTH)),"01")  AND '
+					      .'t2.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 3 MONTH)),"01") AND '
+					      .'t3.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 3 MONTH)),"01")  AND '
+					      .'t4.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 3 MONTH)),"01")  AND '
+					      .'t5.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 3 MONTH)),"01")  AND '
+					      .'t6.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 3 MONTH)),"01")  AND '
+					      .'t7.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 3 MONTH)),"01")  AND '
+					      .'t8.data=CONCAT(EXTRACT(YEAR_MONTH FROM DATE_SUB(curdate(), INTERVAL 3 MONTH)),"01")';
+
 				} else {
 				$this->sql='SELECT CONCAT_WS(" ",t1.mec,t1.god) as period1, CONCAT_WS(" ",t2.mec,t2.god) as period2, CONCAT_WS(" ",t3.mec,t3.god) as period3,'
 					      .'CONCAT_WS(" ",t3.mec,t3.god) as period8,CONCAT_WS(" ",t4.mec,t4.god) as period4, CONCAT_WS(" ",t5.mec,t5.god) as period5,'

@@ -74,17 +74,13 @@ $this->results = '[';
  $where_cat='';
  
 		
+$this->sql='SELECT t1.`org_id`, trim(replace(t1.`sname`,"\n","")) as sname FROM YISGRAND.TM_ORG as t1 WHERE  t1.`org_id` = '.$org_id.''; 
 		
-		$this->sql='SELECT YISGRAND.TM_ORG.`org_id`, YISGRAND.TM_ORG.`sname` FROM YISGRAND.TM_ORG WHERE  YISGRAND.TM_ORG.`org_id` = '.$org_id.''; 
-		
-//print($filter);
 		$_result_company = $_db->query($this->sql) or die('Connect Error (' . $_db->connect_errno . ') ' . $_db->connect_error);
 		while ($row_company = $_result_company->fetch_assoc()) {
 		    $count_company++;
 		    if ($count_company > 1) {$this->results.=',';}
 		    $str1 = str_replace("'", "", $row_company['sname']);
-		   //print($row_company['sname']);
-
 		    $str2 = str_replace("\"", "", $str1);
 		    $this->results.='{id:"cat'.$row_company['org_id'].'",';
 		    $this->results.='orig_id:"'.$row_company['org_id'].'",';
@@ -92,11 +88,10 @@ $this->results = '[';
 		    $this->results.='what:"category",';
 		    $this->results.='icon:"resources/css/images/folders/BlueFolder.png",';
 		    $this->results.='expanded:false,';
-
 $this->results.='subcategories:"1",';
 
 $child2 =1; 
-$_result_depts = $_db->query('SELECT filial_id, name,golovnoe,ind FROM TM_ORG_FILIAL WHERE org_id = "'.$row_company['org_id'].'"') or die('Connect Error (' . $_db->connect_errno . ') ' . $_db->connect_error);
+$_result_depts = $_db->query('SELECT filial_id,trim(replace(`name`,"\n","")) as name,golovnoe,ind FROM TM_ORG_FILIAL WHERE org_id = "'.$row_company['org_id'].'"') or die('Connect Error (' . $_db->connect_errno . ') ' . $_db->connect_error);
 				$this->results.='children:[';
 				$this->results.='{id:"Add-fil'.$row_company['org_id'].'",';
 				$this->results.='orig_id:"'.$row_company['org_id'].'",';

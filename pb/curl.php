@@ -108,6 +108,6 @@ if ($result === FALSE) {
 
 }
 curl_close( $curl );
-
+json: cannot unmarshal object into Go struct field Packet.Data of type string{"type":"rpc","tid":14,"action":"QueryPaymentMarfin","method":"newOplata","result":{"kvartplata":0,"otoplenie":0,"podogrev":0,"voda":0,"stoki":0,"tbo":0,"ptn":0,"payment_id":"8713","edrpou":"43760474","firstname":"\u0421\u0435\u0440\u0433\u0435\u0439","patronymic":"\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447","surname":"\u041d\u0456\u0436\u0435\u043b\u044c\u0441\u044c\u043a\u0438\u0439","account":"6314","address":null,"data_in":"2021-02-13 22:14:48","success":0,"msg":"\u0421\u0435\u0440\u0432\u0456\u0441 \u043f\u043b\u0430\u0442\u0435\u0436\u0456\u0432 Xpay<br>\u041f\u043b\u0430\u0442\u0435\u0436 \u043d\u0435 \u0441\u0444\u043e\u0440\u043c\u043e\u0432\u0430\u043d\u0438\u0439"}}
 		
 ?>

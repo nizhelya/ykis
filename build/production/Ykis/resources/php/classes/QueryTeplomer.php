@@ -223,7 +223,14 @@ class QueryTeplomer
 			  break;
 			  
 			  case "AllOrgByHouse":// применяется	
-			  $this->sql='SELECT t1.*  FROM YISGRAND.TM_ORG_FILIAL as t1    WHERE  t1.house_id ='.$this->house_id.' ORDER BY t1.enaudit DESC';
+			  $this->sql='SELECT t1.`filial_id`, t1.`kod_vik`, t1.`kod_ytke`, t1.`org_id`, t1.`golovnoe`, t1.`ind`, t1.`org`, t1.`address_id`, t1.`raion_id`, t1.`street_id`,'
+			  .'t1.`house_id`, t1.`dvodomer`, t1.`dvodomer_id`, t1.`dteplomer_id`, t1.`dteplomer`, t1.`is_flat`, t1.`sobstv_id`, t1.`usobstv_id`, t1.`type_id`, t1.`typeh_id`,'
+			  .'t1.`appartment`, t1.`address`,(case WHEN  t1.`vkl_otopl` = 1 THEN t1.`area` ELSE 0 END) as area, t1.`visota`, t1.`volume`, t1.`people`, t1.`rwork_id`, '
+			  .'t1.`tarif_gv`, t1.`tarif_xv`, t1.`tarif_st`, t1.`tarif_ot`,t1.`name`, t1.`fname`, t1.`dogovor_id`, t1.`rteplo`, t1.`rvoda`, t1.`gkal_hw_gvs`, t1.`gkal_yw_gvs`,'
+			  .'t1.`gkal_h_ot`, t1.`gkal_y_ot`, t1.`gkal_ys_gvs`,t1.`gkal_hs_gvs`, t1.`nrx_gvs_d`, t1.`nrx_xv_d`, t1.`pstoki`, t1.`qty_hour`, t1.`vkl_gvoda`, t1.`vkl_otopl`,'
+			  .'t1.`vkl_xvoda`, t1.`vkl_stoki`, t1.`norma_xv`,t1.`norma_gv`, t1.`xvodomer`, t1.`gvodomer`, t1.`teplomer`, t1.`distributor`, t1.`type_voda`, t1.`type_teplo`,'
+			  .'t1.`enaudit`, t1.`enaudit_id`,t1.`tne`, t1.`kte`, t1.`length`, t1.`diametr`, t1.`heated`, t1.`vibor`, t1.`operator` '
+			  .' FROM YISGRAND.TM_ORG_FILIAL as t1 WHERE  t1.house_id ='.$this->house_id.' ORDER BY t1.enaudit DESC';
 					//print_r($this->sql); 
 			  break;
 

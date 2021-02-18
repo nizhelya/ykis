@@ -3344,9 +3344,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 320,
-                        "layout|x": 365,
-                        "layout|y": 10,
+                        "height": 310,
+                        "layout|x": 385,
+                        "layout|y": 110,
                         "style": "background-color: #DCDCDC;",
                         "title": "Начислено, грн",
                         "width": 195
@@ -3387,23 +3387,23 @@
                             "userConfig": {
                                 "autoStripChars": true,
                                 "decimalPrecision": 3,
-                                "fieldLabel": "тариф   (м&sup2;)",
+                                "fieldLabel": "тариф (гкал)",
                                 "fieldStyle": "background-color:#F0F8FF;font-size:10pt;text-align:right;",
                                 "hideLabel": null,
                                 "hideTrigger": true,
                                 "labelWidth": 90,
                                 "layout|anchor": "100%",
-                                "name": "tarif",
+                                "name": "tarif_gkal",
                                 "value": [
                                     "0"
                                 ],
                                 "width": 135
                             },
-                            "name": "MyNumberField271",
+                            "name": "MyNumberField156",
                             "configAlternates": {
                                 "scrollable": "boolean"
                             },
-                            "designerId": "8a7edb75-b6fe-4eec-883d-9496789dc5a3"
+                            "designerId": "32f30f63-c24a-4dee-93ff-470dd2b46fb8"
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -3442,13 +3442,13 @@
                             "userConfig": {
                                 "autoStripChars": true,
                                 "decimalPrecision": 7,
-                                "fieldLabel": "Гкал (м&sup2;)",
+                                "fieldLabel": "Гкал_дорах /м&sup2;",
                                 "fieldStyle": "background-color:#F0F8FF;font-size:10pt;text-align:right;",
                                 "hideLabel": null,
                                 "hideTrigger": true,
                                 "labelWidth": 90,
                                 "layout|anchor": "100%",
-                                "name": "gkalm2",
+                                "name": "gkm2_add",
                                 "value": [
                                     "0"
                                 ],
@@ -3469,7 +3469,35 @@
                             "codeClass": null,
                             "userConfig": {
                                 "autoStripChars": true,
-                                "fieldLabel": "Начисл (м&sup2;)",
+                                "decimalPrecision": 6,
+                                "fieldLabel": "Гкал_дорах",
+                                "fieldStyle": "background-color:#F0F8FF;font-size:10pt;text-align:right;",
+                                "hideLabel": null,
+                                "hideTrigger": true,
+                                "labelWidth": 90,
+                                "layout|anchor": "100%",
+                                "name": "gkal_add",
+                                "value": [
+                                    "0"
+                                ],
+                                "width": null
+                            },
+                            "name": "MyNumberField12",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "68daee25-41ee-4582-9ff2-9a819e6e296f"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoStripChars": true,
+                                "fieldLabel": "Дораховано",
                                 "fieldStyle": "background-color:#F0F8FF;font-size:10pt;text-align:right;",
                                 "hideLabel": null,
                                 "hideTrigger": true,
@@ -3486,61 +3514,6 @@
                                 "scrollable": "boolean"
                             },
                             "designerId": "df25cb40-fc7e-44dc-adac-4bd0014f3bae"
-                        },
-                        {
-                            "type": "Ext.form.field.Number",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "autoStripChars": true,
-                                "decimalPrecision": 3,
-                                "fieldLabel": "тариф (гкал)",
-                                "fieldStyle": "background-color:#F0F8FF;font-size:10pt;text-align:right;",
-                                "hideLabel": null,
-                                "hideTrigger": true,
-                                "labelWidth": 90,
-                                "layout|anchor": "100%",
-                                "name": "tarif_gkal",
-                                "value": [
-                                    "0"
-                                ],
-                                "width": 135
-                            },
-                            "name": "MyNumberField156",
-                            "configAlternates": {
-                                "scrollable": "boolean"
-                            },
-                            "designerId": "32f30f63-c24a-4dee-93ff-470dd2b46fb8"
-                        },
-                        {
-                            "type": "Ext.form.field.Number",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "autoStripChars": true,
-                                "fieldLabel": "Начисл (гкал)",
-                                "fieldStyle": "background-color:#F0F8FF;font-size:10pt;text-align:right;",
-                                "hideLabel": null,
-                                "hideTrigger": true,
-                                "labelWidth": 90,
-                                "layout|anchor": "100%",
-                                "name": "otoplenie_gkal",
-                                "value": [
-                                    "0"
-                                ],
-                                "width": null
-                            },
-                            "name": "MyNumberField159",
-                            "configAlternates": {
-                                "scrollable": "boolean"
-                            },
-                            "designerId": "dfb1fc07-47e4-4d78-ba51-4360cdf02d44"
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -3607,23 +3580,183 @@
                             "codeClass": null,
                             "userConfig": {
                                 "autoStripChars": true,
-                                "fieldLabel": "Начислено",
+                                "fieldLabel": "Начисл (гкал)",
                                 "fieldStyle": "background-color:#F0F8FF;font-size:10pt;text-align:right;",
                                 "hideLabel": null,
                                 "hideTrigger": true,
                                 "labelWidth": 90,
                                 "layout|anchor": "100%",
-                                "name": "nachisleno",
+                                "name": "otoplenie_gkal",
                                 "value": [
                                     "0"
                                 ],
-                                "width": 125
+                                "width": null
                             },
-                            "name": "MyNumberField161",
+                            "name": "MyNumberField159",
                             "configAlternates": {
                                 "scrollable": "boolean"
                             },
-                            "designerId": "17ac6ed3-1a05-49f5-bb8e-c31bd2b9999e"
+                            "designerId": "dfb1fc07-47e4-4d78-ba51-4360cdf02d44"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "height": null,
+                                "icon": "resources/css/images/ico/schet.png",
+                                "id": "btnOtoplenieAppPerer",
+                                "itemId": null,
+                                "layout|anchor": null,
+                                "margin": 5,
+                                "scale": "medium",
+                                "text": "просчитать",
+                                "tooltip": "Просчитать",
+                                "width": 123
+                            },
+                            "name": "MyButton30",
+                            "configAlternates": {
+                                "tooltip": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "9ce65513-2d01-4f7e-9f09-4b02edbdcec0",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "//this.up('#winAddVodomer').close();",
+                                            "var form = button.findParentByType('form').getForm();",
+                                            "//form.reset();",
+                                            "var zadol = form.findField('zadol').getValue();",
+                                            "var tarif = form.findField('tarif_gkal').getValue();",
+                                            "",
+                                            "var gkal = form.findField('gkal').getValue();",
+                                            "var gkal_add = form.findField('gkal_add').getValue();",
+                                            "",
+                                            "var gkal_mop = form.findField('gkal_mop').getValue();",
+                                            "var square = form.findField('square').getValue();",
+                                            "var square_lg = form.findField('square_lg').getValue();",
+                                            "var perer = form.findField('perer').getValue();",
+                                            "var budjet = form.findField('budjet').getValue();",
+                                            "var budjet_mop = form.findField('budjet_mop').getValue();",
+                                            "var pbudjet = form.findField('pbudjet').getValue();",
+                                            "var oplacheno = form.findField('oplacheno').getValue();",
+                                            "var otoplenie_gkal = form.findField('otoplenie_gkal').getValue();",
+                                            "var otoplenie = form.findField('otoplenie').getValue();",
+                                            "",
+                                            "",
+                                            "",
+                                            "var gkm2_mop =0;",
+                                            "var gkm2_add =0;",
+                                            "var gkm2 = 0;",
+                                            "var otoplenie = 0;",
+                                            "var otoplenie_gkal = 0;",
+                                            "var mop = 0;",
+                                            "var nacisleno = 0;",
+                                            "",
+                                            "",
+                                            "if (tarif===0)  {",
+                                            "",
+                                            "    Ext.MessageBox.show({",
+                                            "        title: 'Проверка тарифа',",
+                                            "        msg: 'Введите тариф по услуге',",
+                                            "        buttons: Ext.MessageBox.OK,",
+                                            "        icon: Ext.MessageBox.INFO",
+                                            "    });",
+                                            "} else {",
+                                            "    otoplenie = gkal_add * tarif  ;",
+                                            "    otoplenie_gkal = gkal * tarif - budjet ;",
+                                            "    mop = gkal_mop * tarif - budjet_mop;",
+                                            "    gkm2 = gkal / square;",
+                                            "    gkm2_mop = gkal_mop / square;",
+                                            "    gkm2_add = gkal_add / square;",
+                                            "",
+                                            "    nachisleno =otoplenie +otoplenie_gkal + mop + perer - pbudjet ;",
+                                            "    form.findField('gkm2').setValue(gkm2);",
+                                            "    form.findField('gkm2_mop').setValue(gkm2_mop);",
+                                            "    form.findField('gkm2_add').setValue(gkm2_add);",
+                                            "    form.findField('otoplenie').setValue(otoplenie);",
+                                            "    form.findField('otoplenie_gkal').setValue(otoplenie_gkal);",
+                                            "    form.findField('mop').setValue(mop);",
+                                            "    form.findField('nachisleno').setValue(nachisleno);",
+                                            "    form.findField('dolg').setValue(zadol + nachisleno - oplacheno);",
+                                            "",
+                                            "}",
+                                            ""
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "91b60b28-5ae1-4230-8f7b-55a2861196da"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "height": 30,
+                                "icon": "resources/css/images/ico/refresh.png",
+                                "id": "btnOtoplenieAppReset",
+                                "itemId": null,
+                                "margin": 5,
+                                "scale": "medium",
+                                "text": "",
+                                "tooltip": "Восстановить",
+                                "width": 30
+                            },
+                            "name": "MyButton29",
+                            "configAlternates": {
+                                "tooltip": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "b555d422-da3e-4f26-9a30-733ab3462834",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var form = button.findParentByType('form').getForm();",
+                                            "var grNach = Ext.getCmp('grNachOtoplenie');",
+                                            "var record = grNach.getSelectionModel().getSelection()[0];",
+                                            "var ind  = grNach.getView().getStore().indexOf(record);",
+                                            "grNach.getView().getSelectionModel().clearSelections();",
+                                            "grNach.getView().getSelectionModel().select(ind);"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "757375a3-1261-4824-be6a-d31799a84e3c"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -3637,14 +3770,14 @@
                     "userConfig": {
                         "designer|createAlias": null,
                         "forceFit": null,
-                        "height": 330,
+                        "height": 415,
                         "id": "grNachOtoplenie",
-                        "layout|x": 0,
-                        "layout|y": 0,
+                        "layout|x": 5,
+                        "layout|y": 5,
                         "scrollable": true,
                         "store": "StTekNachApp",
                         "title": "Период начисления",
-                        "width": 210
+                        "width": 225
                     },
                     "name": "MyGridPanel12",
                     "configAlternates": {
@@ -3661,7 +3794,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "emptyText": "нет начислений",
-                                "height": 458,
+                                "height": 353,
                                 "style": null
                             },
                             "name": "MyGridView12",
@@ -4056,14 +4189,14 @@
                     "userConfig": {
                         "collapsible": null,
                         "forceFit": null,
-                        "height": 185,
+                        "height": 135,
                         "id": "grLgotaNachOtoplenie",
                         "layout|x": 5,
-                        "layout|y": 340,
+                        "layout|y": 430,
                         "scrollable": true,
                         "store": "StLgotaNachVoda",
                         "title": "нарахування на бюджет",
-                        "width": 1095
+                        "width": 1000
                     },
                     "name": "MyGridPanel13",
                     "configAlternates": {
@@ -4080,6 +4213,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "emptyText": "Начислений по льготе нет",
+                                "height": 133,
                                 "style": null
                             },
                             "name": "MyGridView13",
@@ -4441,71 +4575,6 @@
                                 "scrollable": "boolean"
                             },
                             "designerId": "998fcf37-6da5-4796-a735-ad954adcd163"
-                        },
-                        {
-                            "type": "Ext.grid.column.Number",
-                            "reference": {
-                                "name": "columns",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "align": "center",
-                                "dataIndex": "percent",
-                                "format": "0",
-                                "hidden": null,
-                                "menuDisabled": true,
-                                "text": "%",
-                                "width": 45
-                            },
-                            "name": "MyNumberColumn53",
-                            "configAlternates": {
-                                "scrollable": "boolean"
-                            },
-                            "designerId": "e0cf4d16-17be-4e0e-abfd-270657df56d5"
-                        },
-                        {
-                            "type": "Ext.grid.column.Number",
-                            "reference": {
-                                "name": "columns",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "align": "center",
-                                "dataIndex": "people",
-                                "format": "0",
-                                "hidden": null,
-                                "menuDisabled": true,
-                                "text": "чел",
-                                "width": 45
-                            },
-                            "name": "MyNumberColumn54",
-                            "configAlternates": {
-                                "scrollable": "boolean"
-                            },
-                            "designerId": "78476223-9361-4389-b542-075446d0d829"
-                        },
-                        {
-                            "type": "Ext.grid.column.Number",
-                            "reference": {
-                                "name": "columns",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "align": "right",
-                                "dataIndex": "tarif",
-                                "format": "0.000",
-                                "menuDisabled": true,
-                                "text": "тариф",
-                                "width": 80
-                            },
-                            "name": "MyNumberColumn55",
-                            "configAlternates": {
-                                "scrollable": "boolean"
-                            },
-                            "designerId": "a88593d5-037a-4344-a525-dac9cfec1aff"
                         },
                         {
                             "type": "Ext.grid.column.Number",
@@ -5047,9 +5116,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 280,
-                        "layout|x": 215,
-                        "layout|y": 50,
+                        "height": 380,
+                        "layout|x": 235,
+                        "layout|y": 40,
                         "style": "background-color: #DCDCDC;",
                         "title": "",
                         "toggleOnTitleClick": false,
@@ -5091,6 +5160,34 @@
                                 "scrollable": "boolean"
                             },
                             "designerId": "04a617af-59d5-41e5-9534-3e68f2f05bd4"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoStripChars": true,
+                                "fieldLabel": "Начислено",
+                                "fieldStyle": "background-color:#F0F8FF;font-size:10pt;text-align:right;",
+                                "hideLabel": null,
+                                "hideTrigger": true,
+                                "labelAlign": "top",
+                                "labelWidth": 90,
+                                "layout|anchor": "100%",
+                                "name": "nachisleno",
+                                "value": [
+                                    "0"
+                                ],
+                                "width": 125
+                            },
+                            "name": "MyNumberField161",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "17ac6ed3-1a05-49f5-bb8e-c31bd2b9999e"
                         },
                         {
                             "type": "Ext.form.field.Number",
@@ -5214,11 +5311,65 @@
                             "userConfig": {
                                 "formBind": true,
                                 "height": null,
+                                "icon": "resources/css/images/ico/schet.png",
+                                "id": "btnOtoplenieAppItog",
+                                "itemId": null,
+                                "layout|anchor": "100%",
+                                "margin": 5,
+                                "scale": "medium",
+                                "text": "просчитать",
+                                "tooltip": "Просчитать",
+                                "width": null
+                            },
+                            "name": "MyButton33",
+                            "configAlternates": {
+                                "tooltip": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "7a56380a-0a46-49f7-a946-3ce6e31e884c",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|params": [
+                                            "button",
+                                            "e"
+                                        ],
+                                        "fn": "handler",
+                                        "implHandler": [
+                                            "var form = button.findParentByType('form').getForm();",
+                                            "var zadol = form.findField('zadol').getValue();",
+                                            "var oplacheno = form.findField('oplacheno').getValue();",
+                                            "var nachisleno = form.findField('nachisleno').getValue();",
+                                            "form.findField('dolg').setValue(zadol + nachisleno - oplacheno);"
+                                        ]
+                                    },
+                                    "name": "handler",
+                                    "designerId": "a1e3f853-1261-4fe3-aeb6-9fd23c46b224"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "height": null,
                                 "icon": "resources/css/images/ico/yes22.png",
                                 "id": "btnOtoplenieAppIns",
                                 "itemId": null,
                                 "layout|anchor": "100%",
-                                "margin": null,
+                                "margin": 5,
+                                "scale": "medium",
                                 "text": "Записати",
                                 "width": null
                             },
@@ -5311,8 +5462,8 @@
                         "id": null,
                         "labelAlign": "top",
                         "labelWidth": 50,
-                        "layout|x": 215,
-                        "layout|y": 0,
+                        "layout|x": 235,
+                        "layout|y": -6,
                         "margin": "10 0 10 0",
                         "name": "data",
                         "startDay": 1,
@@ -5334,11 +5485,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "height": 110,
-                        "layout|x": 565,
-                        "layout|y": 10,
+                        "layout|x": 385,
+                        "layout|y": -1,
                         "style": "background-color: #DCDCDC;",
                         "title": "МОП",
-                        "width": 160
+                        "width": 195
                     },
                     "name": "MyFieldSet27",
                     "configAlternates": {
@@ -5441,13 +5592,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 210,
+                        "height": 195,
                         "layout|anchor": null,
-                        "layout|x": 565,
-                        "layout|y": 120,
+                        "layout|x": 805,
+                        "layout|y": 225,
                         "style": "background-color: #DCDCDC;",
                         "title": "Рассрочка оплаты",
-                        "width": 160
+                        "width": 200
                     },
                     "name": "MyFieldSet30",
                     "configAlternates": {
@@ -5723,12 +5874,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 260,
-                        "layout|x": 730,
-                        "layout|y": 10,
+                        "height": 415,
+                        "layout|x": 585,
+                        "layout|y": 5,
                         "style": "background-color: #DCDCDC;",
                         "title": "перерасчет",
-                        "width": 195
+                        "width": 215
                     },
                     "name": "MyFieldSet28",
                     "configAlternates": {
@@ -5968,6 +6119,29 @@
                             "designerId": "d5810b10-ddf1-40d5-8f63-84a8decda803"
                         },
                         {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "инфо перер",
+                                "height": 155,
+                                "labelAlign": "top",
+                                "layout|anchor": "100%",
+                                "name": "info",
+                                "style": "background-color: #f3f3f3;",
+                                "width": 170
+                            },
+                            "name": "MyTextArea13",
+                            "configAlternates": {
+                                "style": "string",
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "445377c8-535c-4162-902d-31e7a38e7cb5"
+                        },
+                        {
                             "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
@@ -5982,7 +6156,7 @@
                                 "id": "btnOtopleniePererIns",
                                 "itemId": null,
                                 "layout|anchor": "100%",
-                                "margin": null,
+                                "margin": 5,
                                 "text": "Выполнить перерасч",
                                 "width": 95
                             },
@@ -6102,12 +6276,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 225,
-                        "layout|x": 930,
-                        "layout|y": 10,
+                        "height": 215,
+                        "layout|x": 805,
+                        "layout|y": 5,
                         "style": "background-color: #DCDCDC;",
                         "title": "По льготе",
-                        "width": 170
+                        "width": 205
                     },
                     "name": "MyFieldSet29",
                     "configAlternates": {
@@ -6307,198 +6481,6 @@
                             "designerId": "9478140f-6157-4e9c-bbd8-c844f97740eb"
                         }
                     ]
-                },
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fieldLabel": "инфо бюджет",
-                        "layout|x": 730,
-                        "layout|y": 305,
-                        "name": "msq_lgota",
-                        "style": "background-color: #f3f3f3;",
-                        "width": 355
-                    },
-                    "name": "MyTextField46",
-                    "configAlternates": {
-                        "style": "string",
-                        "scrollable": "boolean"
-                    },
-                    "designerId": "9a8e7cf0-b42c-4c3b-b746-b576dcb711e7"
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "formBind": true,
-                        "height": 30,
-                        "icon": "resources/css/images/ico/refresh.png",
-                        "id": "btnOtoplenieAppReset",
-                        "itemId": null,
-                        "layout|x": 1050,
-                        "layout|y": 240,
-                        "scale": "medium",
-                        "text": "",
-                        "tooltip": "Восстановить",
-                        "width": 30
-                    },
-                    "name": "MyButton29",
-                    "configAlternates": {
-                        "tooltip": "string",
-                        "scrollable": "boolean"
-                    },
-                    "designerId": "b555d422-da3e-4f26-9a30-733ab3462834",
-                    "cn": [
-                        {
-                            "type": "fixedfunction",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|params": [
-                                    "button",
-                                    "e"
-                                ],
-                                "fn": "handler",
-                                "implHandler": [
-                                    "var form = button.findParentByType('form').getForm();",
-                                    "var grNach = Ext.getCmp('grNachOtoplenie');",
-                                    "var record = grNach.getSelectionModel().getSelection()[0];",
-                                    "var ind  = grNach.getView().getStore().indexOf(record);",
-                                    "grNach.getView().getSelectionModel().clearSelections();",
-                                    "grNach.getView().getSelectionModel().select(ind);"
-                                ]
-                            },
-                            "name": "handler",
-                            "designerId": "757375a3-1261-4824-be6a-d31799a84e3c"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.button.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "formBind": true,
-                        "height": 30,
-                        "icon": "resources/css/images/ico/schet.png",
-                        "id": "btnOtoplenieAppPerer",
-                        "itemId": null,
-                        "layout|x": 1010,
-                        "layout|y": 240,
-                        "scale": "medium",
-                        "text": "",
-                        "tooltip": "Просчитать",
-                        "width": 30
-                    },
-                    "name": "MyButton30",
-                    "configAlternates": {
-                        "tooltip": "string",
-                        "scrollable": "boolean"
-                    },
-                    "designerId": "9ce65513-2d01-4f7e-9f09-4b02edbdcec0",
-                    "cn": [
-                        {
-                            "type": "fixedfunction",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|params": [
-                                    "button",
-                                    "e"
-                                ],
-                                "fn": "handler",
-                                "implHandler": [
-                                    "//this.up('#winAddVodomer').close();",
-                                    "var form = button.findParentByType('form').getForm();",
-                                    "//form.reset();",
-                                    "var zadol = form.findField('zadol').getValue();",
-                                    "var tarif = form.findField('tarif_gkal').getValue();",
-                                    "",
-                                    "var gkal = form.findField('gkal').getValue();",
-                                    "var gkal_mop = form.findField('gkal_mop').getValue();",
-                                    "var square = form.findField('square').getValue();",
-                                    "var square_lg = form.findField('square_lg').getValue();",
-                                    "var perer = form.findField('perer').getValue();",
-                                    "var budjet = form.findField('budjet').getValue();",
-                                    "var budjet_mop = form.findField('budjet_mop').getValue();",
-                                    "var pbudjet = form.findField('pbudjet').getValue();",
-                                    "var oplacheno = form.findField('oplacheno').getValue();",
-                                    "",
-                                    "var gkm2_mop =0;",
-                                    "var gkm2 = 0;",
-                                    "var otoplenie = 0;",
-                                    "var mop = 0;",
-                                    "var nacisleno = 0;",
-                                    "",
-                                    "",
-                                    "if (tarif===0)  {",
-                                    "",
-                                    "    Ext.MessageBox.show({",
-                                    "        title: 'Проверка тарифа',",
-                                    "        msg: 'Введите тариф по услуге',",
-                                    "        buttons: Ext.MessageBox.OK,",
-                                    "        icon: Ext.MessageBox.INFO",
-                                    "    });",
-                                    "} else {",
-                                    "    otoplenie = gkal * tarif - budjet ;",
-                                    "    mop = gkal_mop * tarif - budjet_mop;",
-                                    "    gkm2 = gkal / square;",
-                                    "    gkm2_mop = gkal_mop / square;",
-                                    "    nachisleno =otoplenie + mop + perer - pbudjet ;",
-                                    "    form.findField('gkm2').setValue(gkm2);",
-                                    "    form.findField('gkm2_mop').setValue(gkm2_mop);",
-                                    "    form.findField('otoplenie').setValue(otoplenie);",
-                                    "    form.findField('mop').setValue(mop);",
-                                    "    form.findField('nachisleno').setValue(nachisleno);",
-                                    "    form.findField('dolg').setValue(zadol + nachisleno - oplacheno);",
-                                    "",
-                                    "}",
-                                    ""
-                                ]
-                            },
-                            "name": "handler",
-                            "designerId": "91b60b28-5ae1-4230-8f7b-55a2861196da"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fieldLabel": "инфо перер",
-                        "layout|x": 730,
-                        "layout|y": 275,
-                        "name": "info",
-                        "style": "background-color: #f3f3f3;",
-                        "width": 355
-                    },
-                    "name": "MyTextField",
-                    "configAlternates": {
-                        "style": "string",
-                        "scrollable": "boolean"
-                    },
-                    "designerId": "445377c8-535c-4162-902d-31e7a38e7cb5"
                 }
             ]
         },
