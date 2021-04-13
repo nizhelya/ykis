@@ -12,7 +12,7 @@
         "id": "tabNachApp",
         "itemId": null,
         "scrollable": true,
-        "title": "Нарахування",
+        "title": "ТПВ",
         "width": 1257
     },
     "configAlternates": {
@@ -160,8 +160,8 @@
                                 "inputValue": "да",
                                 "labelWidth": 110,
                                 "layout|anchor": null,
-                                "layout|x": 20,
-                                "layout|y": 20,
+                                "layout|x": 5,
+                                "layout|y": 35,
                                 "name": "tbo",
                                 "padding": null,
                                 "style": null,
@@ -315,6 +315,32 @@
                                     "designerId": "9ad4075a-f5ed-488f-81a5-e49c7133415e"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "fieldLabel": "Користувачів",
+                                "hideTrigger": true,
+                                "labelSeparator": " ",
+                                "labelWidth": 80,
+                                "layout|anchor": null,
+                                "layout|x": 5,
+                                "layout|y": 5,
+                                "name": "tenant_tbo",
+                                "width": 145
+                            },
+                            "name": "MyNumberField18",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
+                            "designerId": "5be5e9f0-6cd3-4d8c-b1a3-422adc6c72cb"
                         }
                     ]
                 },

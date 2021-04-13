@@ -158,6 +158,9 @@ $API = array(
             'updateRecords'=>array(
             	'len'=>1
             ),
+             'newOplata'=>array(
+            	'len'=>1
+            ),
             'destroyRecord'=>array(
             	'len'=>1
             )          

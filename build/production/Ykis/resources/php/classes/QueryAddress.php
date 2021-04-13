@@ -195,7 +195,7 @@ public function connect($login,$password)
 		    case "Appartment":
 			  $_sql_total=null; 
 			  $_sql= 'SELECT `raion_id`, `house_id`,`address_id`,`address`,`kod`,`lift`,`fio` as owner ,`order`,`data` as data_ordera,`privat`,'
-				  .'`room`,`area_full`,`area_life`,`area_balk`,`area_dop`,`area_otopl`, `nanim`,`tenant`,`absent`,`podnan`,`lgotchik`,(CASE WHEN lgotchik > 0 THEN 1 ELSE 0 END ) as lgota, `vxvoda`,'
+				  .'`room`,`area_full`,`area_life`,`area_balk`,`area_dop`,`area_otopl`, `nanim`,`tenant`,`tenant_tbo`,`absent`,`podnan`,`lgotchik`,(CASE WHEN lgotchik > 0 THEN 1 ELSE 0 END ) as lgota, `vxvoda`,'
 				  .'`vgvoda`, `teplomer`,`dteplomer_id`,`dvodomer_id`,`teplomer_id`,`boiler`,`kvartplata`,`otoplenie`,`podogrev`,`voda`,`stoki`,`tbo`,`subsidia`,aggr_voda,' .'aggr_teplo,aggr_tbo,aggr_kv,`type_teplo`,`type_voda`,`length`,`diametr`,`enaudit`,`tne`,`kte`,`heated`,`phone`,`email`,`operator`,'
 				  .'`what_change`,`data_change`,`data_change` as chdate, inn, passport, vidan,  viddata, '
 				  .'(SELECT `nomer` FROM YIS.DOGOVOR_YTKE WHERE `address_id`='.$_id.' LIMIT 1) AS dog_ytke, '
@@ -375,7 +375,8 @@ public function connect($login,$password)
 	case "AppartmentUpdateTbo":
 		 $this->sql='CALL YISGRAND.AppartmentUpdateTbo("'
 		.$this->address_id.'","'
-		.$this->tbo.'",'		
+		.$this->tenant_tbo.'","'
+		.$this->tbo.'",'
 		.' @success, @msg)';
 			 // print($this->sql);
 	break;
@@ -615,7 +616,7 @@ public function connect($login,$password)
 				.'YIS.TBO.people="'.$this->people.'",'
 				.'YIS.TBO.tbo="'.$this->tbo.'",'
 				.'YIS.TBO.tarif="'.$this->tarif.'",'
-			  .'YIS.TBO.perer="'.$this->perer.'",'
+				.'YIS.TBO.perer="'.$this->perer.'",'
 				.'YIS.TBO.nachisleno="'.$this->nachisleno.'",'
 				.'YIS.TBO.people_lg="'.$this->people_lg.'",'
 				.'YIS.TBO.budjet="'.$this->budjet.'",'
@@ -1527,7 +1528,7 @@ public function connect($login,$password)
 			  break;
 		case "updateSchetaVik":
 			      $this->sql='CALL YISGRAND.updateSchetaVik("'.$this->data.'",@success,@msg)';
-			      			      			 //  print_r($this->sql); 
+			      			      			//  print_r($this->sql); 
 
 			  break;
 		case "input_port":

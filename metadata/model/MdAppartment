@@ -1141,6 +1141,19 @@
             },
             "name": "MyInteger153",
             "designerId": "4d751a59-b647-4d61-addc-d158e20dfd88"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tenant_tbo"
+            },
+            "name": "MyInteger157",
+            "designerId": "f421c207-7dc5-41db-b63e-77c0961117e8"
         }
     ]
 }

@@ -504,7 +504,7 @@ TM_ORG_FILIAL WHERE TM_ORG_FILIAL.org_id=(SELECT YISGRAND.DOGOVOR_VIK.`org_id` F
 		
 		   
 			case "FmFilial"://in use			
-			      $this->sql='SELECT *  FROM YISGRAND.TM_ORG_FILIAL  WHERE YISGRAND.TM_ORG_FILIAL.filial_id="'.$this->filial_id.'" LIMIT 1';
+			      $this->sql='SELECT *,org_id as new_id  FROM YISGRAND.TM_ORG_FILIAL  WHERE YISGRAND.TM_ORG_FILIAL.filial_id="'.$this->filial_id.'" LIMIT 1';
 					  // print_r($this->sql); 
 			break;
 			case "getFilialOrg"://in use			
@@ -1191,8 +1191,7 @@ TM_ORG_FILIAL WHERE TM_ORG_FILIAL.org_id=(SELECT YISGRAND.DOGOVOR_VIK.`org_id` F
 				.$this->zadol.',YISGRAND.OTOPLENIE.square='
 				.$this->square.',YISGRAND.OTOPLENIE.gkm2='
 				.$this->gkm2.',YISGRAND.OTOPLENIE.volume='
-				.$this->volume.',YISGRAND.OTOPLENIE.qty_day='
-				.$this->qty_day.',YISGRAND.OTOPLENIE.gkal_y_ot='
+				.$this->volume.',YISGRAND.OTOPLENIE.gkal_y_ot='
 				.$this->gkal_y_ot.',YISGRAND.OTOPLENIE.tarif='
 				.$this->tarif.',YISGRAND.OTOPLENIE.ptarif='
 				.$this->ptarif.',YISGRAND.OTOPLENIE.otoplenie='
@@ -1712,13 +1711,48 @@ public function Org(stdClass $params)
 			
 
 			case "updateFilial": /* обновлена: добавлен typeh_id */
-		$this->sql='CALL YISGRAND.update_filial('.$this->filial_id.',"'.$this->golovnoe.'","'.$this->ind.'","'.$this->kod_ytke.'","'.$this->kod_vik.'","'.$this->org_id.'","'.$this->raion_id.'","'
-						.$this->street_id.'","'.$this->house_id.'","'.$this->address_id.'","'
-						.$this->is_flat.'","'.$this->sobstv_id.'","'.$this->usobstv_id.'","'.$this->type_id.'","'
-						.$this->typeh_id.'",'.$this->area.','.$this->visota.','.$this->people.',"'.$this->rwork_id.'","'.$this->dvodomer.'","'.$this->dvodomer_id.'","'.$this->dteplomer.'","'
-						.$this->dteplomer_id.'","'.$this->fname.'","'.$this->name.'","'.$this->vkl_otopl.'","'.$this->vkl_xvoda.'","'.$this->vkl_stoki.'","'
-						.$this->vkl_gvoda.'","'.$this->gvodomer.'","'.$this->xvodomer.'","'.$this->norma_xv.'","'.$this->norma_gv.'","'.$this->teplomer.'","'.$this->nrx_gvs_d.'","'
-						.$this->nrx_xv_d.'","'.$this->pstoki.'","'.$this->qty_hour.'","'.$this->rteplo.'","'.$this->rvoda.'",@success,@msg)';
+		$this->sql='CALL YISGRAND.update_filial('
+			  .$this->filial_id.',"'
+			  .$this->golovnoe.'","'
+			  .$this->ind.'","'
+			  .$this->kod_ytke.'","'
+			  .$this->kod_vik.'","'
+			  .$this->org_id.'","'
+			  .$this->new_id.'","'
+			  .$this->raion_id.'","'
+			  .$this->street_id.'","'
+			  .$this->house_id.'","'
+			  .$this->address_id.'","'
+			  .$this->is_flat.'","'
+			  .$this->sobstv_id.'","'
+			  .$this->usobstv_id.'","'
+			  .$this->type_id.'","'
+			  .$this->typeh_id.'","'
+			  .$this->area.'","'
+			  .$this->visota.'","'
+			  .$this->people.'","'
+			  .$this->rwork_id.'","'
+			  .$this->dvodomer.'","'
+			  .$this->dvodomer_id.'","'
+			  .$this->dteplomer.'","'
+			  .$this->dteplomer_id.'","'
+			  .$this->fname.'","'
+			  .$this->name.'","'
+			  .$this->vkl_otopl.'","'
+			  .$this->vkl_xvoda.'","'
+			  .$this->vkl_stoki.'","'
+			  .$this->vkl_gvoda.'","'
+			  .$this->gvodomer.'","'
+			  .$this->xvodomer.'","'
+			  .$this->norma_xv.'","'
+			  .$this->norma_gv.'","'
+			  .$this->teplomer.'","'
+			  .$this->nrx_gvs_d.'","'
+			  .$this->nrx_xv_d.'","'
+			  .$this->pstoki.'","'
+			  .$this->qty_hour.'","'
+			  .$this->rteplo.'","'
+			  .$this->rvoda.'",@success,@msg)';
 						//print($this->sql);
 			break;
 			case "nachGvsFilial":

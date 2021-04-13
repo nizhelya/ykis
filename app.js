@@ -64,7 +64,8 @@ Ext.application({
         'MdVsubsidia',
         'MdDogovor',
         'MdPBankXml',
-        'MdPB'
+        'MdPB',
+        'MdMTB'
     ],
     stores: [
         'StTekPokDTeplomera',
@@ -213,7 +214,8 @@ Ext.application({
         'StHouseEnOut',
         'StTarifOt',
         'StIPAY',
-        'StPrixodEdit'
+        'StPrixodEdit',
+        'StMTB'
     ],
     views: [
         'flat.TabAppTeplomer',
@@ -291,7 +293,8 @@ Ext.application({
         'sprav.TabPB',
         'sprav.TabEnergoAudit',
         'sprav.TabIPAY',
-        'org.WinDogovorOrg'
+        'org.WinDogovorOrg',
+        'sprav.TabMTB'
     ],
     controllers: [
         'CrInfo',

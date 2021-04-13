@@ -66,7 +66,8 @@
             "MdVsubsidia",
             "MdDogovor",
             "MdPBankXml",
-            "MdPB"
+            "MdPB",
+            "MdMTB"
         ],
         "name": "Ykis",
         "stores": [
@@ -216,7 +217,8 @@
             "StHouseEnOut",
             "StTarifOt",
             "StIPAY",
-            "StPrixodEdit"
+            "StPrixodEdit",
+            "StMTB"
         ],
         "views": [
             "flat.TabAppTeplomer",
@@ -294,7 +296,8 @@
             "sprav.TabPB",
             "sprav.TabEnergoAudit",
             "sprav.TabIPAY",
-            "org.WinDogovorOrg"
+            "org.WinDogovorOrg",
+            "sprav.TabMTB"
         ]
     },
     "name": "Application",

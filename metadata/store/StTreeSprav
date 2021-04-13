@@ -70,7 +70,7 @@
             "{id: 'tabGerz', leaf: true, text: 'ГЕРЦ' },\t",
             "{id: 'tabPB', leaf: true, text: 'ПРИВАТБАНК' },",
             "{id: 'tabIPAY', leaf: true, text: 'IPAY' },",
-            "",
+            "{id: 'tabMTB', leaf: true, text: 'МТБ БАНК' },",
             "{id: 'tabOsmdHouses', leaf: true, text: 'ОСМД РКО' },",
             "{id: 'tabEnergoAudit', leaf: true, text: 'Энергоаудит' }   ",
             "",

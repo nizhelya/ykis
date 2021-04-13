@@ -1074,9 +1074,7 @@ case "SvodOtNasel":
 
 
 			case "DogovorYtke":			
-			      $this->sql='CALL YISGRAND.YtkeDogovor('
-			      .'"'.$this->dog_id.'", '
-			      .' @head,@content,@foot)';
+			      $this->sql='CALL YISGRAND.DogovoraHouse_ytke("'.$this->house_id.'",  @content,@success,@msg)';
 			//  print($this->sql);
 			break;
 
