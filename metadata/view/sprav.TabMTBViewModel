@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabmtb",
+        "designer|userClassName": "sprav.TabMTBViewModel"
+    },
+    "name": "sprav.TabPBViewModel1",
+    "designerId": "bfa79048-6f0b-474e-ac65-69e11ab21142"
+}

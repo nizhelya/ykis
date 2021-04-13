@@ -1,0 +1,14 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "tabmtb",
+        "designer|userClassName": "sprav.TabMTBViewController"
+    },
+    "name": "sprav.TabPBViewController1",
+    "designerId": "f8d0fa00-aae7-4531-8643-bb779705be7a"
+}
