@@ -63,7 +63,7 @@ class QueryUpload
 	      {
 		$row = @dbase_get_record_with_names($dbf,$i);
 		$this->results = $row;
-	
+	/*
 		$q = 'INSERT INTO  YISGRAND.LGOTNIK_UTSZN( `COD`, `CDPR`,`NCARD`,`IDPIL`,`PASPPIL`, `FIOPIL`,`INDEX`, `CDUL`, `HOUSE` ,
 		`BUILD`, `APT`,  `KAT`,`LGCODE`, `DATEIN`, `DATEOUT`,`MonthZv`,`YearZv`, `RAH`, `MONEY`, `EBK` )  values (';
 		foreach ($row as $key => $val)
@@ -72,8 +72,18 @@ class QueryUpload
 		  OR $key == 'HOUSE' OR $key == 'BUILD'  OR $key == 'APT'  OR $key == 'KAT'  OR  $key == 'LGCODE'  OR $key == 'DATEIN' OR $key == 'DATEOUT' OR  $key == 'MonthZv' 
 		  OR $key == 'YearZv' OR  $key == 'RAH' OR $key == 'MONEY' OR $key == 'EBK' )
 		  
-		
-	
+		$q = 'INSERT INTO  YISGRAND.LGOTNIK_UTSZN( `COD`, `CDPR`,`NCARD`,`IDPIL`,`PASPPIL`, `FIOPIL`,`INDEX`, `CDUL`, `HOUSE` ,
+		`BUILD`, `APT`,  `KAT`,`LGCODE`, `DATEIN`, `DATEOUT`, `RAH`, `MONEY`, `EBK` )  values (';
+		foreach ($row as $key => $val)
+		{
+		  if ( $key == 'COD' OR $key == 'CDPR' OR $key == 'NCARD' OR $key == 'IDPIL'  OR $key == 'PASPPIL'  OR $key == 'FIOPIL' OR  $key == 'INDEX'  OR $key == 'CDUL' 
+		  OR $key == 'HOUSE' OR $key == 'BUILD'  OR $key == 'APT'  OR $key == 'KAT'  OR  $key == 'LGCODE'  OR $key == 'DATEIN' OR $key == 'DATEOUT'  OR  $key == 'RAH' 
+		  OR $key == 'MONEY' OR $key == 'EBK' )
+	*/	  
+		  $q = 'INSERT INTO  YISGRAND.LGOTNIK_UTSZN(  `FIOPIL`, `RAH` )  values (';
+		foreach ($row as $key => $val)
+		{
+		  if ( $key == 'F1' OR $key == 'F2'  )
 		    {
 			//$q .= "'" . addslashes(trim($val)) . "',";
 			//$q .= "'" . addslashes(trim(convert_cyr_string($val,"i","k"))) . "',";

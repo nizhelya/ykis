@@ -27851,15 +27851,16 @@
         "openTabs": [
             "b1b02687-9ba4-42dc-b422-04da89c767e3",
             "649972ac-4ac7-4a14-a3c7-443ec2cf0d09",
-            "1529d999-78c0-4fb6-a98c-d12396e3ac00"
+            "1529d999-78c0-4fb6-a98c-d12396e3ac00",
+            "c4fd8062-8cb8-4c4a-939b-a57788cee129"
         ]
     },
     "canvasState": {
-        "topInstance": "b1b02687-9ba4-42dc-b422-04da89c767e3"
+        "topInstance": "c4fd8062-8cb8-4c4a-939b-a57788cee129"
     },
     "inspectorState": {
-        "topInstance": "b1b02687-9ba4-42dc-b422-04da89c767e3",
-        "selectedInstance": "bbe2c0cf-cfc3-470e-a626-804cb37f708d"
+        "topInstance": "c4fd8062-8cb8-4c4a-939b-a57788cee129",
+        "selectedInstance": "ef1245fd-c04a-4818-aa7d-5547916b9b0e"
     },
     "editMode": "code",
     "userSettings": {}

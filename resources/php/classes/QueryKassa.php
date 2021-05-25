@@ -1154,10 +1154,17 @@ public function delOplata(stdClass $params)
 				      $this->sql='CALL YISGRAND.AktSubsUtsznOrg('.$this->rec_id.',@success,@content)';
 			 //   print_r($this->sql); 
 			break;
+			/*
 			case "AktSubsidiaAll":
 				      $this->sql='CALL YISGRAND.AktSubsidiaAll("'.$this->org_id.'","'.$this->address_id.'",@success,@content)';
 			  //  print_r($this->sql); 
 			break;
+			*/
+			case "AktSubsidiaAll":
+				      $this->sql='CALL YISGRAND.AktSubsidiaAll('.$this->org_id.',@success,@content)';
+			  //  print_r($this->sql); 
+			break;
+			
 			case "AktLgotaUtsznAll":
 			  switch ($this->usluga_id) {
 							
